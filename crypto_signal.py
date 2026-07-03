@@ -308,7 +308,7 @@ def gemini_news_summary(headlines):
     # Try the newest model first; fall back if the key/tier doesn't allow it.
     models = [
         os.environ.get("GEMINI_MODEL", "gemini-3.5-flash"),
-        "gemini-2.5-flash",
+        "gemini-3.1-flash-lite",
     ]
     for model in models:
         url = (
