@@ -1,0 +1,496 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gemini 4 Argon | معرفی و بنچمارک</title>
+<meta name="description" content="معرفی Gemini 4 Argon گوگل، پیشرفت‌ها، بنچمارک‌ها و مقایسه با GPT-6 Astra، GPT-6.1 Sol، Claude Opus 5.5 و Claude Sonnet 5.5">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;600;800;900&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#05060f;
+  --bg2:#0b0d1f;
+  --card:rgba(255,255,255,.04);
+  --stroke:rgba(255,255,255,.09);
+  --text:#eef0ff;
+  --muted:#9aa0c3;
+  --argon:#7c8cff;
+  --argon2:#3ee0ff;
+  --pink:#ff5fd2;
+  --astra:#10b981;
+  --sol:#f59e0b;
+  --opus:#e07a5f;
+  --sonnet:#c084fc;
+  --grad:linear-gradient(120deg,#3ee0ff 0%,#7c8cff 45%,#ff5fd2 100%);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:"Vazirmatn",system-ui,sans-serif;
+  background:var(--bg);color:var(--text);
+  line-height:1.9;overflow-x:hidden;
+}
+.en{font-family:"Space Grotesk","Vazirmatn",sans-serif;direction:ltr;unicode-bidi:isolate}
+a{color:inherit;text-decoration:none}
+.wrap{width:min(1180px,100% - 32px);margin-inline:auto}
+
+/* ---------- background ---------- */
+#stars{position:fixed;inset:0;z-index:-2}
+.aurora{position:fixed;inset:0;z-index:-1;overflow:hidden;opacity:.55;pointer-events:none}
+.aurora span{position:absolute;border-radius:50%;filter:blur(90px);mix-blend-mode:screen;animation:float 18s ease-in-out infinite}
+.aurora span:nth-child(1){width:45vw;height:45vw;background:#2b3bff;top:5%;right:10%}
+.aurora span:nth-child(2){width:35vw;height:35vw;background:#00c2ff;top:40%;left:5%;animation-delay:-6s}
+.aurora span:nth-child(3){width:30vw;height:30vw;background:#c026d3;bottom:0;right:30%;animation-delay:-12s}
+@keyframes float{0%,100%{transform:translate(0,0) scale(1)}33%{transform:translate(6vw,-4vw) scale(1.15)}66%{transform:translate(-5vw,5vw) scale(.9)}}
+
+/* ---------- nav ---------- */
+nav{position:fixed;top:14px;inset-inline:0;z-index:50}
+nav .bar{display:flex;align-items:center;justify-content:space-between;gap:16px;
+  padding:10px 18px;border:1px solid var(--stroke);border-radius:999px;
+  background:rgba(8,10,25,.6);backdrop-filter:blur(16px)}
+.logo{display:flex;align-items:center;gap:10px;font-weight:800}
+.logo i{width:26px;height:26px;border-radius:8px;background:var(--grad);display:block;animation:spin 8s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+nav ul{display:flex;gap:22px;list-style:none;font-size:.92rem;color:var(--muted)}
+nav ul a:hover{color:var(--text)}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:10px 20px;border-radius:999px;font-weight:700;
+  background:var(--grad);color:#05060f;transition:transform .25s,box-shadow .25s}
+.btn:hover{transform:translateY(-2px);box-shadow:0 10px 40px -10px #7c8cff}
+.btn.ghost{background:transparent;color:var(--text);border:1px solid var(--stroke)}
+@media (max-width:820px){nav ul{display:none}}
+
+/* ---------- hero ---------- */
+.hero{min-height:100vh;display:grid;place-items:center;text-align:center;padding:130px 0 60px;position:relative}
+.chip{display:inline-flex;align-items:center;gap:8px;padding:6px 14px;border-radius:999px;
+  border:1px solid var(--stroke);background:var(--card);font-size:.85rem;color:var(--muted)}
+.chip b{width:8px;height:8px;border-radius:50%;background:#22c55e;box-shadow:0 0 12px #22c55e;animation:pulse 1.6s infinite}
+@keyframes pulse{50%{opacity:.3}}
+.hero h1{font-size:clamp(2.6rem,8vw,6.2rem);font-weight:900;line-height:1.1;margin:22px 0 10px;letter-spacing:-1px}
+.grad{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;
+  background-size:200% auto;animation:shine 6s linear infinite}
+@keyframes shine{to{background-position:200% center}}
+.hero p.lead{max-width:720px;margin:0 auto 32px;color:var(--muted);font-size:clamp(1rem,2.2vw,1.2rem)}
+.typed{color:var(--text);border-left:2px solid var(--argon2);padding-left:4px;animation:caret 1s steps(1) infinite}
+@keyframes caret{50%{border-color:transparent}}
+.hero .cta{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+
+.orb{position:relative;width:min(340px,70vw);aspect-ratio:1;margin:50px auto 0}
+.orb .core{position:absolute;inset:22%;border-radius:50%;
+  background:radial-gradient(circle at 35% 30%,#fff 0%,#7c8cff 25%,#2a1b8f 60%,transparent 72%);
+  box-shadow:0 0 120px 20px rgba(124,140,255,.45);animation:breathe 4s ease-in-out infinite}
+@keyframes breathe{50%{transform:scale(1.07);box-shadow:0 0 160px 40px rgba(62,224,255,.35)}}
+.orb .ring{position:absolute;inset:0;border-radius:50%;border:1px solid rgba(124,140,255,.35);animation:spin 14s linear infinite}
+.orb .ring:nth-child(2){inset:8%;border-style:dashed;border-color:rgba(62,224,255,.35);animation-duration:22s;animation-direction:reverse}
+.orb .ring:nth-child(3){inset:-10%;border-color:rgba(255,95,210,.2);animation-duration:30s}
+.orb .ring::after{content:"";position:absolute;top:-5px;left:50%;width:10px;height:10px;border-radius:50%;background:var(--argon2);box-shadow:0 0 18px var(--argon2)}
+.orb .ring:nth-child(3)::after{background:var(--pink);box-shadow:0 0 18px var(--pink)}
+
+.scroll-hint{margin-top:40px;color:var(--muted);font-size:.8rem;animation:bob 2s ease-in-out infinite}
+@keyframes bob{50%{transform:translateY(8px)}}
+
+/* ---------- sections ---------- */
+section{padding:100px 0;position:relative}
+.eyebrow{color:var(--argon2);font-weight:700;font-size:.9rem;letter-spacing:1px}
+h2{font-size:clamp(1.8rem,4.5vw,3rem);font-weight:900;line-height:1.3;margin:8px 0 14px}
+.sub{color:var(--muted);max-width:720px}
+.head{margin-bottom:46px}
+
+.reveal{opacity:0;transform:translateY(40px);transition:opacity .9s cubic-bezier(.2,.7,.2,1),transform .9s cubic-bezier(.2,.7,.2,1)}
+.reveal.in{opacity:1;transform:none}
+
+/* stats */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+@media (max-width:820px){.stats{grid-template-columns:repeat(2,1fr)}}
+.stat{padding:26px 22px;border:1px solid var(--stroke);border-radius:22px;background:var(--card);backdrop-filter:blur(10px)}
+.stat .n{font-size:clamp(2rem,5vw,2.8rem);font-weight:900}
+.stat .l{color:var(--muted);font-size:.9rem}
+
+/* timeline */
+.timeline{position:relative;display:grid;gap:22px;padding-inline-start:30px}
+.timeline::before{content:"";position:absolute;inset-block:0;right:8px;width:2px;background:linear-gradient(var(--argon2),var(--pink));border-radius:2px}
+.tl{position:relative;padding:18px 22px;border:1px solid var(--stroke);border-radius:18px;background:var(--card)}
+.tl::before{content:"";position:absolute;right:-29px;top:26px;width:14px;height:14px;border-radius:50%;background:var(--bg);border:3px solid var(--argon)}
+.tl time{color:var(--argon2);font-weight:700;font-size:.9rem}
+.tl h3{font-size:1.1rem;margin:2px 0}
+.tl p{color:var(--muted);font-size:.95rem}
+
+/* features */
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+@media (max-width:980px){.grid{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:620px){.grid{grid-template-columns:1fr}}
+.feat{position:relative;padding:28px;border-radius:24px;background:var(--card);border:1px solid var(--stroke);overflow:hidden;
+  transition:transform .4s,border-color .4s}
+.feat:hover{transform:translateY(-6px);border-color:rgba(124,140,255,.5)}
+.feat::before{content:"";position:absolute;inset:0;background:radial-gradient(400px circle at var(--mx,50%) var(--my,50%),rgba(124,140,255,.18),transparent 40%);opacity:0;transition:opacity .3s}
+.feat:hover::before{opacity:1}
+.feat .ic{width:48px;height:48px;border-radius:14px;display:grid;place-items:center;font-size:1.4rem;margin-bottom:14px;
+  background:linear-gradient(135deg,rgba(62,224,255,.2),rgba(255,95,210,.2));border:1px solid var(--stroke)}
+.feat h3{font-size:1.15rem;margin-bottom:6px}
+.feat p{color:var(--muted);font-size:.95rem}
+.feat .tag{display:inline-block;margin-top:12px;font-size:.78rem;padding:3px 10px;border-radius:999px;background:rgba(62,224,255,.1);color:var(--argon2)}
+
+/* benchmarks */
+.tabs{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:26px}
+.tab{cursor:pointer;padding:9px 16px;border-radius:999px;border:1px solid var(--stroke);background:var(--card);color:var(--muted);
+  font:inherit;font-size:.9rem;transition:all .25s}
+.tab:hover{color:var(--text)}
+.tab.on{background:var(--grad);color:#05060f;font-weight:800;border-color:transparent}
+.panel{padding:30px;border-radius:26px;border:1px solid var(--stroke);background:rgba(10,12,30,.55);backdrop-filter:blur(14px)}
+.panel .desc{color:var(--muted);margin-bottom:24px;font-size:.95rem}
+.bars{display:grid;gap:16px}
+.row{display:grid;grid-template-columns:150px 1fr 70px;align-items:center;gap:14px}
+@media (max-width:620px){.row{grid-template-columns:100px 1fr 56px;gap:8px;font-size:.85rem}}
+.row .name{font-weight:700;font-size:.92rem}
+.track{height:16px;border-radius:999px;background:rgba(255,255,255,.06);overflow:hidden;position:relative}
+.fill{height:100%;width:0;border-radius:999px;transition:width 1.3s cubic-bezier(.2,.8,.2,1)}
+.row.win .fill{box-shadow:0 0 20px currentColor}
+.row .val{font-weight:800;text-align:left}
+.row.na .val{color:var(--muted);font-weight:400;font-size:.8rem}
+.row.argon .name{color:var(--argon2)}
+.crown{font-size:.85rem}
+.note{margin-top:20px;font-size:.82rem;color:var(--muted)}
+
+/* comparison table */
+.tablewrap{overflow-x:auto;border-radius:22px;border:1px solid var(--stroke);background:var(--card)}
+table{width:100%;border-collapse:collapse;min-width:780px;font-size:.93rem}
+th,td{padding:14px 16px;text-align:center;border-bottom:1px solid var(--stroke)}
+th{font-weight:800;background:rgba(255,255,255,.03)}
+td:first-child,th:first-child{text-align:right;color:var(--muted);font-weight:600}
+tr:last-child td{border-bottom:none}
+tbody tr{transition:background .2s}
+tbody tr:hover{background:rgba(124,140,255,.07)}
+.col-argon{background:rgba(124,140,255,.08)}
+.best{color:#4ade80;font-weight:800}
+.dot{display:inline-block;width:9px;height:9px;border-radius:50%;margin-left:6px;vertical-align:middle}
+
+/* model cards */
+.models{display:grid;grid-template-columns:repeat(5,1fr);gap:14px}
+@media (max-width:1050px){.models{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:560px){.models{grid-template-columns:1fr}}
+.model{padding:22px;border-radius:20px;border:1px solid var(--stroke);background:var(--card);position:relative;overflow:hidden}
+.model::after{content:"";position:absolute;top:0;inset-inline:0;height:3px;background:var(--c)}
+.model h3{font-size:1.05rem}
+.model .co{color:var(--muted);font-size:.8rem}
+.model ul{list-style:none;margin-top:12px;font-size:.88rem;color:var(--muted);display:grid;gap:6px}
+.model ul li b{color:var(--text)}
+.model.hl{border-color:rgba(124,140,255,.6);box-shadow:0 0 60px -20px var(--argon)}
+
+/* verdict */
+.verdict{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+@media (max-width:760px){.verdict{grid-template-columns:1fr}}
+.v{padding:24px;border-radius:22px;border:1px solid var(--stroke);background:var(--card)}
+.v h3{font-size:1.05rem;margin-bottom:8px}
+.v p{color:var(--muted);font-size:.95rem}
+.v .who{display:inline-block;margin-top:10px;font-weight:800;font-size:.9rem;padding:4px 12px;border-radius:999px;background:rgba(255,255,255,.06)}
+
+.warn{margin-top:30px;padding:18px 22px;border-radius:18px;border:1px dashed rgba(245,158,11,.45);background:rgba(245,158,11,.06);color:#fcd9a3;font-size:.9rem}
+
+footer{padding:50px 0 70px;border-top:1px solid var(--stroke);color:var(--muted);font-size:.85rem}
+footer ol{padding-inline-start:20px;margin-top:10px;display:grid;gap:4px}
+footer a{color:var(--argon2)}
+footer a:hover{text-decoration:underline}
+
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<canvas id="stars"></canvas>
+<div class="aurora"><span></span><span></span><span></span></div>
+
+<nav><div class="wrap bar">
+  <a class="logo" href="#top"><i></i><span class="en">Argon</span></a>
+  <ul>
+    <li><a href="#about">معرفی</a></li>
+    <li><a href="#features">پیشرفت‌ها</a></li>
+    <li><a href="#bench">بنچمارک‌ها</a></li>
+    <li><a href="#compare">مقایسه</a></li>
+    <li><a href="#verdict">جمع‌بندی</a></li>
+  </ul>
+  <a class="btn" href="#bench">اعداد را ببین</a>
+</div></nav>
+
+<header class="hero" id="top">
+  <div class="wrap">
+    <span class="chip"><b></b> عرضه‌ی عمومی از ۱۳ اکتبر ۲۰۲۶</span>
+    <h1><span class="en grad">Gemini 4 Argon</span><br>نسل تازه‌ی هوش گوگل</h1>
+    <p class="lead">قوی‌ترین مدل تاریخ گوگل برای <span class="typed" id="typed">مهندسی نرم‌افزار</span></p>
+    <div class="cta">
+      <a class="btn" href="#bench">بنچمارک‌ها ⟵</a>
+      <a class="btn ghost" href="#compare">مقایسه با رقبا</a>
+    </div>
+    <div class="orb"><div class="ring"></div><div class="ring"></div><div class="ring"></div><div class="core"></div></div>
+    <div class="scroll-hint">↓ اسکرول کن</div>
+  </div>
+</header>
+
+<section id="about">
+  <div class="wrap">
+    <div class="head reveal">
+      <div class="eyebrow">معرفی</div>
+      <h2>آرگون دقیقاً چیست؟</h2>
+      <p class="sub">Gemini 4 Argon پرچم‌دار نسل چهارم جمینای است که گوگل دیپ‌مایند آن را «قوی‌ترین مدل خود تا امروز» معرفی کرد. تمرکز اصلی‌اش روی سه حوزه است: مهندسی نرم‌افزارِ سنگین، کارهای دانشیِ حرفه‌ای و امنیت سایبری دفاعی. طبق شاخص مستقل Artificial Analysis، گوگل با این مدل دوباره به جمع سه آزمایشگاه برتر دنیا برگشته است.</p>
+    </div>
+    <div class="stats reveal">
+      <div class="stat"><div class="n grad" data-count="1" data-suffix="M">0</div><div class="l">توکن پنجره‌ی یکپارچه‌ی ورودی و خروجی</div></div>
+      <div class="stat"><div class="n grad" data-count="77.9" data-suffix="%">0</div><div class="l">در DeepSWE v1.1، بالاتر از همه‌ی رقبا</div></div>
+      <div class="stat"><div class="n grad" data-count="84.2" data-suffix="%">0</div><div class="l">در GraphWalks (۲۵۶K تا ۱M توکن)</div></div>
+      <div class="stat"><div class="n grad" data-count="15" data-suffix="%">0</div><div class="l">نرخ توهم، کمترین در میان مدل‌های رده‌ی بالا</div></div>
+    </div>
+
+    <div class="head reveal" style="margin-top:80px">
+      <div class="eyebrow">مسیر عرضه</div>
+      <h2>از معرفی تا دسترسی عمومی</h2>
+    </div>
+    <div class="timeline">
+      <div class="tl reveal"><time>۳۰ سپتامبر ۲۰۲۶</time><h3>معرفی رسمی</h3><p>گوگل آرگون را معرفی کرد، ولی دسترسی اولیه فقط برای مدافعان سایبری عضو برنامه‌ی <span class="en">Fairwind</span> باز بود.</p></div>
+      <div class="tl reveal"><time>اوایل اکتبر ۲۰۲۶</time><h3>تست‌های امنیتی</h3><p>اعضای Fairwind نسخه‌ی بدون محدودیت‌های سایبری را برای پیدا کردن و وصله کردن آسیب‌پذیری‌ها آزمایش کردند.</p></div>
+      <div class="tl reveal"><time>۱۳ اکتبر ۲۰۲۶</time><h3>عرضه‌ی عمومی</h3><p>دسترسی از طریق Gemini API با شناسه‌ی <span class="en">gemini-4-argon</span>، Google AI Studio، Antigravity، Gemini برای کسب‌وکار و اشتراک‌های AI Pro و Ultra.</p></div>
+      <div class="tl reveal"><time>۳۰ نوامبر ۲۰۲۶</time><h3>پایان قیمت معرفی</h3><p>بعد از این تاریخ قیمت رسمی اعمال می‌شود: ۴ دلار برای هر یک میلیون توکن ورودی و ۲۰ دلار برای خروجی.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="features">
+  <div class="wrap">
+    <div class="head reveal">
+      <div class="eyebrow">پیشرفت‌ها</div>
+      <h2>چه چیزی نسبت به نسل قبل عوض شده؟</h2>
+      <p class="sub">تغییرهای اصلی آرگون نسبت به خانواده‌ی Gemini 3:</p>
+    </div>
+    <div class="grid">
+      <div class="feat reveal"><div class="ic">∞</div><h3>خروجی تا یک میلیون توکن</h3><p>پنجره‌ی یکپارچه‌ی ۱M بین ورودی، فکر کردن و خروجی تقسیم می‌شود. با «Long Decode» پاسخ می‌تواند از سقف ۳۲K/۶۴K هر درخواست هم فراتر برود، در حالی که سقف خروجی Gemini 3 حدود ۶۴K بود.</p><span class="tag">بزرگ‌ترین تغییر</span></div>
+      <div class="feat reveal"><div class="ic">🧠</div><h3>استدلال طولانی‌تر و قابل تنظیم</h3><p>مدل روی مسائل سخت بیشتر فکر می‌کند. سطح تفکر را می‌توانید روی کم، متوسط یا زیاد بگذارید تا بین کیفیت و هزینه تعادل برقرار کنید.</p><span class="tag">Thinking Levels</span></div>
+      <div class="feat reveal"><div class="ic">🛡️</div><h3>امنیت سایبری خودکار</h3><p>آموزش دیده تا آسیب‌پذیری‌های نرم‌افزار را خودش پیدا، تأیید و وصله کند: ۸۵٫۸٪ در بنچمارک داخلی کشف آسیب‌پذیری و ۷۰٫۹٪ در بنچمارک تست نفوذ Wiz.</p><span class="tag">Fairwind</span></div>
+      <div class="feat reveal"><div class="ic">📚</div><h3>پادشاه متن‌های طولانی</h3><p>۸۴٫۲٪ در GraphWalks با متن ۲۵۶ هزار تا ۱ میلیون توکنی، در حالی که GPT-6 Astra به ۷۱٫۸٪ و Opus 5.5 به ۶۶٫۸٪ رسیده‌اند.</p><span class="tag">Long Context</span></div>
+      <div class="feat reveal"><div class="ic">🎬</div><h3>فهم ویدیو به‌صورت ایجنتی</h3><p>ورودی متن، تصویر، ویدیو و گفتار را می‌پذیرد. درک ایجنتی ویدیو حالا عمومی شده و امتیاز LVBench آن ۹۱٫۷٪ است.</p><span class="tag">Multimodal</span></div>
+      <div class="feat reveal"><div class="ic">⚡</div><h3>حالت Tasks در اپ جمینای</h3><p>آرگون کارهای چندمرحله‌ای مثل تحقیق، زمان‌بندی و اتصال به اپ‌های دیگر را خودش جلو می‌برد. با ۵۱٫۳٪ در AutomationBench رتبه‌ی اول را دارد.</p><span class="tag">Agentic</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="bench">
+  <div class="wrap">
+    <div class="head reveal">
+      <div class="eyebrow">بنچمارک‌ها</div>
+      <h2>آرگون در برابر رقبا، با عدد</h2>
+      <p class="sub">روی هر بنچمارک بزنید تا نمودار به‌روز شود. 👑 یعنی بهترین امتیاز در آن آزمون.</p>
+    </div>
+    <div class="tabs reveal" id="tabs"></div>
+    <div class="panel reveal">
+      <p class="desc" id="bdesc"></p>
+      <div class="bars" id="bars"></div>
+      <p class="note" id="bnote"></p>
+    </div>
+  </div>
+</section>
+
+<section id="compare">
+  <div class="wrap">
+    <div class="head reveal">
+      <div class="eyebrow">مقایسه</div>
+      <h2>پنج مدل پرچم‌دار پاییز ۲۰۲۶</h2>
+      <p class="sub">آرگون در برابر جدیدترین مدل‌های OpenAI و Anthropic.</p>
+    </div>
+    <div class="models reveal" id="models"></div>
+    <div class="tablewrap reveal" style="margin-top:28px">
+      <table id="ctable"></table>
+    </div>
+  </div>
+</section>
+
+<section id="verdict">
+  <div class="wrap">
+    <div class="head reveal">
+      <div class="eyebrow">جمع‌بندی</div>
+      <h2>کدام مدل برای کدام کار؟</h2>
+    </div>
+    <div class="verdict">
+      <div class="v reveal"><h3>📚 متن‌های خیلی طولانی و تحلیل اسناد</h3><p>آرگون در GraphWalks با اختلاف زیاد جلوتر است و کمترین نرخ توهم را دارد. برای کار با کل یک کدبیس یا صدها صفحه سند بهترین انتخاب است.</p><span class="who" style="color:var(--argon2)">Gemini 4 Argon</span></div>
+      <div class="v reveal"><h3>🖥️ کار در ترمینال و ایجنت‌های کدنویسی</h3><p>Sonnet 5.5 با ۷۰٫۶٪ و Opus 5.5 با ۶۶٫۴٪ در Terminal-Bench 4.0 حدود ۹ تا ۱۳ امتیاز از آرگون جلوترند. کدنویسی نقطه‌ی ضعف آرگون است.</p><span class="who" style="color:var(--sonnet)">Claude Sonnet / Opus 5.5</span></div>
+      <div class="v reveal"><h3>🧮 ریاضی پیشرفته و پروژه‌های بزرگ نرم‌افزاری</h3><p>Astra در FrontierSWE v2 (۶۵٫۵٪)، FrontierMath و ARC-AGI-3 بهترین گزارش‌ها را دارد، ولی گران‌ترین مدل این فهرست هم هست.</p><span class="who" style="color:var(--astra)">GPT-6 Astra</span></div>
+      <div class="v reveal"><h3>💰 بهترین نسبت کیفیت به قیمت</h3><p>GPT-6.1 Sol در DeepSWE به ۷۵٫۲٪ می‌رسد، یعنی هم‌سطح Astra، با حدود یک‌هفتم هزینه به ازای هر تسک. Sonnet 5.5 هم با همین قیمت پایه گزینه‌ی خیلی خوبی است.</p><span class="who" style="color:var(--sol)">GPT-6.1 Sol</span></div>
+      <div class="v reveal" style="grid-column:1/-1"><h3>🏆 هوش کلی (شاخص مستقل)</h3><p>در Artificial Analysis Intelligence Index، Opus 5.5 با ۵۷٫۶ اول است، Sonnet 5.5 با حدود ۵۶ دوم، و آرگون (۵۲٫۶)، Astra (۵۲٫۷) و GPT-6.1 Sol (حدود ۵۲) تقریباً مساوی‌اند. خلاصه: آرگون مدل همه‌کاره و فوق‌العاده‌ای است، به‌خصوص در متن طولانی و دقت، ولی در همه‌چیز بهترین نیست.</p><span class="who" style="color:var(--opus)">Claude Opus 5.5</span></div>
+    </div>
+    <div class="warn reveal">⚠️ بیشتر این اعداد را خود شرکت‌ها گزارش کرده‌اند و در زمان عرضه هنوز هیچ نهاد مستقلی جدول گوگل را بازتولید نکرده بود. تنظیمات آزمون‌ها (سطح effort، نسخه‌ی بنچمارک، ابزارها) بین شرکت‌ها یکسان نیست و منابع مختلف گاهی اعداد کمی متفاوتی گزارش می‌کنند. «—» یعنی امتیاز معتبری منتشر نشده است.</div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <strong style="color:var(--text)">منابع</strong> (به‌روز تا ۱۸ اکتبر ۲۰۲۶)
+    <ol class="en" style="direction:ltr;text-align:left">
+      <li><a href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-argon/" target="_blank" rel="noopener">Google: Gemini 4 Argon announcement</a></li>
+      <li><a href="https://ai.google.dev/gemini-api/docs/latest-model" target="_blank" rel="noopener">Google AI for Developers: What's new in Gemini 4 Argon</a></li>
+      <li><a href="https://techcrunch.com/2026/09/30/google-releases-gemini-4-argon-called-its-most-powerful-model-yet/" target="_blank" rel="noopener">TechCrunch: Google releases Gemini 4 Argon</a></li>
+      <li><a href="https://artificialanalysis.ai/articles/gemini-4-argon-google-top-three-labs" target="_blank" rel="noopener">Artificial Analysis: Gemini 4 Argon</a></li>
+      <li><a href="https://www.vals.ai/models/google_gemini-4-argon" target="_blank" rel="noopener">Vals AI: Gemini 4 Argon</a></li>
+      <li><a href="https://openai.com/index/gpt-6-astra/" target="_blank" rel="noopener">OpenAI: GPT-6 Astra</a> · <a href="https://developers.openai.com/api/docs/pricing" target="_blank" rel="noopener">OpenAI pricing</a></li>
+      <li><a href="https://www.vellum.ai/blog/gpt-6-1-sol-benchmarks-explained" target="_blank" rel="noopener">Vellum: GPT-6.1 Sol benchmarks</a></li>
+      <li><a href="https://www.digitalapplied.com/blog/claude-opus-5-5-launch-pricing-benchmarks-2026" target="_blank" rel="noopener">Digital Applied: Claude Opus 5.5</a> · <a href="https://kingy.ai/blog/claude-opus-5-5-specs-benchmarks-pricing-comparison/" target="_blank" rel="noopener">Kingy AI</a></li>
+      <li><a href="https://www.digitalapplied.com/blog/claude-sonnet-5-5-launch-pricing-benchmarks-2026" target="_blank" rel="noopener">Digital Applied: Claude Sonnet 5.5</a></li>
+      <li><a href="https://dev.to/max_quimby/gemini-4-argon-wins-12-of-18-benchmarks-code-isnt-one-2h70" target="_blank" rel="noopener">DEV: Gemini 4 Argon wins 12 of 18 benchmarks</a></li>
+    </ol>
+  </div>
+</footer>
+
+<script>
+const fa = (v) => String(v).replace(/\d/g, d => "۰۱۲۳۴۵۶۷۸۹"[d]).replace(".", "٫");
+
+const MODELS = [
+  {id:"argon",  name:"Gemini 4 Argon",  co:"Google DeepMind", color:"#7c8cff", date:"۳۰ سپتامبر ۲۰۲۶", price:"۴ / ۲۰", ctx:"۱M"},
+  {id:"astra",  name:"GPT-6 Astra",     co:"OpenAI",          color:"#10b981", date:"۳ سپتامبر ۲۰۲۶",  price:"۱۰ / ۵۰", ctx:"۱٫۰۵M"},
+  {id:"sol",    name:"GPT-6.1 Sol",     co:"OpenAI",          color:"#f59e0b", date:"۲۹ سپتامبر ۲۰۲۶", price:"۲ / ۱۰", ctx:"۱٫۰۵M"},
+  {id:"opus",   name:"Claude Opus 5.5", co:"Anthropic",       color:"#e07a5f", date:"۲۲ سپتامبر ۲۰۲۶", price:"۴ / ۲۰", ctx:"—"},
+  {id:"sonnet", name:"Claude Sonnet 5.5",co:"Anthropic",      color:"#c084fc", date:"۲۸ سپتامبر ۲۰۲۶", price:"۲ / ۱۰", ctx:"—"},
+];
+
+// null = not published
+const BENCH = [
+  {key:"aa", label:"شاخص هوش AA", max:70, unit:"",
+   desc:"Artificial Analysis Intelligence Index: میانگین مستقل چندین آزمون استدلال، دانش، ریاضی و کدنویسی. معتبرترین معیار مستقل برای مقایسه‌ی کلی.",
+   data:{argon:52.6, astra:52.7, sol:52, opus:57.6, sonnet:56},
+   note:"منبع: Artificial Analysis (مستقل). عدد Sol و Sonnet تقریبی است."},
+  {key:"deepswe", label:"DeepSWE v1.1", max:100, unit:"%",
+   desc:"آزمون کدنویسی ایجنتی: مدل باید باگ‌ها و تسک‌های واقعی را در مخازن کد حل کند.",
+   data:{argon:77.9, astra:74.1, sol:75.2, opus:74.2, sonnet:null},
+   note:"گزارش شرکت‌ها. Sol در سطح effort بالا، با حدود ۰٫۶۵ دلار به ازای هر تسک در برابر ۴٫۴۳ دلار Astra."},
+  {key:"tb", label:"Terminal-Bench 4.0", max:100, unit:"%",
+   desc:"توانایی انجام کارهای واقعی در ترمینال لینوکس: نصب، دیباگ، اسکریپت‌نویسی و اجرای پروژه.",
+   data:{argon:57.4, astra:57.7, sol:null, opus:66.4, sonnet:70.6},
+   note:"گزارش شرکت‌ها، با خطای استاندارد حدود ±۲٫۶. Artificial Analysis به‌طور مستقل حدود ۵۷٪ برای آرگون و ۶۴٪ برای Sonnet 5.5 اندازه گرفته است."},
+  {key:"fswe", label:"FrontierSWE v2", max:100, unit:"%",
+   desc:"پروژه‌های بزرگ و چندروزه‌ی مهندسی نرم‌افزار، سخت‌تر از آزمون‌های کلاسیک SWE.",
+   data:{argon:55.0, astra:65.5, sol:null, opus:62.3, sonnet:null},
+   note:"منبع: جدول گوگل در زمان عرضه."},
+  {key:"gw", label:"GraphWalks ۱M", max:100, unit:"%",
+   desc:"استدلال روی متن‌های بسیار طولانی (۲۵۶ هزار تا ۱ میلیون توکن): دنبال کردن روابط پیچیده در کل متن.",
+   data:{argon:84.2, astra:71.8, sol:null, opus:66.8, sonnet:null},
+   note:"منبع: جدول گوگل."},
+  {key:"hle", label:"Humanity's Last Exam", max:100, unit:"%",
+   desc:"یکی از سخت‌ترین آزمون‌های دانش و استدلال در سطح تخصصی، از ریاضی تا علوم انسانی.",
+   data:{argon:57.1, astra:54.7, sol:null, opus:61.4, sonnet:null},
+   note:"اندازه‌گیری مستقل Artificial Analysis. Anthropic برای Opus 5.5 با ابزار ۶۷٫۷٪ گزارش کرده است."},
+  {key:"os", label:"OSWorld 2.0", max:100, unit:"%",
+   desc:"کار با کامپیوتر مثل یک انسان: کلیک، تایپ و کار با اپلیکیشن‌های واقعی دسکتاپ.",
+   data:{argon:69.2, astra:72.6, sol:71.4, opus:81.8, sonnet:80.1},
+   note:"توجه: اعداد Claude «نمره‌ی جزئی» هستند (برای Sonnet روی OSWorld 2.1) و عدد آرگون روی زیرمجموعه‌ی آفلاین است. مقایسه‌ی مستقیم دقیق نیست."},
+];
+
+const byId = Object.fromEntries(MODELS.map(m => [m.id, m]));
+
+// ---------- benchmark chart ----------
+const tabs = document.getElementById("tabs"), bars = document.getElementById("bars");
+BENCH.forEach((b, i) => {
+  const t = document.createElement("button");
+  t.className = "tab" + (i === 0 ? " on" : "");
+  t.textContent = b.label;
+  t.onclick = () => { document.querySelectorAll(".tab").forEach(x => x.classList.remove("on")); t.classList.add("on"); render(b); };
+  tabs.appendChild(t);
+});
+
+function render(b) {
+  document.getElementById("bdesc").textContent = b.desc;
+  document.getElementById("bnote").textContent = b.note;
+  const vals = Object.values(b.data).filter(v => v != null);
+  const best = Math.max(...vals);
+  const order = [...MODELS].sort((x, y) => (b.data[y.id] ?? -1) - (b.data[x.id] ?? -1));
+  bars.innerHTML = order.map(m => {
+    const v = b.data[m.id];
+    const cls = ["row", m.id === "argon" ? "argon" : "", v == null ? "na" : "", v === best ? "win" : ""].join(" ");
+    return `<div class="${cls}">
+      <div class="name en">${m.name}</div>
+      <div class="track"><div class="fill" data-w="${v == null ? 0 : v / b.max * 100}" style="background:linear-gradient(90deg,${m.color}88,${m.color});color:${m.color}"></div></div>
+      <div class="val">${v == null ? "گزارش نشده" : fa(v) + b.unit + (v === best ? ' <span class="crown">👑</span>' : "")}</div>
+    </div>`;
+  }).join("");
+  requestAnimationFrame(() => requestAnimationFrame(() =>
+    bars.querySelectorAll(".fill").forEach(f => f.style.width = f.dataset.w + "%")));
+}
+
+// ---------- model cards ----------
+document.getElementById("models").innerHTML = MODELS.map(m => `
+  <div class="model ${m.id === "argon" ? "hl" : ""}" style="--c:${m.color}">
+    <h3 class="en">${m.name}</h3><div class="co">${m.co}</div>
+    <ul>
+      <li>عرضه: <b>${m.date}</b></li>
+      <li>قیمت (دلار/۱M توکن): <b>${m.price}</b></li>
+      <li>پنجره‌ی متن: <b class="en">${m.ctx}</b></li>
+    </ul>
+  </div>`).join("");
+
+// ---------- comparison table ----------
+const head = `<thead><tr><th>بنچمارک</th>${MODELS.map(m => `<th class="en ${m.id === "argon" ? "col-argon" : ""}"><span class="dot" style="background:${m.color}"></span>${m.name}</th>`).join("")}</tr></thead>`;
+const rows = BENCH.map(b => {
+  const best = Math.max(...Object.values(b.data).filter(v => v != null));
+  return `<tr><td>${b.label}</td>${MODELS.map(m => {
+    const v = b.data[m.id];
+    return `<td class="${m.id === "argon" ? "col-argon" : ""} ${v === best ? "best" : ""}">${v == null ? "—" : fa(v) + b.unit}</td>`;
+  }).join("")}</tr>`;
+}).join("");
+const priceRow = `<tr><td>قیمت ورودی / خروجی ($/1M)</td>${MODELS.map(m => `<td class="${m.id === "argon" ? "col-argon" : ""}">${m.price}</td>`).join("")}</tr>`;
+document.getElementById("ctable").innerHTML = head + "<tbody>" + rows + priceRow + "</tbody>";
+
+// ---------- typing effect ----------
+const words = ["مهندسی نرم‌افزار", "کار با متن‌های میلیونی", "امنیت سایبری دفاعی", "کارهای دانشی حرفه‌ای"];
+let wi = 0, ci = words[0].length, del = true;
+const typed = document.getElementById("typed");
+(function type() {
+  const w = words[wi];
+  typed.textContent = w.slice(0, ci);
+  if (del) { ci--; if (ci < 0) { del = false; wi = (wi + 1) % words.length; ci = 0; } }
+  else { ci++; if (ci > words[wi].length) { del = true; setTimeout(type, 1600); return; } }
+  setTimeout(type, del ? 45 : 90);
+})();
+
+// ---------- reveal + counters ----------
+const io = new IntersectionObserver(es => es.forEach(e => {
+  if (!e.isIntersecting) return;
+  e.target.classList.add("in");
+  e.target.querySelectorAll("[data-count]").forEach(countUp);
+  if (e.target.classList.contains("panel") && !bars.children.length) render(BENCH[0]);
+  io.unobserve(e.target);
+}), {threshold: .15});
+document.querySelectorAll(".reveal").forEach(el => io.observe(el));
+
+function countUp(el) {
+  const target = parseFloat(el.dataset.count), dec = String(target).includes(".") ? 1 : 0, t0 = performance.now();
+  (function step(t) {
+    const p = Math.min((t - t0) / 1600, 1), e = 1 - Math.pow(1 - p, 3);
+    el.textContent = fa((target * e).toFixed(dec)) + el.dataset.suffix;
+    if (p < 1) requestAnimationFrame(step);
+  })(t0);
+}
+
+// ---------- spotlight on feature cards ----------
+document.querySelectorAll(".feat").forEach(c => c.addEventListener("pointermove", e => {
+  const r = c.getBoundingClientRect();
+  c.style.setProperty("--mx", (e.clientX - r.left) + "px");
+  c.style.setProperty("--my", (e.clientY - r.top) + "px");
+}));
+
+// ---------- starfield ----------
+const cv = document.getElementById("stars"), cx = cv.getContext("2d");
+let stars = [];
+function size() {
+  cv.width = innerWidth * devicePixelRatio; cv.height = innerHeight * devicePixelRatio;
+  stars = Array.from({length: Math.min(220, innerWidth / 5)}, () => ({
+    x: Math.random() * cv.width, y: Math.random() * cv.height,
+    r: Math.random() * 1.4 * devicePixelRatio, s: Math.random() * .3 + .05, a: Math.random()
+  }));
+}
+size(); addEventListener("resize", size);
+(function draw() {
+  cx.clearRect(0, 0, cv.width, cv.height);
+  for (const s of stars) {
+    s.y -= s.s; if (s.y < 0) s.y = cv.height;
+    s.a += (Math.random() - .5) * .05; s.a = Math.max(.15, Math.min(1, s.a));
+    cx.fillStyle = `rgba(200,210,255,${s.a})`;
+    cx.beginPath(); cx.arc(s.x, s.y, s.r, 0, 7); cx.fill();
+  }
+  requestAnimationFrame(draw);
+})();
+</script>
+</body>
+</html>
