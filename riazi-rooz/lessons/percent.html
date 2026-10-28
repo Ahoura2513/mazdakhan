@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>درصدها و تخفیف‌ها | ریاضی روزمره</title>
+  <meta name="description" content="آموزش ساده‌ی درصد، حساب تخفیف و مالیات و انعام، درصد افزایش و کاهش، و تله‌ی تخفیف پشت تخفیف با مثال و تمرین.">
+  <meta name="theme-color" content="#fbf7ee" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0f1226" media="(prefers-color-scheme: dark)">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <script>
+    /* تم را پیش از اولین رندر تنظیم می‌کند تا چشمک نزند */
+    (function () {
+      var root = document.documentElement, theme = null;
+      root.classList.add('js');
+      try { theme = localStorage.getItem('theme'); } catch (e) {}
+      if (theme !== 'light' && theme !== 'dark') {
+        theme = window.matchMedia && matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      }
+      root.setAttribute('data-theme', theme);
+    })();
+  </script>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body class="lesson-page" data-topic="percent" style="--c:var(--c-percent);--c-ink:var(--c-percent-ink)">
+  <a class="skip-link" href="#main">پرش به محتوا</a>
+
+  <!-- ============ هدر ============ -->
+  <header class="site-header" id="top">
+    <div class="container header-inner">
+      <a class="brand" href="../index.html" aria-label="ریاضی روزمره، صفحه اصلی">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 32 32" width="32" height="32"><rect width="32" height="32" rx="10" fill="currentColor"/><circle cx="16" cy="9.5" r="2.4" fill="var(--bg)"/><circle cx="16" cy="22.5" r="2.4" fill="var(--bg)"/><rect x="7.5" y="14.7" width="17" height="2.6" rx="1.3" fill="var(--bg)"/></svg>
+        </span>
+        <span class="brand-name">ریاضی روزمره</span>
+      </a>
+
+      <nav class="main-nav" id="main-nav" aria-label="منوی اصلی">
+        <a href="../index.html#topics">همه‌ی موضوع‌ها</a>
+        <a href="#toc">زیردرس‌ها</a>
+        <a href="../index.html#tricks">ترفند سرانگشتی</a>
+      </nav>
+
+      <div class="header-actions">
+        <button class="icon-btn" id="theme-toggle" type="button" aria-label="تغییر حالت روشن/تیره" title="تغییر حالت روشن/تیره">
+          <svg class="i-sun" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+          <svg class="i-moon" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+        </button>
+        <button class="icon-btn menu-btn" id="menu-btn" type="button" aria-label="باز و بسته کردن منو" aria-expanded="false" aria-controls="main-nav">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path class="bar b1" d="M4 7h16"/><path class="bar b2" d="M4 12h16"/><path class="bar b3" d="M4 17h16"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+<section class="lesson-hero" aria-labelledby="page-title">
+<div class="container">
+<nav class="crumbs" aria-label="مسیر"><a href="../index.html">خانه</a><span aria-hidden="true">/</span><a href="../index.html#topics">موضوع‌ها</a><span aria-hidden="true">/</span><span aria-current="page">درصد و تخفیف</span></nav>
+<div class="lh-grid">
+<div class="lh-copy">
+<p class="kicker">موضوع ۲ از ۸</p>
+<h1 id="page-title">درصدها و <span class="mark">تخفیف‌ها</span></h1>
+<p class="lead">درصد همه‌جا هست: تخفیف، مالیات، سود بانکی و گرانی. اینجا یاد می‌گیری بدون ماشین‌حساب و بدون افتادن در تله‌ها حسابش کنی.</p>
+<div class="progress">
+<span class="progress-track" aria-hidden="true"><span class="progress-fill" id="progress-fill"></span></span>
+<span class="progress-text" id="progress-text">۰ از ۱۹ تمرین حل شده</span>
+<button type="button" class="link-btn" id="progress-reset">از نو</button>
+</div>
+</div>
+<nav class="toc card-sticker" id="toc" aria-labelledby="toc-title">
+<span class="tape" aria-hidden="true"></span>
+<h2 id="toc-title">زیردرس‌ها</h2>
+<ol class="toc-list"><li><a href="#p1">درصد یعنی چه؟</a></li><li><a href="#p2">تخفیف، مالیات و انعام</a></li><li><a href="#p3">افزایش، کاهش و «درصد تغییر»</a></li><li><a href="#p4">تخفیف پشت تخفیف و تله‌های درصد</a></li></ol>
+<p class="toc-meta">۴ زیردرس · ۸ مثال حل‌شده · ۱۹ تمرین</p>
+</nav>
+</div>
+</div>
+</section>
+
+<section class="lesson" id="p1" aria-labelledby="p1-t">
+<div class="container">
+<header class="lesson-head"><span class="lesson-n" aria-hidden="true">۱</span><div><p class="kicker">زیردرس ۱ از ۴</p><h2 id="p1-t">درصد یعنی چه؟</h2></div></header>
+<div class="part part-see"><h3 class="part-label"><span class="pn" aria-hidden="true">۱</span>ببین</h3><div class="prose">
+<p>«درصد» یعنی «از هر صد تا». ۳۰٪ یعنی از هر ۱۰۰ تا، ۳۰ تا. پس ۳۰٪ همان کسر <span class="frac"><span>۳۰</span><span>۱۰۰</span></span> است.</p>
+<figure class="figure fig-grid"><svg viewBox="-1 -1 111 111" width="200" height="200" role="img" aria-label="۳۰ خانه از ۱۰۰ خانه رنگی است"><rect x="0" y="0" width="10" height="10" rx="2" class="on"/><rect x="11" y="0" width="10" height="10" rx="2" class="on"/><rect x="22" y="0" width="10" height="10" rx="2" class="on"/><rect x="33" y="0" width="10" height="10" rx="2" class="on"/><rect x="44" y="0" width="10" height="10" rx="2" class="on"/><rect x="55" y="0" width="10" height="10" rx="2" class="on"/><rect x="66" y="0" width="10" height="10" rx="2" class="on"/><rect x="77" y="0" width="10" height="10" rx="2" class="on"/><rect x="88" y="0" width="10" height="10" rx="2" class="on"/><rect x="99" y="0" width="10" height="10" rx="2" class="on"/><rect x="0" y="11" width="10" height="10" rx="2" class="on"/><rect x="11" y="11" width="10" height="10" rx="2" class="on"/><rect x="22" y="11" width="10" height="10" rx="2" class="on"/><rect x="33" y="11" width="10" height="10" rx="2" class="on"/><rect x="44" y="11" width="10" height="10" rx="2" class="on"/><rect x="55" y="11" width="10" height="10" rx="2" class="on"/><rect x="66" y="11" width="10" height="10" rx="2" class="on"/><rect x="77" y="11" width="10" height="10" rx="2" class="on"/><rect x="88" y="11" width="10" height="10" rx="2" class="on"/><rect x="99" y="11" width="10" height="10" rx="2" class="on"/><rect x="0" y="22" width="10" height="10" rx="2" class="on"/><rect x="11" y="22" width="10" height="10" rx="2" class="on"/><rect x="22" y="22" width="10" height="10" rx="2" class="on"/><rect x="33" y="22" width="10" height="10" rx="2" class="on"/><rect x="44" y="22" width="10" height="10" rx="2" class="on"/><rect x="55" y="22" width="10" height="10" rx="2" class="on"/><rect x="66" y="22" width="10" height="10" rx="2" class="on"/><rect x="77" y="22" width="10" height="10" rx="2" class="on"/><rect x="88" y="22" width="10" height="10" rx="2" class="on"/><rect x="99" y="22" width="10" height="10" rx="2" class="on"/><rect x="0" y="33" width="10" height="10" rx="2" class=""/><rect x="11" y="33" width="10" height="10" rx="2" class=""/><rect x="22" y="33" width="10" height="10" rx="2" class=""/><rect x="33" y="33" width="10" height="10" rx="2" class=""/><rect x="44" y="33" width="10" height="10" rx="2" class=""/><rect x="55" y="33" width="10" height="10" rx="2" class=""/><rect x="66" y="33" width="10" height="10" rx="2" class=""/><rect x="77" y="33" width="10" height="10" rx="2" class=""/><rect x="88" y="33" width="10" height="10" rx="2" class=""/><rect x="99" y="33" width="10" height="10" rx="2" class=""/><rect x="0" y="44" width="10" height="10" rx="2" class=""/><rect x="11" y="44" width="10" height="10" rx="2" class=""/><rect x="22" y="44" width="10" height="10" rx="2" class=""/><rect x="33" y="44" width="10" height="10" rx="2" class=""/><rect x="44" y="44" width="10" height="10" rx="2" class=""/><rect x="55" y="44" width="10" height="10" rx="2" class=""/><rect x="66" y="44" width="10" height="10" rx="2" class=""/><rect x="77" y="44" width="10" height="10" rx="2" class=""/><rect x="88" y="44" width="10" height="10" rx="2" class=""/><rect x="99" y="44" width="10" height="10" rx="2" class=""/><rect x="0" y="55" width="10" height="10" rx="2" class=""/><rect x="11" y="55" width="10" height="10" rx="2" class=""/><rect x="22" y="55" width="10" height="10" rx="2" class=""/><rect x="33" y="55" width="10" height="10" rx="2" class=""/><rect x="44" y="55" width="10" height="10" rx="2" class=""/><rect x="55" y="55" width="10" height="10" rx="2" class=""/><rect x="66" y="55" width="10" height="10" rx="2" class=""/><rect x="77" y="55" width="10" height="10" rx="2" class=""/><rect x="88" y="55" width="10" height="10" rx="2" class=""/><rect x="99" y="55" width="10" height="10" rx="2" class=""/><rect x="0" y="66" width="10" height="10" rx="2" class=""/><rect x="11" y="66" width="10" height="10" rx="2" class=""/><rect x="22" y="66" width="10" height="10" rx="2" class=""/><rect x="33" y="66" width="10" height="10" rx="2" class=""/><rect x="44" y="66" width="10" height="10" rx="2" class=""/><rect x="55" y="66" width="10" height="10" rx="2" class=""/><rect x="66" y="66" width="10" height="10" rx="2" class=""/><rect x="77" y="66" width="10" height="10" rx="2" class=""/><rect x="88" y="66" width="10" height="10" rx="2" class=""/><rect x="99" y="66" width="10" height="10" rx="2" class=""/><rect x="0" y="77" width="10" height="10" rx="2" class=""/><rect x="11" y="77" width="10" height="10" rx="2" class=""/><rect x="22" y="77" width="10" height="10" rx="2" class=""/><rect x="33" y="77" width="10" height="10" rx="2" class=""/><rect x="44" y="77" width="10" height="10" rx="2" class=""/><rect x="55" y="77" width="10" height="10" rx="2" class=""/><rect x="66" y="77" width="10" height="10" rx="2" class=""/><rect x="77" y="77" width="10" height="10" rx="2" class=""/><rect x="88" y="77" width="10" height="10" rx="2" class=""/><rect x="99" y="77" width="10" height="10" rx="2" class=""/><rect x="0" y="88" width="10" height="10" rx="2" class=""/><rect x="11" y="88" width="10" height="10" rx="2" class=""/><rect x="22" y="88" width="10" height="10" rx="2" class=""/><rect x="33" y="88" width="10" height="10" rx="2" class=""/><rect x="44" y="88" width="10" height="10" rx="2" class=""/><rect x="55" y="88" width="10" height="10" rx="2" class=""/><rect x="66" y="88" width="10" height="10" rx="2" class=""/><rect x="77" y="88" width="10" height="10" rx="2" class=""/><rect x="88" y="88" width="10" height="10" rx="2" class=""/><rect x="99" y="88" width="10" height="10" rx="2" class=""/><rect x="0" y="99" width="10" height="10" rx="2" class=""/><rect x="11" y="99" width="10" height="10" rx="2" class=""/><rect x="22" y="99" width="10" height="10" rx="2" class=""/><rect x="33" y="99" width="10" height="10" rx="2" class=""/><rect x="44" y="99" width="10" height="10" rx="2" class=""/><rect x="55" y="99" width="10" height="10" rx="2" class=""/><rect x="66" y="99" width="10" height="10" rx="2" class=""/><rect x="77" y="99" width="10" height="10" rx="2" class=""/><rect x="88" y="99" width="10" height="10" rx="2" class=""/><rect x="99" y="99" width="10" height="10" rx="2" class=""/></svg><figcaption>۳۰٪ یعنی ۳۰ خانه از ۱۰۰ خانه</figcaption></figure>
+<p>درصدهای آشنا که نصف کار را حل می‌کنند:</p>
+<ul class="dots"><li><b>۱۰۰٪</b> = کل چیز</li><li><b>۵۰٪</b> = نصف</li><li><b>۲۵٪</b> = یک‌چهارم (دو بار نصف کن)</li><li><b>۱۰٪</b> = یک‌دهم (یک صفر از آخر عدد بردار)</li><li><b>۱٪</b> = یک‌صدم (دو صفر بردار)</li></ul>
+<div class="key"><b>چند درصدِ یک عدد چقدر است؟</b> عدد را بر ۱۰۰ تقسیم کن تا ۱٪ آن پیدا شود، بعد در درصد ضرب کن. مثلاً ۲۰٪ از ۳۰۰: <span class="eq">۳۰۰ ÷ ۱۰۰ = ۳</span> و <span class="eq">۳ × ۲۰ = ۶۰</span>.</div>
+<p class="formula"><span class="eq eq-fa">عدد ÷ ۱۰۰ × درصد</span></p>
+<p>راه ساده‌تر برای حساب ذهنی: درصد را از تکه‌های آشنا بساز. مثلاً ۳۵٪ = ۱۰٪ + ۱۰٪ + ۱۰٪ + ۵٪، و ۵٪ هم نصفِ ۱۰٪ است.</p>
+<p>سؤال برعکس هم زیاد پیش می‌آید: «۳۰ چند درصدِ ۴۰ است؟» اینجا جزء را بر کل تقسیم می‌کنی و در ۱۰۰ ضرب می‌کنی.</p>
+<p class="formula"><span class="eq eq-fa">جزء ÷ کل × ۱۰۰</span></p>
+</div></div>
+<div class="part part-solved"><h3 class="part-label"><span class="pn" aria-hidden="true">۲</span>حل‌شده</h3><div class="examples">
+<article class="question card-paper"><div class="q-top"><span class="q-tag">مثال ۱</span><span class="q-level" aria-label="سطح: آسان"><i class="on"></i><i></i><i></i></span></div><h4>۳۰٪ از ۸۰۰ هزار تومان</h4><p>۳۰٪ از ۸۰۰٬۰۰۰ تومان چقدر است؟</p><details class="solution"><summary><span class="when-closed">نمایش راه‌حل گام‌به‌گام</span><span class="when-open">بستن راه‌حل</span></summary><ol class="solution-steps"><li>۱۰٪: یک صفر کم کن ← <span class="eq">۸۰٬۰۰۰</span></li><li>۳۰٪ یعنی سه تا ۱۰٪: <span class="eq">۳ × ۸۰٬۰۰۰ = <b>۲۴۰٬۰۰۰</b></span> تومان.</li></ol><p class="check">با فرمول هم همین می‌شود: <span class="eq">۸۰۰٬۰۰۰ ÷ ۱۰۰ × ۳۰ = ۸٬۰۰۰ × ۳۰ = ۲۴۰٬۰۰۰</span> ✓</p></details></article>
+<article class="question card-paper"><div class="q-top"><span class="q-tag">مثال ۲</span><span class="q-level" aria-label="سطح: متوسط"><i class="on"></i><i class="on"></i><i></i></span></div><h4>چند درصد درست زدی؟</h4><p>از ۴۰ سؤال امتحان، به ۳۰ تا درست جواب دادی. چند درصد درست زدی؟</p><details class="solution"><summary><span class="when-closed">نمایش راه‌حل گام‌به‌گام</span><span class="when-open">بستن راه‌حل</span></summary><ol class="solution-steps"><li>سؤال این است: ۳۰ چه کسری از ۴۰ است؟ <span class="eq"><span class="frac"><span>۳۰</span><span>۴۰</span></span> = <span class="frac"><span>۳</span><span>۴</span></span></span></li><li><span class="frac"><span>۳</span><span>۴</span></span> همان ۰٫۷۵ است.</li><li><span class="eq">۰٫۷۵ × ۱۰۰ = <b>۷۵٪</b></span></li></ol><p class="check">قانون: «چند درصد؟» = جزء ÷ کل × ۱۰۰</p></details></article>
+</div></div>
+<div class="part part-try"><h3 class="part-label"><span class="pn" aria-hidden="true">۳</span>خودت امتحان کن</h3><div class="exercises">
+<div class="exercise" id="p1-q1" data-answer="6500" data-unit="تومان"><div class="ex-top"><span class="ex-n">تمرین ۱</span><span class="q-level" aria-label="سطح: آسان"><i class="on"></i><i></i><i></i></span></div><div class="ex-q"><p>۱۰٪ از ۶۵٬۰۰۰ تومان چقدر است؟</p></div><details class="solution"><summary><span class="when-closed">دیدن راه‌حل</span><span class="when-open">بستن راه‌حل</span></summary><ol class="solution-steps"><li>یک صفر از آخر بردار: <b>۶٬۵۰۰</b> تومان.</li></ol></details></div>
+<div class="exercise" id="p1-q2" data-answer="90" data-hint="۲۵٪ یعنی یک‌چهارم؛ دو بار نصف کن."><div class="ex-top"><span class="ex-n">تمرین ۲</span><span class="q-level" aria-label="سطح: آسان"><i class="on"></i><i></i><i></i></span></div><div class="ex-q"><p>۲۵٪ از ۳۶۰ چند است؟</p></div><details class="solution"><summary><span class="when-closed">دیدن راه‌حل</span><span class="when-open">بستن راه‌حل</span></summary><ol class="solution-steps"><li>نصف: <span class="eq">۳۶۰ ÷ ۲ = ۱۸۰</span></li><li>دوباره نصف: <span class="eq">۱۸۰ ÷ ۲ = <b>۹۰</b></span></li></ol></details></div>
+<div class="exercise" id="p1-q3" data-answer="105000" data-unit="تومان" data-hint="۳۵٪ را سه تا ۱۰٪ و یک ۵٪ ببین."><div class="ex-top"><span class="ex-n">تمرین ۳</span><span class="q-level" aria-label="سطح: متوسط"><i class="on"></i><i class="on"></i><i></i></span></div><div class="ex-q"><p>۳۵٪ از ۳۰۰٬۰۰۰ تومان چقدر است؟</p></div><details class="solution"><summary><span class="when-closed">دیدن راه‌حل</span><span class="when-open">بستن راه‌حل</span></summary><ol class="solution-steps"><li>۱۰٪ = ۳۰٬۰۰۰، پس ۳۰٪ = <span class="eq">۳ × ۳۰٬۰۰۰ = ۹۰٬۰۰۰</span></li><li>۵٪ = نصفِ ۱۰٪ = ۱۵٬۰۰۰</li><li><span class="eq">۹۰٬۰۰۰ + ۱۵٬۰۰۰ = <b>۱۰۵٬۰۰۰</b></span> تومان.</li></ol></details></div>
+<div class="exercise" id="p1-q4" data-answer="20" data-unit="٪" data-hint="جزء (غایب‌ها) را بر کل (همه‌ی کلاس) تقسیم کن."><div class="ex-top"><span class="ex-n">تمرین ۴</span><span class="q-level" aria-label="سطح: متوسط"><i class="on"></i><i class="on"></i><i></i></span></div><div class="ex-q"><p>در یک کلاس ۲۵ نفره، ۵ نفر غایب‌اند. چند درصد کلاس غایب است؟</p></div><details class="solution"><summary><span class="when-closed">دیدن راه‌حل</span><span class="when-open">بستن راه‌حل</span></summary><ol class="solution-steps"><li><span class="eq"><span class="frac"><span>۵</span><span>۲۵</span></span> = <span class="frac"><span>۱</span><span>۵</span></span></span></li><li><span class="frac"><span>۱</span><span>۵</span></span> همان ۲۰٪ است: <span class="eq">۰٫۲ × ۱۰۰ = <b>۲۰٪</b></span></li></ol></details></div>
+<div class="exercise" id="p1-q5" data-answer="60" data-unit="٪"><div class="ex-top"><span class="ex-n">تمرین ۵</span><span class="q-level" aria-label="سطح: متوسط"><i class="on"></i><i class="on"></i><i></i></span></div><div class="ex-q"><p>حجم بسته‌ی اینترنتت ۲۰ گیگ است و ۱۲ گیگ آن را مصرف کرده‌ای. چند درصدش مصرف شده؟</p></div><details class="solution"><summary><span class="when-closed">دیدن راه‌حل</span><span class="when-open">بستن راه‌حل</span></summary><ol class="solution-steps"><li><span class="eq"><span class="frac"><span>۱۲</span><span>۲۰</span></span> = <span class="frac"><span>۶</span><span>۱۰</span></span> = ۰٫۶</span></li><li><span class="eq">۰٫۶ × ۱۰۰ = <b>۶۰٪</b></span></li></ol><p class="check">پس ۴۰٪ (۸ گیگ) مانده.</p></details></div>
+</div></div>
+<aside class="tip" aria-label="ترفند سرانگشتی"><p class="kicker">ترفند سرانگشتی</p><h3>جای عددها را عوض کن</h3>
+<p>«۸٪ از ۵۰» با «۵۰٪ از ۸» برابر است؛ همیشه می‌توانی جای عدد و درصد را عوض کنی. هر کدام آسان‌تر بود، همان را حساب کن.</p>
+<p class="trick-example">۸٪ از ۵۰ = ۵۰٪ از ۸ = <b>۴</b></p>
+</aside>
+</div>
+</section>
+<section class="lesson" id="p2" aria-labelledby="p2-t">
+<div class="container">
+<header class="lesson-head"><span class="lesson-n" aria-hidden="true">۲</span><div><p class="kicker">زیردرس ۲ از ۴</p><h2 id="p2-t">تخفیف، مالیات و انعام</h2></div></header>
+<div class="part part-see"><h3 class="part-label"><span class="pn" aria-hidden="true">۱</span>ببین</h3><div class="prose">
+<p>تخفیف یعنی قسمتی از قیمت <strong>کم</strong> می‌شود. مالیات و انعام یعنی قسمتی به آن <strong>اضافه</strong> می‌شود. هر سه را با همان درصدگیری حساب می‌کنیم.</p>
+<div class="key"><b>دو راه برای قیمت بعد از تخفیف:</b> ۱) مبلغ تخفیف را حساب کن و از قیمت کم کن. ۲) یا مستقیم حساب کن چند درصد قیمت باقی می‌ماند؛ با ۲۰٪ تخفیف، ۸۰٪ قیمت را می‌پردازی.</div>
+<p class="formula"><span class="eq eq-fa">قیمت نهایی = قیمت × (۱۰۰ − تخفیف) ÷ ۱۰۰</span></p>
+<p>برای مالیات برعکس است: با ۱۰٪ مالیات، ۱۱۰٪ قیمت را می‌پردازی؛ یعنی قیمت × ۱٫۱.</p>
+<p>انعام هم مثل مالیات حساب می‌شود: ۱۰٪ انعام روی صورتحساب ۸۵۰٬۰۰۰ تومانی می‌شود ۸۵٬۰۰۰ تومان.</p>
+<ul class="dots"><li>با ۵۰٪ تخفیف ← نصف قیمت را می‌پردازی.</li><li>با ۲۵٪ تخفیف ← سه‌چهارم قیمت را می‌پردازی.</li><li>با ۱۰٪ تخفیف ← ۹۰٪، یعنی قیمت منهای یک‌دهمش.</li></ul>
+</div></div>
+<div class="part part-solved"><h3 class="part-label"><span class="pn" aria-hidden="true">۲</span>حل‌شده</h3><div class="examples">
+<article class="question card-paper"><div class="q-top"><span class="q-tag">مثال ۱</span><span class="q-level" aria-label="سطح: آسان"><i class="on"></i><i></i><i></i></span></div><h4>مانتو با ۴۰٪ تخفیف</h4><p>مانتویی ۱٬۸۰۰٬۰۰۰ تومان است و ۴۰٪ تخفیف دارد. چقدر باید بپردازی؟</p><details class="solution"><summary><span class="when-closed">نمایش راه‌حل گام‌به‌گام</span><span class="when-open">بستن راه‌حل</span></summary><ol class="solution-steps"><li>۱۰٪ قیمت: <span class="eq">۱۸۰٬۰۰۰</span>؛ پس ۴۰٪ تخفیف: <span class="eq">۴ × ۱۸۰٬۰۰۰ = ۷۲۰٬۰۰۰</span></li><li>قیمت نهایی: <span class="eq">۱٬۸۰۰٬۰۰۰ − ۷۲۰٬۰۰۰ = <b>۱٬۰۸۰٬۰۰۰</b></span> تومان.</li></ol><p class="check">راه دوم: ۶۰٪ قیمت را می‌پردازی: <span class="eq">۶ × ۱۸۰٬۰۰۰ = ۱٬۰۸۰٬۰۰۰</span> ✓</p></details></article>
+<article class="question card-paper"><div class="q-top"><span class="q-tag">مثال ۲</span><span class="q-level" aria-label="سطح: متوسط"><i class="on"></i><i class="on"></i><i></i></span></div><h4>صورتحساب رستوران با مالیات</h4><p>غذا ۱٬۲۰۰٬۰۰۰ تومان شد و ۱۰٪ مالیات هم رویش می‌آید. کل صورتحساب چقدر است؟</p><details class="solution"><summary><span class="when-closed">نمایش راه‌حل گام‌به‌گام</span><span class="when-open">بستن راه‌حل</span></summary><ol class="solution-steps"><li>۱۰٪ مالیات: <span class="eq">۱٬۲۰۰٬۰۰۰ ÷ ۱۰ = ۱۲۰٬۰۰۰</span></li><li>کل: <span class="eq">۱٬۲۰۰٬۰۰۰ + ۱۲۰٬۰۰۰ = <b>۱٬۳۲۰٬۰۰۰</b></span> تومان.</li></ol><p class="check">یا یک‌جا: <span class="eq">۱٬۲۰۰٬۰۰۰ × ۱٫۱ = ۱٬۳۲۰٬۰۰۰</span> ✓</p></details></article>
+</div></div>
+<div class="part part-try"><h3 class="part-label"><span class="pn" aria-hidden="true">۳</span>خودت امتحان کن</h3><div class="exercises">
+<div class="exercise" id="p2-q1" data-answer="375000" data-unit="تومان" data-hint="۲۵٪ یعنی یک‌چهارم."><div class="ex-top"><span class="ex-n">تمرین ۱</span><span class="q-level" aria-label="سطح: آسان"><i class="on"></i><i></i><i></i></span></div><div class="ex-q"><p>کتابی ۵۰۰٬۰۰۰ تومانی ۲۵٪ تخفیف دارد. قیمت نهایی چقدر است؟</p></div><details class="solution"><summary><span class="when-closed">دیدن راه‌حل</span><span class="when-open">بستن راه‌حل</span></summary><ol class="solution-steps"><li>تخفیف: <span class="eq">۵۰۰٬۰۰۰ ÷ ۴ = ۱۲۵٬۰۰۰</span></li><li>قیمت نهایی: <span class="eq">۵۰۰٬۰۰۰ − ۱۲۵٬۰۰۰ = <b>۳۷۵٬۰۰۰</b></span> تومان.</li></ol></details></div>
+<div class="exercise" id="p2-q2" data-answer="1650000" data-unit="تومان"><div class="ex-top"><span class="ex-n">تمرین ۲</span><span class="q-level" aria-label="سطح: آسان"><i class="on"></i><i></i><i></i></span></div><div class="ex-q"><p>قیمت یک وسیله ۱٬۵۰۰٬۰۰۰ تومان است و ۱۰٪ مالیات رویش می‌آید. چقدر می‌پردازی؟</p></div><details class="solution"><summary><span class="when-closed">دیدن راه‌حل</span><span class="when-open">بستن راه‌حل</span></summary><ol class="solution-steps"><li>۱۰٪: ۱۵۰٬۰۰۰</li><li><span class="eq">۱٬۵۰۰٬۰۰۰ + ۱۵۰٬۰۰۰ = <b>۱٬۶۵۰٬۰۰۰</b></span> تومان.</li></ol></details></div>
+<div class="exercise" id="p2-q3" data-answer="126000" data-unit="تومان" data-hint="۱۵٪ = ۱۰٪ + نصفِ ۱۰٪"><div class="ex-top"><span class="ex-n">تمرین ۳</span><span class="q-level" aria-label="سطح: متوسط"><i class="on"></i><i class="on"></i><i></i></span></div><div class="ex-q"><p>صورتحساب کافه ۸۴۰٬۰۰۰ تومان شد و می‌خواهی ۱۵٪ انعام بدهی. انعام چقدر است؟</p></div><details class="solution"><summary><span class="when-closed">دیدن راه‌حل</span><span class="when-open">بستن راه‌حل</span></summary><ol class="solution-steps"><li>۱۰٪: <span class="eq">۸۴٬۰۰۰</span></li><li>۵٪ (نصفش): <span class="eq">۴۲٬۰۰۰</span></li><li><span class="eq">۸۴٬۰۰۰ + ۴۲٬۰۰۰ = <b>۱۲۶٬۰۰۰</b></span> تومان.</li></ol></details></div>
+<div class="exercise" id="p2-q4" data-choices="فروشگاه الف|فروشگاه ب|هر دو یکسان‌اند" data-correct="1"><div class="ex-top"><span class="ex-n">تمرین ۴</span><span class="q-level" aria-label="سطح: متوسط"><i class="on"></i><i class="on"></i><i></i></span></div><div class="ex-q"><p>فروشگاه الف یک کفش را ۲٬۰۰۰٬۰۰۰ تومان با ۳۰٪ تخفیف می‌فروشد. فروشگاه ب همان کفش را ۱٬۵۰۰٬۰۰۰ تومان با ۱۰٪ تخفیف. کدام ارزان‌تر است؟</p></div><details class="solution"><summary><span class="when-closed">دیدن راه‌حل</span><span class="when-open">بستن راه‌حل</span></summary><ol class="solution-steps"><li>الف: ۷۰٪ قیمت ← <span class="eq">۲٬۰۰۰٬۰۰۰ × ۰٫۷ = ۱٬۴۰۰٬۰۰۰</span></li><li>ب: ۹۰٪ قیمت ← <span class="eq">۱٬۵۰۰٬۰۰۰ × ۰٫۹ = ۱٬۳۵۰٬۰۰۰</span></li><li><b>فروشگاه ب</b> ۵۰ هزار تومان ارزان‌تر است.</li></ol><p class="check">درس مهم: «درصد تخفیف بیشتر» لزوماً یعنی «قیمت کمتر» نیست؛ همیشه قیمت نهایی را مقایسه کن.</p></details></div>
+</div></div>
+<aside class="tip" aria-label="ترفند سرانگشتی"><p class="kicker">ترفند سرانگشتی</p><h3>باقی‌مانده را مستقیم حساب کن</h3>
+<p>به‌جای اینکه تخفیف را حساب کنی و کم کنی، مستقیم «باقی‌مانده» را حساب کن: ۲۰٪ تخفیف = ×۰٫۸، ۲۵٪ تخفیف = سه‌چهارمِ قیمت، ۵۰٪ = نصف.</p>
+<p class="trick-example">۲۵٪ تخفیف روی ۸۰۰٬۰۰۰: <span class="eq">۸۰۰٬۰۰۰ ÷ ۴ × ۳ = <b>۶۰۰٬۰۰۰</b></span></p>
+</aside>
+</div>
+</section>
+<section class="lesson" id="p3" aria-labelledby="p3-t">
+<div class="container">
+<header class="lesson-head"><span class="lesson-n" aria-hidden="true">۳</span><div><p class="kicker">زیردرس ۳ از ۴</p><h2 id="p3-t">افزایش، کاهش و «درصد تغییر»</h2></div></header>
+<div class="part part-see"><h3 class="part-label"><span class="pn" aria-hidden="true">۱</span>ببین</h3><div class="prose">
+<p>خبر می‌گوید: «قیمت نان از ۱۰ هزار به ۱۲ هزار تومان رسید». چند درصد گران شد؟</p>
+<div class="key"><b>درصد تغییر</b> = مقدار تغییر ÷ مقدار <u>قدیمی</u> × ۱۰۰</div>
+<p class="formula"><span class="eq eq-fa">(جدید − قدیم) ÷ قدیم × ۱۰۰</span></p>
+<p>نان: تغییر ۲ هزار تومان است؛ <span class="eq">۲٬۰۰۰ ÷ ۱۰٬۰۰۰ = ۰٫۲</span> ← یعنی ۲۰٪ گران شده.</p>
+<div class="key">همیشه بر عدد <b>قدیمی</b> (نقطه‌ی شروع) تقسیم کن، نه عدد جدید. این رایج‌ترین اشتباه درصدهاست.</div>
+<p>برای ۳۰٪ زیاد کردن یک عدد، آن را در ۱٫۳ ضرب کن (۱ یعنی خودِ عدد و ۰٫۳ یعنی ۳۰٪ اضافه). برای ۱۵٪ کم کردن، در ۰٫۸۵ ضرب کن (۱ منهای ۰٫۱۵).</p>
+<p><strong>برعکسش را هم بلد باش:</strong> «جنسی بعد از ۲۰٪ تخفیف شده ۸۰۰ هزار تومان؛ قیمت اصلی‌اش چند بوده؟» اینجا ۸۰۰ هزار، ۸۰٪ قیمت اصلی است. پس قیمت اصلی = <span class="eq">۸۰۰٬۰۰۰ ÷ ۰٫۸ = ۱٬۰۰۰٬۰۰۰</span>.</p>
+<div class="key">اشتباه رایج: ۲۰٪ از ۸۰۰ هزار را به آن اضافه کنی (می‌شود ۹۶۰ هزار). غلط است، چون ۲۰٪ تخفیف از قیمت اصلی گرفته شده بود، نه از ۸۰۰ هزار.</div>
+</div></div>
+<div class="part part-solved"><h3 class="part-label"><span class="pn" aria-hidden="true">۲</span>حل‌شده</h3><div class="examples">
+<article class="question card-paper"><div class="q-top"><span class="q-tag">مثال ۱</span><span class="q-level" aria-label="سطح: متوسط"><i class="on"></i><i class="on"></i><i></i></span></div><h4>افزایش اجاره</h4><p>اجاره‌ی خانه از ۱۰٬۰۰۰٬۰۰۰ به ۱۳٬۵۰۰٬۰۰۰ تومان رسیده. چند درصد افزایش داشته؟</p><details class="solution"><summary><span class="when-closed">نمایش راه‌حل گام‌به‌گام</span><span class="when-open">بستن راه‌حل</span></summary><ol class="solution-steps"><li>تغییر: <span class="eq">۱۳٬۵۰۰٬۰۰۰ − ۱۰٬۰۰۰٬۰۰۰ = ۳٬۵۰۰٬۰۰۰</span></li><li>تقسیم بر عدد قدیمی: <span class="eq">۳٬۵۰۰٬۰۰۰ ÷ ۱۰٬۰۰۰٬۰۰۰ = ۰٫۳۵</span></li><li><span class="eq">۰٫۳۵ × ۱۰۰ = <b>۳۵٪</b></span> افزایش.</li></ol></details></article>
+<article class="question card-paper"><div class="q-top"><span class="q-tag">مثال ۲</span><span class="q-level" aria-label="سطح: سخت"><i class="on"></i><i class="on"></i><i class="on"></i></span></div><h4>قیمت قبل از تخفیف</h4><p>پیراهنی را با ۲۵٪ تخفیف ۹۰۰٬۰۰۰ تومان خریدی. قیمت اصلی‌اش چقدر بوده؟</p><details class="solution"><summary><span class="when-closed">نمایش راه‌حل گام‌به‌گام</span><span class="when-open">بستن راه‌حل</span></summary><ol class="solution-steps"><li>بعد از ۲۵٪ تخفیف، ۷۵٪ قیمت باقی مانده؛ پس ۹۰۰٬۰۰۰ تومان = ۷۵٪ قیمت اصلی.</li><li>۷۵٪ یعنی سه تا ۲۵٪. پس هر ۲۵٪: <span class="eq">۹۰۰٬۰۰۰ ÷ ۳ = ۳۰۰٬۰۰۰</span></li><li>۱۰۰٪ یعنی چهار تا ۲۵٪: <span class="eq">۴ × ۳۰۰٬۰۰۰ = <b>۱٬۲۰۰٬۰۰۰</b></span> تومان.</li></ol><p class="check">بررسی: ۲۵٪ از ۱٬۲۰۰٬۰۰۰ می‌شود ۳۰۰٬۰۰۰ و <span class="eq">۱٬۲۰۰٬۰۰۰ − ۳۰۰٬۰۰۰ = ۹۰۰٬۰۰۰</span> ✓</p></details></article>
+</div></div>
+<div class="part part-try"><h3 class="part-label"><span class="pn" aria-hidden="true">۳</span>خودت امتحان کن</h3><div class="exercises">
+<div class="exercise" id="p3-q1" data-answer="25" data-unit="٪" data-hint="تغییر را بر قیمت قدیمی (۴۰ هزار) تقسیم کن."><div class="ex-top"><span class="ex-n">تمرین ۱</span><span class="q-level" aria-label="سطح: آسان"><i class="on"></i><i></i><i></i></span></div><div class="ex-q"><p>قیمت شیر از ۴۰٬۰۰۰ به ۵۰٬۰۰۰ تومان رسید. چند درصد گران شد؟</p></div><details class="solution"><summary><span class="when-closed">دیدن راه‌حل</span><span class="when-open">بستن راه‌حل</span></summary><ol class="solution-steps"><li>تغییر: ۱۰٬۰۰۰ تومان</li><li><span class="eq">۱۰٬۰۰۰ ÷ ۴۰٬۰۰۰ = <span class="frac"><span>۱</span><span>۴</span></span> = <b>۲۵٪</b></span></li></ol></details></div>
+<div class="exercise" id="p3-q2" data-answer="20" data-unit="٪"><div class="ex-top"><span class="ex-n">تمرین ۲</span><span class="q-level" aria-label="سطح: متوسط"><i class="on"></i><i class="on"></i><i></i></span></div><div class="ex-q"><p>قیمت یک گوشی از ۲۵٬۰۰۰٬۰۰۰ به ۲۰٬۰۰۰٬۰۰۰ تومان رسید. چند درصد ارزان شد؟</p></div><details class="solution"><summary><span class="when-closed">دیدن راه‌حل</span><span class="when-open">بستن راه‌حل</span></summary><ol class="solution-steps"><li>تغییر: ۵ میلیون تومان</li><li>تقسیم بر عدد قدیمی: <span class="eq">۵ ÷ ۲۵ = <span class="frac"><span>۱</span><span>۵</span></span> = <b>۲۰٪</b></span></li></ol></details></div>
+<div class="exercise" id="p3-q3" data-answer="7800000" data-unit="تومان"><div class="ex-top"><span class="ex-n">تمرین ۳</span><span class="q-level" aria-label="سطح: متوسط"><i class="on"></i><i class="on"></i><i></i></span></div><div class="ex-q"><p>حقوقی ۶٬۰۰۰٬۰۰۰ تومانی ۳۰٪ افزایش پیدا کرد. حقوق جدید چقدر است؟</p></div><details class="solution"><summary><span class="when-closed">دیدن راه‌حل</span><span class="when-open">بستن راه‌حل</span></summary><ol class="solution-steps"><li>۳۰٪ از ۶ میلیون: <span class="eq">۳ × ۶۰۰٬۰۰۰ = ۱٬۸۰۰٬۰۰۰</span></li><li>حقوق جدید: <span class="eq">۶٬۰۰۰٬۰۰۰ + ۱٬۸۰۰٬۰۰۰ = <b>۷٬۸۰۰٬۰۰۰</b></span> تومان.</li></ol><p class="check">یا: <span class="eq">۶٬۰۰۰٬۰۰۰ × ۱٫۳ = ۷٬۸۰۰٬۰۰۰</span> ✓</p></details></div>
+<div class="exercise" id="p3-q4" data-answer="2000000" data-unit="تومان" data-hint="۱٬۶۰۰٬۰۰۰ همان ۸۰٪ قیمت اصلی است."><div class="ex-top"><span class="ex-n">تمرین ۴</span><span class="q-level" aria-label="سطح: سخت"><i class="on"></i><i class="on"></i><i class="on"></i></span></div><div class="ex-q"><p>یک دوچرخه را با ۲۰٪ تخفیف ۱٬۶۰۰٬۰۰۰ تومان خریدی. قیمت اصلی‌اش چقدر بوده؟</p></div><details class="solution"><summary><span class="when-closed">دیدن راه‌حل</span><span class="when-open">بستن راه‌حل</span></summary><ol class="solution-steps"><li>۱٬۶۰۰٬۰۰۰ = ۸۰٪ قیمت اصلی.</li><li>۱۰٪: <span class="eq">۱٬۶۰۰٬۰۰۰ ÷ ۸ = ۲۰۰٬۰۰۰</span></li><li>۱۰۰٪: <span class="eq">۱۰ × ۲۰۰٬۰۰۰ = <b>۲٬۰۰۰٬۰۰۰</b></span> تومان.</li></ol></details></div>
+<div class="exercise" id="p3-q5" data-answer="100" data-unit="٪" data-hint="تغییر را بر عدد قدیمی تقسیم کن؛ این بار عدد قدیمی ۱۰۰ هزار است."><div class="ex-top"><span class="ex-n">تمرین ۵</span><span class="q-level" aria-label="سطح: متوسط"><i class="on"></i><i class="on"></i><i></i></span></div><div class="ex-q"><p>قیمت جنسی از ۲۰۰ هزار به ۱۰۰ هزار تومان رسید (۵۰٪ ارزان شد). حالا اگر دوباره از ۱۰۰ هزار به ۲۰۰ هزار برگردد، چند درصد گران شده است؟</p></div><details class="solution"><summary><span class="when-closed">دیدن راه‌حل</span><span class="when-open">بستن راه‌حل</span></summary><ol class="solution-steps"><li>تغییر: ۱۰۰ هزار تومان</li><li>عدد قدیمی این بار ۱۰۰ هزار است: <span class="eq">۱۰۰ ÷ ۱۰۰ = ۱</span></li><li>یعنی <b>۱۰۰٪</b> افزایش.</li></ol><p class="check">برای همین است که «نصف شدن» ۵۰٪ کاهش است، ولی «دو برابر شدن» ۱۰۰٪ افزایش.</p></details></div>
+</div></div>
+<aside class="tip" aria-label="ترفند سرانگشتی"><p class="kicker">ترفند سرانگشتی</p><h3>هر تغییر را یک ضرب ببین</h3>
+<p>۱۰٪ گران‌تر = ×۱٫۱ ، ۱۵٪ ارزان‌تر = ×۰٫۸۵ ، دو برابر = ۱۰۰٪ افزایش. این‌طوری چند تغییر پشت سر هم هم ساده می‌شود (زیردرس بعدی).</p>
+<p class="trick-example">۲۰٪ افزایش روی ۴۵۰: <span class="eq">۴۵۰ × ۱٫۲ = ۴۵۰ + ۹۰ = <b>۵۴۰</b></span></p>
+</aside>
+</div>
+</section>
+<section class="lesson" id="p4" aria-labelledby="p4-t">
+<div class="container">
+<header class="lesson-head"><span class="lesson-n" aria-hidden="true">۴</span><div><p class="kicker">زیردرس ۴ از ۴</p><h2 id="p4-t">تخفیف پشت تخفیف و تله‌های درصد</h2></div></header>
+<div class="part part-see"><h3 class="part-label"><span class="pn" aria-hidden="true">۱</span>ببین</h3><div class="prose">
+<p>«۳۰٪ تخفیف + ۱۰٪ تخفیف اضافه» همان ۴۰٪ است؟ <strong>نه!</strong> تخفیف دوم روی قیمت <u>جدید</u> (که کمتر شده) حساب می‌شود، نه روی قیمت اول.</p>
+<p>با یک کالای ۱۰۰ هزار تومانی امتحان کنیم: ۳۰٪ تخفیف ← ۷۰ هزار. حالا ۱۰٪ از ۷۰ هزار = ۷ هزار ← ۶۳ هزار. یعنی روی هم ۳۷٪ تخفیف، نه ۴۰٪.</p>
+<div class="key"><b>قانون:</b> درصدهای پشت سر هم را جمع نکن؛ ضریب‌هایشان را در هم ضرب کن. <span class="eq">۰٫۷ × ۰٫۹ = ۰٫۶۳</span> ← ۶۳٪ قیمت می‌ماند ← ۳۷٪ تخفیف.</div>
+<p><strong>تله‌ی دوم:</strong> ۲۰٪ گران شدن و بعد ۲۰٪ ارزان شدن، قیمت را به اول برنمی‌گرداند! <span class="eq">۱۰۰ × ۱٫۲ = ۱۲۰</span> و بعد <span class="eq">۱۲۰ × ۰٫۸ = ۹۶</span>. یعنی ۴٪ پایین‌تر از اول.</p>
+<p><strong>تله‌ی سوم:</strong> «درصد» با «واحد درصد» فرق دارد. اگر سود بانک از ۲۰٪ به ۲۵٪ برسد، ۵ «واحد درصد» زیاد شده، ولی خودِ سود ۲۵٪ بیشتر شده (چون ۵، یک‌چهارمِ ۲۰ است).</p>
+<div class="key"><b>ترفند عدد ۱۰۰:</b> هر وقت درصدها گیجت کرد، قیمت را ۱۰۰ فرض کن و قدم‌به‌قدم جلو برو. عدد آخر خودش درصد را می‌گوید.</div>
+</div></div>
+<div class="part part-solved"><h3 class="part-label"><span class="pn" aria-hidden="true">۲</span>حل‌شده</h3><div class="examples">
+<article class="question card-paper"><div class="q-top"><span class="q-tag">مثال ۱</span><span class="q-level" aria-label="سطح: متوسط"><i class="on"></i><i class="on"></i><i></i></span></div><h4>دو تخفیف پشت سر هم</h4><p>لپ‌تاپی ۴۰٬۰۰۰٬۰۰۰ تومانی ۲۰٪ تخفیف دارد و با کارت عضویت ۱۰٪ تخفیف دیگر هم می‌گیری. قیمت نهایی چقدر است؟ کل تخفیف چند درصد شد؟</p><details class="solution"><summary><span class="when-closed">نمایش راه‌حل گام‌به‌گام</span><span class="when-open">بستن راه‌حل</span></summary><ol class="solution-steps"><li>بعد از تخفیف اول: <span class="eq">۴۰٬۰۰۰٬۰۰۰ × ۰٫۸ = ۳۲٬۰۰۰٬۰۰۰</span></li><li>تخفیف دوم روی قیمت جدید: ۱۰٪ از ۳۲ میلیون = ۳٫۲ میلیون ← <span class="eq">۳۲٬۰۰۰٬۰۰۰ − ۳٬۲۰۰٬۰۰۰ = <b>۲۸٬۸۰۰٬۰۰۰</b></span> تومان.</li><li>ضریب کل: <span class="eq">۰٫۸ × ۰٫۹ = ۰٫۷۲</span> ← ۷۲٪ قیمت را پرداختی ← <b>۲۸٪</b> تخفیف (نه ۳۰٪).</li></ol></details></article>
+<article class="question card-paper"><div class="q-top"><span class="q-tag">مثال ۲</span><span class="q-level" aria-label="سطح: متوسط"><i class="on"></i><i class="on"></i><i></i></span></div><h4>اول گران، بعد ارزان</h4><p>قیمت جنسی ۵۰۰٬۰۰۰ تومان بود. اول ۲۰٪ گران شد و بعد ۲۰٪ ارزان شد. الان چند است؟</p><details class="solution"><summary><span class="when-closed">نمایش راه‌حل گام‌به‌گام</span><span class="when-open">بستن راه‌حل</span></summary><ol class="solution-steps"><li>بعد از گرانی: <span class="eq">۵۰۰٬۰۰۰ × ۱٫۲ = ۶۰۰٬۰۰۰</span></li><li>۲۰٪ از ۶۰۰ هزار = ۱۲۰ هزار ← <span class="eq">۶۰۰٬۰۰۰ − ۱۲۰٬۰۰۰ = <b>۴۸۰٬۰۰۰</b></span> تومان.</li></ol><p class="check">قیمت ۲۰ هزار تومان (۴٪) کمتر از اول شد، نه برابر با آن.</p></details></article>
+</div></div>
+<div class="part part-try"><h3 class="part-label"><span class="pn" aria-hidden="true">۳</span>خودت امتحان کن</h3><div class="exercises">
+<div class="exercise" id="p4-q1" data-answer="37" data-unit="٪" data-hint="قیمت را ۱۰۰ فرض کن و دو تخفیف را پشت سر هم اعمال کن."><div class="ex-top"><span class="ex-n">تمرین ۱</span><span class="q-level" aria-label="سطح: متوسط"><i class="on"></i><i class="on"></i><i></i></span></div><div class="ex-q"><p>۳۰٪ تخفیف و بعد ۱۰٪ تخفیف دیگر، روی هم چند درصد تخفیف است؟</p></div><details class="solution"><summary><span class="when-closed">دیدن راه‌حل</span><span class="when-open">بستن راه‌حل</span></summary><ol class="solution-steps"><li>فرض کن قیمت ۱۰۰ است: ۳۰٪ تخفیف ← ۷۰</li><li>۱۰٪ از ۷۰ = ۷ ← <span class="eq">۷۰ − ۷ = ۶۳</span></li><li>از ۱۰۰ به ۶۳ رسیدیم، یعنی <b>۳۷٪</b> تخفیف.</li></ol></details></div>
+<div class="exercise" id="p4-q2" data-answer="960000" data-unit="تومان"><div class="ex-top"><span class="ex-n">تمرین ۲</span><span class="q-level" aria-label="سطح: متوسط"><i class="on"></i><i class="on"></i><i></i></span></div><div class="ex-q"><p>یک کتانی ۲٬۰۰۰٬۰۰۰ تومانی اول ۴۰٪ تخفیف خورده و بعد ۲۰٪ تخفیف دیگر. قیمت نهایی چقدر است؟</p></div><details class="solution"><summary><span class="when-closed">دیدن راه‌حل</span><span class="when-open">بستن راه‌حل</span></summary><ol class="solution-steps"><li>بعد از ۴۰٪: <span class="eq">۲٬۰۰۰٬۰۰۰ × ۰٫۶ = ۱٬۲۰۰٬۰۰۰</span></li><li>بعد از ۲۰٪ دیگر: <span class="eq">۱٬۲۰۰٬۰۰۰ × ۰٫۸ = <b>۹۶۰٬۰۰۰</b></span> تومان.</li></ol><p class="check">کل تخفیف: <span class="eq">۰٫۶ × ۰٫۸ = ۰٫۴۸</span> ← ۵۲٪، نه ۶۰٪.</p></details></div>
+<div class="exercise" id="p4-q3" data-choices="الف|ب|مساوی‌اند" data-correct="0"><div class="ex-top"><span class="ex-n">تمرین ۳</span><span class="q-level" aria-label="سطح: متوسط"><i class="on"></i><i class="on"></i><i></i></span></div><div class="ex-q"><p>مغازه‌ی الف یک‌جا ۵۰٪ تخفیف می‌دهد. مغازه‌ی ب اول ۳۰٪ و بعد ۲۰٪ دیگر تخفیف می‌دهد. کدام تخفیف بیشتری می‌دهد؟</p></div><details class="solution"><summary><span class="when-closed">دیدن راه‌حل</span><span class="when-open">بستن راه‌حل</span></summary><ol class="solution-steps"><li>ب: <span class="eq">۰٫۷ × ۰٫۸ = ۰٫۵۶</span> ← ۵۶٪ قیمت می‌ماند ← ۴۴٪ تخفیف.</li><li>الف: ۵۰٪ تخفیف.</li><li>پس <b>الف</b> تخفیف بیشتری می‌دهد.</li></ol></details></div>
+<div class="exercise" id="p4-q4" data-answer="99" data-unit="هزار تومان"><div class="ex-top"><span class="ex-n">تمرین ۴</span><span class="q-level" aria-label="سطح: سخت"><i class="on"></i><i class="on"></i><i class="on"></i></span></div><div class="ex-q"><p>قیمت جنسی ۱۰۰ هزار تومان است. ۱۰٪ گران شد و بعد ۱۰٪ ارزان شد. الان چند هزار تومان است؟</p></div><details class="solution"><summary><span class="when-closed">دیدن راه‌حل</span><span class="when-open">بستن راه‌حل</span></summary><ol class="solution-steps"><li><span class="eq">۱۰۰ × ۱٫۱ = ۱۱۰</span></li><li>۱۰٪ از ۱۱۰ = ۱۱ ← <span class="eq">۱۱۰ − ۱۱ = <b>۹۹</b></span> هزار تومان.</li></ol></details></div>
+<div class="exercise" id="p4-q5" data-choices="نه، جواب یکی است|بله، اول تخفیف ارزان‌تر می‌شود|بله، اول مالیات ارزان‌تر می‌شود" data-correct="0"><div class="ex-top"><span class="ex-n">تمرین ۵</span><span class="q-level" aria-label="سطح: سخت"><i class="on"></i><i class="on"></i><i class="on"></i></span></div><div class="ex-q"><p>روی جنسی ۲۰٪ تخفیف و ۱۰٪ مالیات اعمال می‌شود. آیا ترتیبشان در قیمت نهایی فرق می‌کند؟</p></div><details class="solution"><summary><span class="when-closed">دیدن راه‌حل</span><span class="when-open">بستن راه‌حل</span></summary><ol class="solution-steps"><li>اول تخفیف بعد مالیات: <span class="eq">۰٫۸ × ۱٫۱ = ۰٫۸۸</span></li><li>اول مالیات بعد تخفیف: <span class="eq">۱٫۱ × ۰٫۸ = ۰٫۸۸</span></li><li>ترتیب ضرب جواب را عوض نمی‌کند؛ در هر دو حالت <b>۸۸٪</b> قیمت اصلی را می‌پردازی.</li></ol></details></div>
+</div></div>
+<aside class="tip" aria-label="ترفند سرانگشتی"><p class="kicker">ترفند سرانگشتی</p><h3>ترفند عدد ۱۰۰</h3>
+<p>هر وقت درصدهای تودرتو گیجت کرد، قیمت را ۱۰۰ فرض کن و پله‌پله جلو برو. آخر کار هر عددی ماند، همان درصد است.</p>
+<p class="trick-example">۲۰٪ تخفیف و بعد ۲۵٪: <span class="eq">۱۰۰ → ۸۰ → ۶۰</span> یعنی روی هم <b>۴۰٪</b> تخفیف.</p>
+</aside>
+</div>
+</section>
+
+<nav class="lesson-nav container" aria-label="موضوع قبلی و بعدی">
+<a class="prev" href="basics.html"><small>→ موضوع قبلی</small><strong>پایه‌ها</strong></a>
+<a class="next" href="ratio.html"><small>موضوع بعدی ←</small><strong>تناسب</strong></a>
+</nav>
+  </main>
+
+  <!-- ============ فوتر ============ -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p class="footer-brand">ریاضی روزمره</p>
+      <p class="footer-note">جواب‌ها را در کادر بنویس و «بررسی» را بزن؛ ارقام فارسی و انگلیسی هر دو قبول است و ممیز را می‌توانی با «/» یا «.» بنویسی. پیشرفتت فقط در همین مرورگر ذخیره می‌شود.</p>
+      <a class="to-top" href="#top">
+        بازگشت به بالا
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M6 11l6-6 6 6"/></svg>
+      </a>
+    </div>
+  </footer>
+
+  <script src="../js/main.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>تناسب و قاعده سه‌تایی | ریاضی روزمره</title>
+  <meta name="description" content="آموزش ساده‌ی نسبت، تناسب مستقیم و معکوس، قاعده سه‌تایی و مقایسه‌ی قیمت واحد برای خرید به‌صرفه، با مثال و تمرین.">
+  <meta name="theme-color" content="#fbf7ee" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0f1226" media="(prefers-color-scheme: dark)">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <script>
+    /* تم را پیش از اولین رندر تنظیم می‌کند تا چشمک نزند */
+    (function () {
+      var root = document.documentElement, theme = null;
+      root.classList.add('js');
+      try { theme = localStorage.getItem('theme'); } catch (e) {}
+      if (theme !== 'light' && theme !== 'dark') {
+        theme = window.matchMedia && matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      }
+      root.setAttribute('data-theme', theme);
+    })();
+  </script>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body class="lesson-page" data-topic="ratio" style="--c:var(--c-ratio);--c-ink:var(--c-ratio-ink)">
+  <a class="skip-link" href="#main">پرش به محتوا</a>
+
+  <!-- ============ هدر ============ -->
+  <header class="site-header" id="top">
+    <div class="container header-inner">
+      <a class="brand" href="../index.html" aria-label="ریاضی روزمره، صفحه اصلی">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 32 32" width="32" height="32"><rect width="32" height="32" rx="10" fill="currentColor"/><circle cx="16" cy="9.5" r="2.4" fill="var(--bg)"/><circle cx="16" cy="22.5" r="2.4" fill="var(--bg)"/><rect x="7.5" y="14.7" width="17" height="2.6" rx="1.3" fill="var(--bg)"/></svg>
+        </span>
+        <span class="brand-name">ریاضی روزمره</span>
+      </a>
+
+      <nav class="main-nav" id="main-nav" aria-label="منوی اصلی">
+        <a href="../index.html#topics">همه‌ی موضوع‌ها</a>
+        <a href="#toc">زیردرس‌ها</a>
+        <a href="../index.html#tricks">ترفند سرانگشتی</a>
+      </nav>
+
+      <div class="header-actions">
+        <button class="icon-btn" id="theme-toggle" type="button" aria-label="تغییر حالت روشن/تیره" title="تغییر حالت روشن/تیره">
+          <svg class="i-sun" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+          <svg class="i-moon" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+        </button>
+        <button class="icon-btn menu-btn" id="menu-btn" type="button" aria-label="باز و بسته کردن منو" aria-expanded="false" aria-controls="main-nav">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path class="bar b1" d="M4 7h16"/><path class="bar b2" d="M4 12h16"/><path class="bar b3" d="M4 17h16"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+<section class="lesson-hero" aria-labelledby="page-title">
+<div class="container">
+<nav class="crumbs" aria-label="مسیر"><a href="../index.html">خانه</a><span aria-hidden="true">/</span><a href="../index.html#topics">موضوع‌ها</a><span aria-hidden="true">/</span><span aria-current="page">تناسب</span></nav>
+<div class="lh-grid">
+<div class="lh-copy">
+<p class="kicker">موضوع ۳ از ۸</p>
+<h1 id="page-title">تناسب و <span class="mark">قاعده سه‌تایی</span></h1>
+<p class="lead">اگر بدانی ۳ کیلو چند است، می‌توانی بگویی ۷ کیلو چند است. تناسب یعنی همین: از یک نمونه به همه‌چیز رسیدن؛ از دستور غذا تا نقشه و قیمت هر کیلو.</p>
+<div class="progress">
+<span class="progress-track" aria-hidden="true"><span class="progress-fill" id="progress-fill"></span></span>
+<span class="progress-text" id="progress-text">۰ از ۲۰ تمرین حل شده</span>
+<button type="button" class="link-btn" id="progress-reset">از نو</button>
+</div>
+</div>
+<nav class="toc card-sticker" id="toc" aria-labelledby="toc-title">
+<span class="tape" aria-hidden="true"></span>
+<h2 id="toc-title">زیردرس‌ها</h2>
+<ol class="toc-list"><li><a href="#r1">نسبت چیست؟</a></li><li><a href="#r2">تناسب مستقیم و قاعده سه‌تایی</a></li><li><a href="#r3">قیمت واحد: کدام بسته ارزان‌تر است؟</a></li><li><a href="#r4">تناسب معکوس</a></li></ol>
+<p class="toc-meta">۴ زیردرس · ۸ مثال حل‌شده · ۲۰ تمرین</p>
+</nav>
+</div>
+</div>
+</section>
+
+<section class="lesson" id="r1" aria-labelledby="r1-t">
+<div class="container">
+<header class="lesson-head"><span class="lesson-n" aria-hidden="true">۱</span><div><p class="kicker">زیردرس ۱ از ۴</p><h2 id="r1-t">نسبت چیست؟</h2></div></header>
+<div class="part part-see"><h3 class="part-label"><span class="pn" aria-hidden="true">۱</span>ببین</h3><div class="prose">
+<p>نسبت یعنی مقایسه‌ی دو مقدار. «برای پختن برنج، به ازای هر ۱ لیوان برنج ۲ لیوان آب بریز» یعنی نسبت آب به برنج «۲ به ۱» است.</p>
+<p>نسبت را به شکل <span class="eq">۲ : ۱</span> هم می‌نویسند. ترتیب مهم است: «آب به برنج» (۲ به ۱) با «برنج به آب» (۱ به ۲) فرق دارد.</p>
+<p>مثل کسر، نسبت را هم می‌شود ساده کرد: در کلاسی با ۱۰ دختر و ۱۵ پسر، نسبت دختر به پسر <span class="eq">۱۰ : ۱۵ = ۲ : ۳</span> است (هر دو را بر ۵ تقسیم کردیم).</p>
+<div class="key"><b>نسبت یعنی «دستور».</b> اگر همه‌ی اجزا را در یک عدد ضرب کنی، طعم و رنگ و حالت همان می‌ماند. ۲ پیمانه آب و ۱ پیمانه برنج همان نتیجه‌ای را می‌دهد که ۶ پیمانه آب و ۳ پیمانه برنج.</div>
+<p><strong>تقسیم به نسبت:</strong> فرض کن باید ۳ میلیون تومان را به نسبت ۲ به ۱ بین دو نفر تقسیم کنیم. کل سهم‌ها <span class="eq">۲ + ۱ = ۳</span> است، پس هر سهم ۱ میلیون می‌شود. نفر اول ۲ سهم (۲ میلیون) و نفر دوم ۱ سهم (۱ میلیون) می‌برد.</p>
+<p class="formula"><span class="eq eq-fa">هر سهم = کل ÷ (جمع سهم‌ها)</span></p>
+</div></div>
+<div class="part part-solved"><h3 class="part-label"><span class="pn" aria-hidden="true">۲</span>حل‌شده</h3><div class="examples">
+<article class="question card-paper"><div class="q-top"><span class="q-tag">مثال ۱</span><span class="q-level" aria-label="سطح: آسان"><i class="on"></i><i></i><i></i></span></div><h4>شربت آلبالو</h4><p>دستور شربت: ۱ لیوان شربت آلبالو برای ۴ لیوان آب. اگر ۳ لیوان شربت آلبالو داشته باشی، چقدر آب لازم است؟</p><details class="solution"><summary><span class="when-closed">نمایش راه‌حل گام‌به‌گام</span><span class="when-open">بستن راه‌حل</span></summary><ol class="solution-steps"><li>نسبت شربت به آب ۱ به ۴ است.</li><li>شربت ۳ برابر شده، پس آب هم باید ۳ برابر شود: <span class="eq">۴ × ۳ = <b>۱۲</b></span> لیوان آب.</li></ol></details></article>
+<article class="question card-paper"><div class="q-top"><span class="q-tag">مثال ۲</span><span class="q-level" aria-label="سطح: متوسط"><i class="on"></i><i class="on"></i><i></i></span></div><h4>تقسیم سود</h4><p>سارا ۲ میلیون و رضا ۳ میلیون تومان روی یک کار گذاشتند و ۱٬۵۰۰٬۰۰۰ تومان سود کردند. سود را به نسبت پولشان تقسیم کن.</p><details class="solution"><summary><span class="when-closed">نمایش راه‌حل گام‌به‌گام</span><span class="when-open">بستن راه‌حل</span></summary><ol class="solution-steps"><li>نسبت سارا به رضا ۲ به ۳ است؛ کل سهم‌ها: <span class="eq">۲ + ۳ = ۵</span></li><li>هر سهم: <span class="eq">۱٬۵۰۰٬۰۰۰ ÷ ۵ = ۳۰۰٬۰۰۰</span></li><li>سارا: <span class="eq">۲ × ۳۰۰٬۰۰۰ = <b>۶۰۰٬۰۰۰</b></span> و رضا: <span class="eq">۳ × ۳۰۰٬۰۰۰ = <b>۹۰۰٬۰۰۰</b></span> تومان.</li></ol><p class="check">بررسی: <span class="eq">۶۰۰٬۰۰۰ + ۹۰۰٬۰۰۰ = ۱٬۵۰۰٬۰۰۰</span> ✓</p></details></article>
+</div></div>
+<div class="part part-try"><h3 class="part-label"><span class="pn" aria-hidden="true">۳</span>خودت امتحان کن</h3><div class="exercises">
+<div class="exercise" id="r1-q1" data-choices="۲ به ۳|۳ به ۲|۴ به ۵" data-correct="0"><div class="ex-top"><span class="ex-n">تمرین ۱</span><span class="q-level" aria-label="سطح: آسان"><i class="on"></i><i></i><i></i></span></div><div class="ex-q"><p>نسبت ۱۲ به ۱۸ ساده‌شده کدام است؟</p></div><details class="solution"><summary><span class="when-closed">دیدن راه‌حل</span><span class="when-open">بستن راه‌حل</span></summary><ol class="solution-steps"><li>۱۲ و ۱۸ هر دو بر ۶ بخش‌پذیرند.</li><li><span class="eq">۱۲ ÷ ۶ = ۲</span> و <span class="eq">۱۸ ÷ ۶ = ۳</span>، پس <b>۲ به ۳</b>.</li></ol></details></div>
+<div class="exercise" id="r1-q2" data-answer="6" data-unit="پیمانه"><div class="ex-top"><span class="ex-n">تمرین ۲</span><span class="q-level" aria-label="سطح: آسان"><i class="on"></i><i></i><i></i></span></div><div class="ex-q"><p>برای پختن برنج، به ازای هر پیمانه برنج ۱٫۵ پیمانه آب لازم است. برای ۴ پیمانه برنج چند پیمانه آب لازم است؟</p></div><details class="solution"><summary><span class="when-closed">دیدن راه‌حل</span><span class="when-open">بستن راه‌حل</span></summary><ol class="solution-steps"><li><span class="eq">۴ × ۱٫۵ = <b>۶</b></span> پیمانه آب.</li></ol><p class="check">ضرب در ۱٫۵ یعنی خود عدد به‌اضافه‌ی نصفش: <span class="eq">۴ + ۲ = ۶</span></p></details></div>
+<div class="exercise" id="r1-q3" data-answer="6" data-unit="قاشق" data-hint="۹ نفر چند برابرِ ۶ نفر است؟"><div class="ex-top"><span class="ex-n">تمرین ۳</span><span class="q-level" aria-label="سطح: متوسط"><i class="on"></i><i class="on"></i><i></i></span></div><div class="ex-q"><p>دستور کیکی برای ۶ نفر، ۴ قاشق شکر دارد. برای ۹ نفر چند قاشق شکر لازم است؟</p></div><details class="solution"><summary><span class="when-closed">دیدن راه‌حل</span><span class="when-open">بستن راه‌حل</span></summary><ol class="solution-steps"><li>۹ نفر، ۱٫۵ برابرِ ۶ نفر است (<span class="eq">۹ ÷ ۶ = ۱٫۵</span>).</li><li><span class="eq">۴ × ۱٫۵ = <b>۶</b></span> قاشق.</li></ol></details></div>
+<div class="exercise" id="r1-q4" data-answer="4000000" data-unit="تومان"><div class="ex-top"><span class="ex-n">تمرین ۴</span><span class="q-level" aria-label="سطح: متوسط"><i class="on"></i><i class="on"></i><i></i></span></div><div class="ex-q"><p>۱۰ میلیون تومان را به نسبت ۳ به ۲ بین دو نفر تقسیم کرده‌اند. سهم کوچک‌تر چقدر است؟</p></div><details class="solution"><summary><span class="when-closed">دیدن راه‌حل</span><span class="when-open">بستن راه‌حل</span></summary><ol class="solution-steps"><li>کل سهم‌ها: <span class="eq">۳ + ۲ = ۵</span></li><li>هر سهم: <span class="eq">۱۰٬۰۰۰٬۰۰۰ ÷ ۵ = ۲٬۰۰۰٬۰۰۰</span></li><li>سهم کوچک‌تر ۲ سهم است: <span class="eq">۲ × ۲٬۰۰۰٬۰۰۰ = <b>۴٬۰۰۰٬۰۰۰</b></span> تومان.</li></ol></details></div>
+<div class="exercise" id="r1-q5" data-answer="15" data-unit="نفر" data-hint="کل سهم‌ها ۳ + ۴ = ۷ است."><div class="ex-top"><span class="ex-n">تمرین ۵</span><span class="q-level" aria-label="سطح: متوسط"><i class="on"></i><i class="on"></i><i></i></span></div><div class="ex-q"><p>در یک کلاس ۳۵ نفره، نسبت دخترها به پسرها ۳ به ۴ است. چند دختر در کلاس هست؟</p></div><details class="solution"><summary><span class="when-closed">دیدن راه‌حل</span><span class="when-open">بستن راه‌حل</span></summary><ol class="solution-steps"><li>کل سهم‌ها: <span class="eq">۳ + ۴ = ۷</span></li><li>هر سهم: <span class="eq">۳۵ ÷ ۷ = ۵</span> نفر</li><li>دخترها ۳ سهم‌اند: <span class="eq">۳ × ۵ = <b>۱۵</b></span> نفر (و پسرها ۲۰ نفر).</li></ol></details></div>
+</div></div>
+<aside class="tip" aria-label="ترفند سرانگشتی"><p class="kicker">ترفند سرانگشتی</p><h3>نسبت را کسرِ کل ببین</h3>
+<p>در نسبت ۳ به ۴، کل سهم‌ها ۷ است؛ پس گروه اول <span class="frac"><span>۳</span><span>۷</span></span> کل و گروه دوم <span class="frac"><span>۴</span><span>۷</span></span> کل است.</p>
+<p class="trick-example"><span class="frac"><span>۳</span><span>۷</span></span> از ۳۵ = <span class="eq">۳۵ ÷ ۷ × ۳ = <b>۱۵</b></span></p>
+</aside>
+</div>
+</section>
+<section class="lesson" id="r2" aria-labelledby="r2-t">
+<div class="container">
+<header class="lesson-head"><span class="lesson-n" aria-hidden="true">۲</span><div><p class="kicker">زیردرس ۲ از ۴</p><h2 id="r2-t">تناسب مستقیم و قاعده سه‌تایی</h2></div></header>
+<div class="part part-see"><h3 class="part-label"><span class="pn" aria-hidden="true">۱</span>ببین</h3><div class="prose">
+<p>دو مقدار «متناسب مستقیم»اند اگر با هم و به یک اندازه زیاد و کم شوند: دو برابر کیلو ← دو برابر قیمت. سه برابر مهمان ← سه برابر غذا.</p>
+<div class="key"><b>روش «اول یکی را پیدا کن»:</b> ۱) مقدارِ «یک واحد» را با تقسیم پیدا کن. ۲) آن را در تعداد جدید ضرب کن.</div>
+<p>مثال: ۳ کیلو ۱۵۰٬۰۰۰ تومان است ← ۱ کیلو: <span class="eq">۱۵۰٬۰۰۰ ÷ ۳ = ۵۰٬۰۰۰</span> ← ۷ کیلو: <span class="eq">۷ × ۵۰٬۰۰۰ = ۳۵۰٬۰۰۰</span> تومان.</p>
+<p><strong>روش جدولی (قاعده‌ی سه‌تایی):</strong> عددها را در یک جدول بنویس و جای مجهول علامت سؤال بگذار:</p>
+<div class="table-wrap"><table class="data-table"><thead><tr><th>کیلو</th><th>تومان</th></tr></thead><tbody><tr><td>۳</td><td>۱۵۰٬۰۰۰</td></tr><tr><td>۷</td><td>؟</td></tr></tbody></table></div>
+<p>دو عددی را که روی یک قطرند (۷ و ۱۵۰٬۰۰۰) در هم ضرب کن و بر عدد سوم (۳) تقسیم کن: <span class="eq">۷ × ۱۵۰٬۰۰۰ ÷ ۳ = ۳۵۰٬۰۰۰</span>. به این «ضرب ضربدری» هم می‌گویند.</p>
+<p>همین روش برای تبدیل ارز، مقیاس نقشه، مصرف بنزین، دستور غذا و خیلی چیزهای دیگر کار می‌کند.</p>
+</div></div>
+<div class="part part-solved"><h3 class="part-label"><span class="pn" aria-hidden="true">۲</span>حل‌شده</h3><div class="examples">
+<article class="question card-paper"><div class="q-top"><span class="q-tag">مثال ۱</span><span class="q-level" aria-label="سطح: آسان"><i class="on"></i><i></i><i></i></span></div><h4>قیمت ۷ کیلو برنج</h4><p>اگر ۳ کیلو برنج ۴۵۰٬۰۰۰ تومان باشد، ۷ کیلو چند می‌شود؟</p><details class="solution"><summary><span class="when-closed">نمایش راه‌حل گام‌به‌گام</span><span class="when-open">بستن راه‌حل</span></summary><ol class="solution-steps"><li>یک کیلو: <span class="eq">۴۵۰٬۰۰۰ ÷ ۳ = ۱۵۰٬۰۰۰</span></li><li>هفت کیلو: <span class="eq">۷ × ۱۵۰٬۰۰۰ = <b>۱٬۰۵۰٬۰۰۰</b></span> تومان.</li></ol><p class="check">بررسی: ۷ کیلو کمی بیشتر از دو برابرِ ۳ کیلو است و جواب هم کمی بیشتر از دو برابرِ ۴۵۰ هزار (۹۰۰ هزار) است ✓</p></details></article>
+<article class="question card-paper"><div class="q-top"><span class="q-tag">مثال ۲</span><span class="q-level" aria-label="سطح: متوسط"><i class="on"></i><i class="on"></i><i></i></span></div><h4>مقیاس نقشه</h4><p>روی نقشه‌ای با مقیاس ۱ به ۵۰٬۰۰۰، فاصله‌ی دو روستا ۸ سانتی‌متر است. فاصله‌ی واقعی چند کیلومتر است؟</p><details class="solution"><summary><span class="when-closed">نمایش راه‌حل گام‌به‌گام</span><span class="when-open">بستن راه‌حل</span></summary><ol class="solution-steps"><li>مقیاس ۱ به ۵۰٬۰۰۰ یعنی هر ۱ سانتی‌متر روی نقشه = ۵۰٬۰۰۰ سانتی‌متر در واقعیت.</li><li>۸ سانتی‌متر: <span class="eq">۸ × ۵۰٬۰۰۰ = ۴۰۰٬۰۰۰</span> سانتی‌متر.</li><li>هر ۱۰۰ سانتی‌متر یک متر است: ۴۰۰٬۰۰۰ سانتی‌متر = ۴٬۰۰۰ متر = <b>۴ کیلومتر</b>.</li></ol></details></article>
+</div></div>
+<div class="part part-try"><h3 class="part-label"><span class="pn" aria-hidden="true">۳</span>خودت امتحان کن</h3><div class="exercises">
+<div class="exercise" id="r2-q1" data-answer="280000" data-unit="تومان"><div class="ex-top"><span class="ex-n">تمرین ۱</span><span class="q-level" aria-label="سطح: آسان"><i class="on"></i><i></i><i></i></span></div><div class="ex-q"><p>۴ خودکار ۱۶۰٬۰۰۰ تومان است. ۷ خودکار چند می‌شود؟</p></div><details class="solution"><summary><span class="when-closed">دیدن راه‌حل</span><span class="when-open">بستن راه‌حل</span></summary><ol class="solution-steps"><li>یکی: <span class="eq">۱۶۰٬۰۰۰ ÷ ۴ = ۴۰٬۰۰۰</span></li><li>هفت تا: <span class="eq">۷ × ۴۰٬۰۰۰ = <b>۲۸۰٬۰۰۰</b></span> تومان.</li></ol></details></div>
+<div class="exercise" id="r2-q2" data-answer="12" data-unit="دقیقه" data-hint="اول ببین پرینتر در یک دقیقه چند صفحه چاپ می‌کند."><div class="ex-top"><span class="ex-n">تمرین ۲</span><span class="q-level" aria-label="سطح: متوسط"><i class="on"></i><i class="on"></i><i></i></span></div><div class="ex-q"><p>یک پرینتر در ۳ دقیقه ۴۵ صفحه چاپ می‌کند. چاپ ۱۸۰ صفحه چند دقیقه طول می‌کشد؟</p></div><details class="solution"><summary><span class="when-closed">دیدن راه‌حل</span><span class="when-open">بستن راه‌حل</span></summary><ol class="solution-steps"><li>در یک دقیقه: <span class="eq">۴۵ ÷ ۳ = ۱۵</span> صفحه</li><li>۱۸۰ صفحه: <span class="eq">۱۸۰ ÷ ۱۵ = <b>۱۲</b></span> دقیقه.</li></ol></details></div>
+<div class="exercise" id="r2-q3" data-answer="6" data-unit="کیلومتر" data-hint="اول به سانتی‌متر حساب کن، بعد به متر و کیلومتر تبدیل کن."><div class="ex-top"><span class="ex-n">تمرین ۳</span><span class="q-level" aria-label="سطح: متوسط"><i class="on"></i><i class="on"></i><i></i></span></div><div class="ex-q"><p>مقیاس یک نقشه ۱ به ۲۰۰٬۰۰۰ است. ۳ سانتی‌متر روی نقشه، در واقعیت چند کیلومتر است؟</p></div><details class="solution"><summary><span class="when-closed">دیدن راه‌حل</span><span class="when-open">بستن راه‌حل</span></summary><ol class="solution-steps"><li><span class="eq">۳ × ۲۰۰٬۰۰۰ = ۶۰۰٬۰۰۰</span> سانتی‌متر</li><li>÷ ۱۰۰ ← ۶٬۰۰۰ متر ← ÷ ۱۰۰۰ ← <b>۶ کیلومتر</b>.</li></ol></details></div>
+<div class="exercise" id="r2-q4" data-answer="18000000" data-unit="تومان"><div class="ex-top"><span class="ex-n">تمرین ۴</span><span class="q-level" aria-label="سطح: متوسط"><i class="on"></i><i class="on"></i><i></i></span></div><div class="ex-q"><p>فرض کن هر یورو ۹۰٬۰۰۰ تومان است. ۲۰۰ یورو چند تومان می‌شود؟</p></div><details class="solution"><summary><span class="when-closed">دیدن راه‌حل</span><span class="when-open">بستن راه‌حل</span></summary><ol class="solution-steps"><li><span class="eq">۲۰۰ × ۹۰٬۰۰۰ = <b>۱۸٬۰۰۰٬۰۰۰</b></span> تومان.</li></ol><p class="check">حساب ذهنی: <span class="eq">۲ × ۹ = ۱۸</span> و بعد صفرها: ۲۰۰ دو صفر و ۹۰٬۰۰۰ چهار صفر دارد؛ روی هم شش صفر ← ۱۸٬۰۰۰٬۰۰۰.</p></details></div>
+<div class="exercise" id="r2-q5" data-answer="750" data-unit="گرم"><div class="ex-top"><span class="ex-n">تمرین ۵</span><span class="q-level" aria-label="سطح: متوسط"><i class="on"></i><i class="on"></i><i></i></span></div><div class="ex-q"><p>دستور کوکو برای ۴ نفر ۵۰۰ گرم سیب‌زمینی لازم دارد. برای ۶ نفر چند گرم لازم است؟</p></div><details class="solution"><summary><span class="when-closed">دیدن راه‌حل</span><span class="when-open">بستن راه‌حل</span></summary><ol class="solution-steps"><li>برای یک نفر: <span class="eq">۵۰۰ ÷ ۴ = ۱۲۵</span> گرم</li><li>برای ۶ نفر: <span class="eq">۶ × ۱۲۵ = <b>۷۵۰</b></span> گرم.</li></ol></details></div>
+</div></div>
+<aside class="tip" aria-label="ترفند سرانگشتی"><p class="kicker">ترفند سرانگشتی</p><h3>لازم نیست حتماً «یکی» را پیدا کنی</h3>
+<p>هر عدد راحت‌تری هم کار می‌کند. اگر ۶ کیلو ۹۰۰ هزار تومان است و قیمت ۱۰ کیلو را می‌خواهی، اول ۲ کیلو را پیدا کن (÷۳) و بعد ۱۰ کیلو را (×۵).</p>
+<p class="trick-example">۶ کیلو = ۹۰۰ ← ۲ کیلو = ۳۰۰ ← ۱۰ کیلو = <b>۱٬۵۰۰</b> هزار تومان</p>
+</aside>
+</div>
+</section>
+<section class="lesson" id="r3" aria-labelledby="r3-t">
+<div class="container">
+<header class="lesson-head"><span class="lesson-n" aria-hidden="true">۳</span><div><p class="kicker">زیردرس ۳ از ۴</p><h2 id="r3-t">قیمت واحد: کدام بسته ارزان‌تر است؟</h2></div></header>
+<div class="part part-see"><h3 class="part-label"><span class="pn" aria-hidden="true">۱</span>ببین</h3><div class="prose">
+<p>در فروشگاه یک بسته‌ی بزرگ و یک بسته‌ی کوچک از یک جنس هست. «بسته‌ی بزرگ همیشه به‌صرفه‌تر است» همیشه درست نیست!</p>
+<div class="key"><b>قیمت واحد</b> یعنی قیمت هر کیلو، هر لیتر یا هر عدد. برای مقایسه، قیمت واحد هر بسته را حساب کن؛ هر کدام کمتر بود، ارزان‌تر است.</div>
+<p class="formula"><span class="eq eq-fa">قیمت واحد = قیمت ÷ مقدار</span></p>
+<ul class="dots"><li>حواست باشد واحدها یکی باشند: گرم را با کیلو مقایسه نکن. ۹۰۰ گرم = ۰٫۹ کیلو.</li><li>اگر تقسیم سخت است، هر دو را به یک مقدار مشترک برسان؛ مثلاً قیمت ۱۰۰ گرم یا قیمت ۳ کیلو از هر دو.</li><li>فقط قیمت مهم نیست: آیا بسته‌ی بزرگ را قبل از خراب شدن مصرف می‌کنی؟ جا داری نگهش داری؟</li></ul>
+</div></div>
+<div class="part part-solved"><h3 class="part-label"><span class="pn" aria-hidden="true">۲</span>حل‌شده</h3><div class="examples">
+<article class="question card-paper"><div class="q-top"><span class="q-tag">مثال ۱</span><span class="q-level" aria-label="سطح: متوسط"><i class="on"></i><i class="on"></i><i></i></span></div><h4>ماست بزرگ یا کوچک؟</h4><p>ماست ۲ کیلویی ۱۸۰٬۰۰۰ تومان و ماست ۹۰۰ گرمی ۸۵٬۰۰۰ تومان است. کدام ارزان‌تر است؟</p><details class="solution"><summary><span class="when-closed">نمایش راه‌حل گام‌به‌گام</span><span class="when-open">بستن راه‌حل</span></summary><ol class="solution-steps"><li>بزرگ: <span class="eq">۱۸۰٬۰۰۰ ÷ ۲ = ۹۰٬۰۰۰</span> تومان برای هر کیلو.</li><li>کوچک: قیمت ۱۰۰ گرم را مقایسه کنیم. کوچک: <span class="eq">۸۵٬۰۰۰ ÷ ۹ ≈ ۹٬۴۴۴</span> تومان؛ بزرگ: <span class="eq">۱۸۰٬۰۰۰ ÷ ۲۰ = ۹٬۰۰۰</span> تومان.</li><li><b>بسته‌ی ۲ کیلویی</b> ارزان‌تر است (هر کیلو حدود ۴٬۴۰۰ تومان کمتر).</li></ol></details></article>
+<article class="question card-paper"><div class="q-top"><span class="q-tag">مثال ۲</span><span class="q-level" aria-label="سطح: متوسط"><i class="on"></i><i class="on"></i><i></i></span></div><h4>دستمال کاغذی</h4><p>بسته‌ی ۶ تایی دستمال کاغذی ۲۷۰٬۰۰۰ تومان و بسته‌ی ۱۰ تایی ۴۸۰٬۰۰۰ تومان است. هر عدد در کدام ارزان‌تر است؟</p><details class="solution"><summary><span class="when-closed">نمایش راه‌حل گام‌به‌گام</span><span class="when-open">بستن راه‌حل</span></summary><ol class="solution-steps"><li>۶ تایی: <span class="eq">۲۷۰٬۰۰۰ ÷ ۶ = ۴۵٬۰۰۰</span> تومان برای هر عدد.</li><li>۱۰ تایی: <span class="eq">۴۸۰٬۰۰۰ ÷ ۱۰ = ۴۸٬۰۰۰</span> تومان برای هر عدد.</li><li><b>بسته‌ی کوچک‌تر</b> ارزان‌تر است!</li></ol><p class="check">بسته‌ی بزرگ همیشه به‌صرفه نیست؛ همیشه قیمت واحد را مقایسه کن.</p></details></article>
+</div></div>
+<div class="part part-try"><h3 class="part-label"><span class="pn" aria-hidden="true">۳</span>خودت امتحان کن</h3><div class="exercises">
+<div class="exercise" id="r3-q1" data-answer="12000" data-unit="تومان"><div class="ex-top"><span class="ex-n">تمرین ۱</span><span class="q-level" aria-label="سطح: آسان"><i class="on"></i><i></i><i></i></span></div><div class="ex-q"><p>شانه‌ی ۱۲ عددی تخم‌مرغ ۱۴۴٬۰۰۰ تومان است. هر عدد چند است؟</p></div><details class="solution"><summary><span class="when-closed">دیدن راه‌حل</span><span class="when-open">بستن راه‌حل</span></summary><ol class="solution-steps"><li><span class="eq">۱۴۴٬۰۰۰ ÷ ۱۲ = <b>۱۲٬۰۰۰</b></span> تومان.</li></ol></details></div>
+<div class="exercise" id="r3-q2" data-answer="60000" data-unit="تومان"><div class="ex-top"><span class="ex-n">تمرین ۲</span><span class="q-level" aria-label="سطح: آسان"><i class="on"></i><i></i><i></i></span></div><div class="ex-q"><p>روغن ۱٫۵ لیتری ۹۰٬۰۰۰ تومان است. قیمت هر لیتر چقدر است؟</p></div><details class="solution"><summary><span class="when-closed">دیدن راه‌حل</span><span class="when-open">بستن راه‌حل</span></summary><ol class="solution-steps"><li>۱٫۵ لیتر = سه تا نیم‌لیتر. هر نیم‌لیتر: <span class="eq">۹۰٬۰۰۰ ÷ ۳ = ۳۰٬۰۰۰</span></li><li>هر لیتر (دو تا نیم‌لیتر): <b>۶۰٬۰۰۰</b> تومان.</li></ol></details></div>
+<div class="exercise" id="r3-q3" data-choices="۵ کیلویی|۱۰ کیلویی|یکسان‌اند" data-correct="0"><div class="ex-top"><span class="ex-n">تمرین ۳</span><span class="q-level" aria-label="سطح: متوسط"><i class="on"></i><i class="on"></i><i></i></span></div><div class="ex-q"><p>برنج ۵ کیلویی ۱٬۷۵۰٬۰۰۰ تومان و ۱۰ کیلویی ۳٬۶۰۰٬۰۰۰ تومان است. هر کیلو در کدام ارزان‌تر است؟</p></div><details class="solution"><summary><span class="when-closed">دیدن راه‌حل</span><span class="when-open">بستن راه‌حل</span></summary><ol class="solution-steps"><li>۵ کیلویی: <span class="eq">۱٬۷۵۰٬۰۰۰ ÷ ۵ = ۳۵۰٬۰۰۰</span> تومان هر کیلو.</li><li>۱۰ کیلویی: <span class="eq">۳٬۶۰۰٬۰۰۰ ÷ ۱۰ = ۳۶۰٬۰۰۰</span> تومان هر کیلو.</li><li><b>بسته‌ی ۵ کیلویی</b> ارزان‌تر است.</li></ol></details></div>
+<div class="exercise" id="r3-q4" data-choices="قوطی|بطری|یکسان‌اند" data-correct="1" data-hint="قیمت هر دو را برای ۱ لیتر حساب کن، یا ببین چند قوطی می‌شود ۱٫۵ لیتر."><div class="ex-top"><span class="ex-n">تمرین ۴</span><span class="q-level" aria-label="سطح: متوسط"><i class="on"></i><i class="on"></i><i></i></span></div><div class="ex-q"><p>نوشابه‌ی قوطی ۳۳۰ میلی‌لیتری ۲۵٬۰۰۰ تومان و بطری ۱٫۵ لیتری ۶۰٬۰۰۰ تومان است. هر لیتر در کدام ارزان‌تر است؟</p></div><details class="solution"><summary><span class="when-closed">دیدن راه‌حل</span><span class="when-open">بستن راه‌حل</span></summary><ol class="solution-steps"><li>بطری: <span class="eq">۶۰٬۰۰۰ ÷ ۱٫۵ = ۴۰٬۰۰۰</span> تومان هر لیتر.</li><li>قوطی: حدود ۳ قوطی می‌شود یک لیتر (<span class="eq">۳ × ۳۳۰ = ۹۹۰</span> میلی‌لیتر) ← حدود ۷۵٬۰۰۰ تومان هر لیتر.</li><li><b>بطری</b> تقریباً نصف قیمت است.</li></ol></details></div>
+<div class="exercise" id="r3-q5" data-answer="60000" data-unit="تومان" data-hint="۳ کیلو چند تا بسته‌ی ۵۰۰ گرمی است؟"><div class="ex-top"><span class="ex-n">تمرین ۵</span><span class="q-level" aria-label="سطح: سخت"><i class="on"></i><i class="on"></i><i class="on"></i></span></div><div class="ex-q"><p>پودر لباسشویی ۵۰۰ گرمی ۱۱۰٬۰۰۰ تومان و ۳ کیلویی ۶۰۰٬۰۰۰ تومان است. اگر به‌جای چند بسته‌ی ۵۰۰ گرمی، یک بسته‌ی ۳ کیلویی بخری، چقدر صرفه‌جویی می‌کنی؟</p></div><details class="solution"><summary><span class="when-closed">دیدن راه‌حل</span><span class="when-open">بستن راه‌حل</span></summary><ol class="solution-steps"><li>۳ کیلو = ۳۰۰۰ گرم = ۶ تا بسته‌ی ۵۰۰ گرمی.</li><li>۶ بسته‌ی کوچک: <span class="eq">۶ × ۱۱۰٬۰۰۰ = ۶۶۰٬۰۰۰</span> تومان.</li><li>صرفه‌جویی: <span class="eq">۶۶۰٬۰۰۰ − ۶۰۰٬۰۰۰ = <b>۶۰٬۰۰۰</b></span> تومان.</li></ol></details></div>
+</div></div>
+<aside class="tip" aria-label="ترفند سرانگشتی"><p class="kicker">ترفند سرانگشتی</p><h3>کوچک را بزرگ کن</h3>
+<p>وقتی مقدار یک بسته مضربی از دیگری است، تقسیم نکن؛ کوچک را چند برابر کن تا به بزرگ برسد.</p>
+<p class="trick-example">۲۵۰ گرمی ۵۰ هزار، کیلویی ۱۸۰ هزار ← ۴ تا ۲۵۰ گرمی = <b>۲۰۰ هزار</b> ← پس کیلویی ارزان‌تر است.</p>
+</aside>
+</div>
+</section>
+<section class="lesson" id="r4" aria-labelledby="r4-t">
+<div class="container">
+<header class="lesson-head"><span class="lesson-n" aria-hidden="true">۴</span><div><p class="kicker">زیردرس ۴ از ۴</p><h2 id="r4-t">تناسب معکوس</h2></div></header>
+<div class="part part-see"><h3 class="part-label"><span class="pn" aria-hidden="true">۱</span>ببین</h3><div class="prose">
+<p>گاهی وقتی یکی زیاد می‌شود، دیگری <strong>کم</strong> می‌شود: هرچه کارگر بیشتر، کار زودتر تمام می‌شود. هرچه تندتر بروی، زودتر می‌رسی. هرچه مهمان بیشتر، سهم هر نفر از کیک کمتر.</p>
+<div class="key"><b>در تناسب معکوس، حاصل‌ضرب ثابت می‌ماند.</b> اگر ۴ کارگر کاری را ۶ روزه تمام کنند، کل کار <span class="eq">۴ × ۶ = ۲۴</span> «روز-کارگر» است. با ۸ کارگر: <span class="eq">۲۴ ÷ ۸ = ۳</span> روز.</div>
+<p>روش: اول «کل کار» را با ضرب پیدا کن، بعد آن را بر مقدار جدید تقسیم کن.</p>
+<p>چطور بفهمم مستقیم است یا معکوس؟ از خودت بپرس: «اگر این دو برابر شود، آن یکی دو برابر می‌شود یا نصف؟»</p>
+<ul class="dots"><li>کیلو و قیمت: دو برابر ← دو برابر ← <b>مستقیم</b></li><li>سرعت و زمان سفر: دو برابر ← نصف ← <b>معکوس</b></li><li>تعداد مهمان و سهم هر نفر از کیک: دو برابر ← نصف ← <b>معکوس</b></li></ul>
+<div class="key">احتیاط: هر رابطه‌ای تناسبی نیست. اگر ۱ نفر پیاده در ۲۰ دقیقه به مدرسه برسد، ۲ نفر هم که با هم بروند ۲۰ دقیقه‌ای می‌رسند، نه ۱۰ دقیقه‌ای!</div>
+</div></div>
+<div class="part part-solved"><h3 class="part-label"><span class="pn" aria-hidden="true">۲</span>حل‌شده</h3><div class="examples">
+<article class="question card-paper"><div class="q-top"><span class="q-tag">مثال ۱</span><span class="q-level" aria-label="سطح: متوسط"><i class="on"></i><i class="on"></i><i></i></span></div><h4>رنگ کردن خانه</h4><p>۳ نقاش خانه‌ای را ۸ روزه رنگ می‌کنند. اگر ۶ نقاش باشند، چند روز طول می‌کشد؟</p><details class="solution"><summary><span class="when-closed">نمایش راه‌حل گام‌به‌گام</span><span class="when-open">بستن راه‌حل</span></summary><ol class="solution-steps"><li>رابطه معکوس است (نقاش بیشتر ← روز کمتر).</li><li>کل کار: <span class="eq">۳ × ۸ = ۲۴</span> روز-نقاش.</li><li>با ۶ نقاش: <span class="eq">۲۴ ÷ ۶ = <b>۴</b></span> روز.</li></ol><p class="check">بررسی: نقاش‌ها دو برابر شدند و زمان نصف شد ✓</p></details></article>
+<article class="question card-paper"><div class="q-top"><span class="q-tag">مثال ۲</span><span class="q-level" aria-label="سطح: متوسط"><i class="on"></i><i class="on"></i><i></i></span></div><h4>کیسه‌ی برنج</h4><p>یک کیسه برنج برای خانواده‌ی ۴ نفره ۱۵ روز کافی است. اگر ۲ مهمان هم بیایند و ۶ نفر شوند، برنج چند روز کافی است؟</p><details class="solution"><summary><span class="when-closed">نمایش راه‌حل گام‌به‌گام</span><span class="when-open">بستن راه‌حل</span></summary><ol class="solution-steps"><li>کل برنج به اندازه‌ی <span class="eq">۴ × ۱۵ = ۶۰</span> «نفر-روز» است.</li><li>با ۶ نفر: <span class="eq">۶۰ ÷ ۶ = <b>۱۰</b></span> روز.</li></ol></details></article>
+</div></div>
+<div class="part part-try"><h3 class="part-label"><span class="pn" aria-hidden="true">۳</span>خودت امتحان کن</h3><div class="exercises">
+<div class="exercise" id="r4-q1" data-answer="3" data-unit="ساعت" data-hint="اول مسافت کل را پیدا کن."><div class="ex-top"><span class="ex-n">تمرین ۱</span><span class="q-level" aria-label="سطح: آسان"><i class="on"></i><i></i><i></i></span></div><div class="ex-q"><p>با سرعت ۶۰ کیلومتر بر ساعت، سفری ۴ ساعت طول می‌کشد. با سرعت ۸۰ چند ساعت طول می‌کشد؟</p></div><details class="solution"><summary><span class="when-closed">دیدن راه‌حل</span><span class="when-open">بستن راه‌حل</span></summary><ol class="solution-steps"><li>مسافت: <span class="eq">۶۰ × ۴ = ۲۴۰</span> کیلومتر.</li><li>با سرعت ۸۰: <span class="eq">۲۴۰ ÷ ۸۰ = <b>۳</b></span> ساعت.</li></ol></details></div>
+<div class="exercise" id="r4-q2" data-answer="10" data-unit="روز"><div class="ex-top"><span class="ex-n">تمرین ۲</span><span class="q-level" aria-label="سطح: متوسط"><i class="on"></i><i class="on"></i><i></i></span></div><div class="ex-q"><p>۵ کارگر دیواری را ۱۲ روزه می‌سازند. ۶ کارگر همان دیوار را چند روزه می‌سازند؟</p></div><details class="solution"><summary><span class="when-closed">دیدن راه‌حل</span><span class="when-open">بستن راه‌حل</span></summary><ol class="solution-steps"><li>کل کار: <span class="eq">۵ × ۱۲ = ۶۰</span> روز-کارگر.</li><li>با ۶ کارگر: <span class="eq">۶۰ ÷ ۶ = <b>۱۰</b></span> روز.</li></ol></details></div>
+<div class="exercise" id="r4-q3" data-choices="تعداد بلیت و قیمت کل|تعداد شیرهای باز و زمان پر شدن استخر|مسافت و مصرف بنزین" data-correct="1"><div class="ex-top"><span class="ex-n">تمرین ۳</span><span class="q-level" aria-label="سطح: آسان"><i class="on"></i><i></i><i></i></span></div><div class="ex-q"><p>کدام رابطه معکوس است؟</p></div><details class="solution"><summary><span class="when-closed">دیدن راه‌حل</span><span class="when-open">بستن راه‌حل</span></summary><ol class="solution-steps"><li>شیر بیشتر ← استخر زودتر پر می‌شود؛ پس <b>تعداد شیرها و زمان</b> معکوس‌اند.</li><li>دو تای دیگر مستقیم‌اند: بلیت بیشتر ← پول بیشتر؛ مسافت بیشتر ← بنزین بیشتر.</li></ol></details></div>
+<div class="exercise" id="r4-q4" data-answer="150000" data-unit="تومان"><div class="ex-top"><span class="ex-n">تمرین ۴</span><span class="q-level" aria-label="سطح: متوسط"><i class="on"></i><i class="on"></i><i></i></span></div><div class="ex-q"><p>قرار بود ۶ نفر هزینه‌ی هدیه‌ای را بدهند و سهم هر نفر ۲۰۰٬۰۰۰ تومان بود. ۲ نفر دیگر هم اضافه شدند. سهم جدید هر نفر چقدر است؟</p></div><details class="solution"><summary><span class="when-closed">دیدن راه‌حل</span><span class="when-open">بستن راه‌حل</span></summary><ol class="solution-steps"><li>کل هزینه: <span class="eq">۶ × ۲۰۰٬۰۰۰ = ۱٬۲۰۰٬۰۰۰</span> تومان.</li><li>حالا ۸ نفرند: <span class="eq">۱٬۲۰۰٬۰۰۰ ÷ ۸ = <b>۱۵۰٬۰۰۰</b></span> تومان.</li></ol></details></div>
+<div class="exercise" id="r4-q5" data-choices="۱۰ دقیقه|۵۰ دقیقه|۲ دقیقه" data-correct="0"><div class="ex-top"><span class="ex-n">تمرین ۵</span><span class="q-level" aria-label="سطح: متوسط"><i class="on"></i><i class="on"></i><i></i></span></div><div class="ex-q"><p>اگر یک تخم‌مرغ در ۱۰ دقیقه آب‌پز شود، ۵ تخم‌مرغ که با هم در یک قابلمه باشند چقدر طول می‌کشد؟</p></div><details class="solution"><summary><span class="when-closed">دیدن راه‌حل</span><span class="when-open">بستن راه‌حل</span></summary><ol class="solution-steps"><li>همه با هم پخته می‌شوند؛ پس باز هم <b>۱۰ دقیقه</b>.</li></ol><p class="check">این رابطه اصلاً تناسبی نیست. قبل از حساب کردن، همیشه بپرس رابطه واقعاً چطور است.</p></details></div>
+</div></div>
+<aside class="tip" aria-label="ترفند سرانگشتی"><p class="kicker">ترفند سرانگشتی</p><h3>سؤال طلایی</h3>
+<p>قبل از هر حسابی بپرس: «اگر این دو برابر شود، آن چه می‌شود؟» اگر دو برابر شد ← مستقیم (تقسیم و بعد ضرب). اگر نصف شد ← معکوس (ضرب و بعد تقسیم).</p>
+<p class="trick-example">۴ نفر ۶ روزه ← ۸ نفر: <span class="eq">۴ × ۶ ÷ ۸ = <b>۳</b></span> روز</p>
+</aside>
+</div>
+</section>
+
+<nav class="lesson-nav container" aria-label="موضوع قبلی و بعدی">
+<a class="prev" href="percent.html"><small>→ موضوع قبلی</small><strong>درصد و تخفیف</strong></a>
+<a class="next" href="estimation.html"><small>موضوع بعدی ←</small><strong>تخمین ذهنی</strong></a>
+</nav>
+  </main>
+
+  <!-- ============ فوتر ============ -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p class="footer-brand">ریاضی روزمره</p>
+      <p class="footer-note">جواب‌ها را در کادر بنویس و «بررسی» را بزن؛ ارقام فارسی و انگلیسی هر دو قبول است و ممیز را می‌توانی با «/» یا «.» بنویسی. پیشرفتت فقط در همین مرورگر ذخیره می‌شود.</p>
+      <a class="to-top" href="#top">
+        بازگشت به بالا
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M6 11l6-6 6 6"/></svg>
+      </a>
+    </div>
+  </footer>
+
+  <script src="../js/main.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>هندسه کاربردی | ریاضی روزمره</title>
+  <meta name="description" content="آموزش ساده‌ی محیط، مساحت، حجم و تبدیل واحدهای طول و مساحت برای کاشی‌کاری، رنگ‌آمیزی، فرش و ظرف آب، با مثال و تمرین.">
+  <meta name="theme-color" content="#fbf7ee" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0f1226" media="(prefers-color-scheme: dark)">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <script>
+    /* تم را پیش از اولین رندر تنظیم می‌کند تا چشمک نزند */
+    (function () {
+      var root = document.documentElement, theme = null;
+      root.classList.add('js');
+      try { theme = localStorage.getItem('theme'); } catch (e) {}
+      if (theme !== 'light' && theme !== 'dark') {
+        theme = window.matchMedia && matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      }
+      root.setAttribute('data-theme', theme);
+    })();
+  </script>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body class="lesson-page" data-topic="geometry" style="--c:var(--c-geo);--c-ink:var(--c-geo-ink)">
+  <a class="skip-link" href="#main">پرش به محتوا</a>
+
+  <!-- ============ هدر ============ -->
+  <header class="site-header" id="top">
+    <div class="container header-inner">
+      <a class="brand" href="../index.html" aria-label="ریاضی روزمره، صفحه اصلی">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 32 32" width="32" height="32"><rect width="32" height="32" rx="10" fill="currentColor"/><circle cx="16" cy="9.5" r="2.4" fill="var(--bg)"/><circle cx="16" cy="22.5" r="2.4" fill="var(--bg)"/><rect x="7.5" y="14.7" width="17" height="2.6" rx="1.3" fill="var(--bg)"/></svg>
+        </span>
+        <span class="brand-name">ریاضی روزمره</span>
+      </a>
+
+      <nav class="main-nav" id="main-nav" aria-label="منوی اصلی">
+        <a href="../index.html#topics">همه‌ی موضوع‌ها</a>
+        <a href="#toc">زیردرس‌ها</a>
+        <a href="../index.html#tricks">ترفند سرانگشتی</a>
+      </nav>
+
+      <div class="header-actions">
+        <button class="icon-btn" id="theme-toggle" type="button" aria-label="تغییر حالت روشن/تیره" title="تغییر حالت روشن/تیره">
+          <svg class="i-sun" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+          <svg class="i-moon" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+        </button>
+        <button class="icon-btn menu-btn" id="menu-btn" type="button" aria-label="باز و بسته کردن منو" aria-expanded="false" aria-controls="main-nav">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path class="bar b1" d="M4 7h16"/><path class="bar b2" d="M4 12h16"/><path class="bar b3" d="M4 17h16"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+<section class="lesson-hero" aria-labelledby="page-title">
+<div class="container">
+<nav class="crumbs" aria-label="مسیر"><a href="../index.html">خانه</a><span aria-hidden="true">/</span><a href="../index.html#topics">موضوع‌ها</a><span aria-hidden="true">/</span><span aria-current="page">هندسه کاربردی</span></nav>
+<div class="lh-grid">
+<div class="lh-copy">
+<p class="kicker">موضوع ۵ از ۸</p>
+<h1 id="page-title">هندسه <span class="mark">کاربردی</span></h1>
+<p class="lead">کاشی، رنگ، فرش، قرنیز و آکواریوم: هندسه‌ی کاربردی یعنی بدانی چقدر بخری که نه کم بیاید، نه پولت هدر برود.</p>
+<div class="progress">
+<span class="progress-track" aria-hidden="true"><span class="progress-fill" id="progress-fill"></span></span>
+<span class="progress-text" id="progress-text">۰ از ۱۷ تمرین حل شده</span>
+<button type="button" class="link-btn" id="progress-reset">از نو</button>
+</div>
+</div>
+<nav class="toc card-sticker" id="toc" aria-labelledby="toc-title">
+<span class="tape" aria-hidden="true"></span>
+<h2 id="toc-title">زیردرس‌ها</h2>
+<ol class="toc-list"><li><a href="#g1">محیط: طول دورتادور</a></li><li><a href="#g2">مساحت: چقدر سطح را می‌پوشاند؟</a></li><li><a href="#g3">حجم و گنجایش</a></li><li><a href="#g4">تبدیل واحدهای طول، مساحت و حجم</a></li></ol>
+<p class="toc-meta">۴ زیردرس · ۸ مثال حل‌شده · ۱۷ تمرین</p>
+</nav>
+</div>
+</div>
+</section>
+
+<section class="lesson" id="g1" aria-labelledby="g1-t">
+<div class="container">
+<header class="lesson-head"><span class="lesson-n" aria-hidden="true">۱</span><div><p class="kicker">زیردرس ۱ از ۴</p><h2 id="g1-t">محیط: طول دورتادور</h2></div></header>
+<div class="part part-see"><h3 class="part-label"><span class="pn" aria-hidden="true">۱</span>ببین</h3><div class="prose">
+<p>محیط یعنی طول «دورتادور» یک شکل. اگر دور تا دور اتاق کنار دیوار راه بروی، مسافتی که می‌روی محیط اتاق است. برای قرنیز، نوار LED، حصار باغچه یا قاب عکس به محیط نیاز داری.</p>
+<figure class="figure"><svg viewBox="0 0 260 175" width="260" height="175" role="img" aria-label="مستطیل به طول ۵ متر و عرض ۴ متر"><rect x="40" y="18" width="190" height="120" rx="4" class="fill-c stroke"/><text x="135" y="162" text-anchor="middle">طول: ۵ متر</text><text x="22" y="82" text-anchor="middle" transform="rotate(-90 22 82)">عرض: ۴ متر</text></svg><figcaption>محیط = ۵ + ۴ + ۵ + ۴ = ۱۸ متر</figcaption></figure>
+<div class="key"><b>مستطیل:</b> محیط = (طول + عرض) × ۲ ؛ <b>مربع:</b> ضلع × ۴ ؛ <b>هر شکل دیگر:</b> همه‌ی ضلع‌ها را با هم جمع کن.</div>
+<p class="formula"><span class="eq eq-fa">محیط مستطیل = (طول + عرض) × ۲</span></p>
+<p><strong>دایره:</strong> دور هر دایره کمی بیشتر از ۳ برابر قطرش است. دقیق‌ترش: قطر × π، و π (پی) تقریباً ۳٫۱۴ است. قطر یعنی پهنای دایره از یک لبه تا لبه‌ی روبه‌رو، از وسطش.</p>
+<p class="formula"><span class="eq eq-fa">محیط دایره = قطر × ۳٫۱۴</span></p>
+<div class="key">واحد محیط همان واحد طول است: متر یا سانتی‌متر. قبل از جمع کردن، همه‌ی ضلع‌ها را به یک واحد ببر.</div>
+</div></div>
+<div class="part part-solved"><h3 class="part-label"><span class="pn" aria-hidden="true">۲</span>حل‌شده</h3><div class="examples">
+<article class="question card-paper"><div class="q-top"><span class="q-tag">مثال ۱</span><span class="q-level" aria-label="سطح: آسان"><i class="on"></i><i></i><i></i></span></div><h4>قرنیز اتاق</h4><p>اتاقی ۵ متر طول و ۴ متر عرض دارد. یک در ۱ متری هم دارد که جلویش قرنیز نمی‌خواهد. چند متر قرنیز لازم است؟</p><details class="solution"><summary><span class="when-closed">نمایش راه‌حل گام‌به‌گام</span><span class="when-open">بستن راه‌حل</span></summary><ol class="solution-steps"><li>محیط اتاق: <span class="eq">(۵ + ۴) × ۲ = ۱۸</span> متر</li><li>منهای پهنای در: <span class="eq">۱۸ − ۱ = <b>۱۷</b></span> متر قرنیز.</li></ol></details></article>
+<article class="question card-paper"><div class="q-top"><span class="q-tag">مثال ۲</span><span class="q-level" aria-label="سطح: متوسط"><i class="on"></i><i class="on"></i><i></i></span></div><h4>نوار دور میز گرد</h4><p>میز گردی به قطر ۱۲۰ سانتی‌متر داری و می‌خواهی دور لبه‌اش نوار تزئینی بزنی. حدوداً چند سانتی‌متر نوار لازم است؟</p><details class="solution"><summary><span class="when-closed">نمایش راه‌حل گام‌به‌گام</span><span class="when-open">بستن راه‌حل</span></summary><ol class="solution-steps"><li><span class="eq">۱۲۰ × ۳٫۱۴ = ۳۷۶٫۸</span></li><li>حدود <b>۳۷۷ سانتی‌متر</b> (یعنی کمی کمتر از ۳٫۸ متر).</li></ol><p class="check">تخمین سریع: ۳ برابر قطر = ۳۶۰؛ جواب باید کمی بیشتر از این باشد ✓</p></details></article>
+</div></div>
+<div class="part part-try"><h3 class="part-label"><span class="pn" aria-hidden="true">۳</span>خودت امتحان کن</h3><div class="exercises">
+<div class="exercise" id="g1-q1" data-answer="24" data-unit="متر"><div class="ex-top"><span class="ex-n">تمرین ۱</span><span class="q-level" aria-label="سطح: آسان"><i class="on"></i><i></i><i></i></span></div><div class="ex-q"><p>باغچه‌ای مربعی به ضلع ۶ متر داری. برای دورش چند متر حصار لازم است؟</p></div><details class="solution"><summary><span class="when-closed">دیدن راه‌حل</span><span class="when-open">بستن راه‌حل</span></summary><ol class="solution-steps"><li><span class="eq">۶ × ۴ = <b>۲۴</b></span> متر.</li></ol></details></div>
+<div class="exercise" id="g1-q2" data-answer="240" data-unit="سانتی‌متر"><div class="ex-top"><span class="ex-n">تمرین ۲</span><span class="q-level" aria-label="سطح: آسان"><i class="on"></i><i></i><i></i></span></div><div class="ex-q"><p>یک قاب عکس ۵۰ در ۷۰ سانتی‌متر است. برای دورش چند سانتی‌متر چوب لازم است؟</p></div><details class="solution"><summary><span class="when-closed">دیدن راه‌حل</span><span class="when-open">بستن راه‌حل</span></summary><ol class="solution-steps"><li><span class="eq">(۵۰ + ۷۰) × ۲ = ۱۲۰ × ۲ = <b>۲۴۰</b></span> سانتی‌متر.</li></ol></details></div>
+<div class="exercise" id="g1-q3" data-answer="314" data-tol="3" data-unit="سانتی‌متر"><div class="ex-top"><span class="ex-n">تمرین ۳</span><span class="q-level" aria-label="سطح: متوسط"><i class="on"></i><i class="on"></i><i></i></span></div><div class="ex-q"><p>دور یک حوض گرد به قطر ۱۰۰ سانتی‌متر چند سانتی‌متر است؟ (π را ۳٫۱۴ بگیر.)</p></div><details class="solution"><summary><span class="when-closed">دیدن راه‌حل</span><span class="when-open">بستن راه‌حل</span></summary><ol class="solution-steps"><li><span class="eq">۱۰۰ × ۳٫۱۴ = <b>۳۱۴</b></span> سانتی‌متر.</li></ol></details></div>
+<div class="exercise" id="g1-q4" data-answer="18" data-unit="متر" data-hint="ضلعی که کنار دیوار است حصار نمی‌خواهد."><div class="ex-top"><span class="ex-n">تمرین ۴</span><span class="q-level" aria-label="سطح: متوسط"><i class="on"></i><i class="on"></i><i></i></span></div><div class="ex-q"><p>باغچه‌ای مستطیلی ۸ متر در ۵ متر است. یکی از ضلع‌های ۸ متری‌اش کنار دیوار است. برای بقیه‌ی ضلع‌ها چند متر حصار لازم است؟</p></div><details class="solution"><summary><span class="when-closed">دیدن راه‌حل</span><span class="when-open">بستن راه‌حل</span></summary><ol class="solution-steps"><li>سه ضلع حصار می‌خواهند: یک ضلع ۸ متری و دو ضلع ۵ متری.</li><li><span class="eq">۸ + ۵ + ۵ = <b>۱۸</b></span> متر.</li></ol></details></div>
+</div></div>
+<aside class="tip" aria-label="ترفند سرانگشتی"><p class="kicker">ترفند سرانگشتی</p><h3>محیط شکل‌های L</h3>
+<p>اگر از گوشه‌ی یک مستطیل یک تکه‌ی مستطیلی بریده شده باشد (اتاق L شکل)، محیطش با محیط همان مستطیل کامل برابر است؛ چون ضلع‌های بریده‌شده فقط جابه‌جا شده‌اند.</p>
+<p class="trick-example">اتاق L شکلی که در کل در یک مستطیل ۶ در ۴ جا می‌شود: <span class="eq">(۶ + ۴) × ۲ = <b>۲۰</b></span> متر</p>
+</aside>
+</div>
+</section>
+<section class="lesson" id="g2" aria-labelledby="g2-t">
+<div class="container">
+<header class="lesson-head"><span class="lesson-n" aria-hidden="true">۲</span><div><p class="kicker">زیردرس ۲ از ۴</p><h2 id="g2-t">مساحت: چقدر سطح را می‌پوشاند؟</h2></div></header>
+<div class="part part-see"><h3 class="part-label"><span class="pn" aria-hidden="true">۱</span>ببین</h3><div class="prose">
+<p>مساحت یعنی اندازه‌ی «سطح». برای کاشی، فرش، کف‌پوش، رنگ دیوار و چمن به مساحت نیاز داری. واحدش «متر مربع» است: یعنی یک مربع ۱ متر در ۱ متر.</p>
+<figure class="figure"><svg viewBox="0 0 230 175" width="230" height="175" role="img" aria-label="مستطیل ۴ در ۳ که به ۱۲ مربع تقسیم شده"><g class="fill-c stroke"><rect x="20" y="10" width="45" height="45"/><rect x="65" y="10" width="45" height="45"/><rect x="110" y="10" width="45" height="45"/><rect x="155" y="10" width="45" height="45"/><rect x="20" y="55" width="45" height="45"/><rect x="65" y="55" width="45" height="45"/><rect x="110" y="55" width="45" height="45"/><rect x="155" y="55" width="45" height="45"/><rect x="20" y="100" width="45" height="45"/><rect x="65" y="100" width="45" height="45"/><rect x="110" y="100" width="45" height="45"/><rect x="155" y="100" width="45" height="45"/></g><text x="110" y="168" text-anchor="middle">۴ متر</text></svg><figcaption>۴ متر در ۳ متر = ۱۲ مربعِ یک‌متری = ۱۲ متر مربع</figcaption></figure>
+<div class="key"><b>مستطیل:</b> طول × عرض ؛ <b>مثلث:</b> قاعده × ارتفاع ÷ ۲ (نصف یک مستطیل) ؛ <b>دایره:</b> شعاع × شعاع × ۳٫۱۴</div>
+<p>شعاع، نصفِ قطر است (فاصله‌ی وسط دایره تا لبه‌اش).</p>
+<ul class="dots"><li><b>شکل‌های عجیب:</b> آن‌ها را به چند مستطیل بشکن و مساحت‌ها را جمع کن. اتاق L شکل = دو مستطیل.</li><li><b>رنگ دیوار:</b> مساحت دیوارها = محیط اتاق × ارتفاع سقف، منهای مساحت در و پنجره.</li><li><b>کاشی و کاغذدیواری:</b> معمولاً حدود ۱۰٪ اضافه بخر، برای بریدن و شکستن.</li></ul>
+</div></div>
+<div class="part part-solved"><h3 class="part-label"><span class="pn" aria-hidden="true">۲</span>حل‌شده</h3><div class="examples">
+<article class="question card-paper"><div class="q-top"><span class="q-tag">مثال ۱</span><span class="q-level" aria-label="سطح: متوسط"><i class="on"></i><i class="on"></i><i></i></span></div><h4>کاشی آشپزخانه</h4><p>کف آشپزخانه ۴ متر در ۳ متر است. اگر ۱۰٪ اضافه برای پرت بخری، چند متر مربع کاشی لازم است؟</p><details class="solution"><summary><span class="when-closed">نمایش راه‌حل گام‌به‌گام</span><span class="when-open">بستن راه‌حل</span></summary><ol class="solution-steps"><li>مساحت کف: <span class="eq">۴ × ۳ = ۱۲</span> متر مربع</li><li>با ۱۰٪ اضافه: <span class="eq">۱۲ × ۱٫۱ = <b>۱۳٫۲</b></span> متر مربع.</li></ol><p class="check">در عمل کاشی را کارتنی می‌فروشند؛ پس به اندازه‌ی کارتن کامل بالاتر (مثلاً ۱۴ متر) می‌خری.</p></details></article>
+<article class="question card-paper"><div class="q-top"><span class="q-tag">مثال ۲</span><span class="q-level" aria-label="سطح: سخت"><i class="on"></i><i class="on"></i><i class="on"></i></span></div><h4>رنگ اتاق</h4><p>اتاقی ۴ در ۳ متر با سقف ۳ متری داری. یک در (۲ متر مربع) و یک پنجره (۲ متر مربع) دارد. هر لیتر رنگ ۱۰ متر مربع را یک دست می‌پوشاند. برای یک دست رنگ دیوارها چند لیتر لازم است؟</p><details class="solution"><summary><span class="when-closed">نمایش راه‌حل گام‌به‌گام</span><span class="when-open">بستن راه‌حل</span></summary><ol class="solution-steps"><li>محیط اتاق: <span class="eq">(۴ + ۳) × ۲ = ۱۴</span> متر</li><li>مساحت دیوارها: <span class="eq">۱۴ × ۳ = ۴۲</span> متر مربع</li><li>منهای در و پنجره: <span class="eq">۴۲ − ۴ = ۳۸</span> متر مربع</li><li>رنگ: <span class="eq">۳۸ ÷ ۱۰ = ۳٫۸</span> لیتر ← <b>۴ لیتر</b> بخر.</li></ol></details></article>
+</div></div>
+<div class="part part-try"><h3 class="part-label"><span class="pn" aria-hidden="true">۳</span>خودت امتحان کن</h3><div class="exercises">
+<div class="exercise" id="g2-q1" data-answer="6" data-unit="متر مربع"><div class="ex-top"><span class="ex-n">تمرین ۱</span><span class="q-level" aria-label="سطح: آسان"><i class="on"></i><i></i><i></i></span></div><div class="ex-q"><p>یک فرش ۲ در ۳ متری چند متر مربع است؟</p></div><details class="solution"><summary><span class="when-closed">دیدن راه‌حل</span><span class="when-open">بستن راه‌حل</span></summary><ol class="solution-steps"><li><span class="eq">۲ × ۳ = <b>۶</b></span> متر مربع.</li></ol></details></div>
+<div class="exercise" id="g2-q2" data-answer="12" data-unit="متر مربع" data-hint="مثلث نصف یک مستطیل است."><div class="ex-top"><span class="ex-n">تمرین ۲</span><span class="q-level" aria-label="سطح: متوسط"><i class="on"></i><i class="on"></i><i></i></span></div><div class="ex-q"><p>باغچه‌ای مثلثی شکل، قاعده‌ای ۶ متری و ارتفاعی ۴ متری دارد. مساحتش چقدر است؟</p></div><details class="solution"><summary><span class="when-closed">دیدن راه‌حل</span><span class="when-open">بستن راه‌حل</span></summary><ol class="solution-steps"><li><span class="eq">۶ × ۴ ÷ ۲ = ۲۴ ÷ ۲ = <b>۱۲</b></span> متر مربع.</li></ol></details></div>
+<div class="exercise" id="g2-q3" data-answer="28" data-unit="متر مربع"><div class="ex-top"><span class="ex-n">تمرین ۳</span><span class="q-level" aria-label="سطح: متوسط"><i class="on"></i><i class="on"></i><i></i></span></div><div class="ex-q"><p>اتاقی L شکل را به دو مستطیل تقسیم کرده‌ایم: یکی ۵ در ۴ متر و دیگری ۴ در ۲ متر. کل مساحت اتاق چقدر است؟</p></div><details class="solution"><summary><span class="when-closed">دیدن راه‌حل</span><span class="when-open">بستن راه‌حل</span></summary><ol class="solution-steps"><li><span class="eq">۵ × ۴ = ۲۰</span> و <span class="eq">۴ × ۲ = ۸</span></li><li><span class="eq">۲۰ + ۸ = <b>۲۸</b></span> متر مربع.</li></ol></details></div>
+<div class="exercise" id="g2-q4" data-answer="3.14" data-tol="0.02" data-unit="متر مربع" data-hint="شعاع نصف قطر است."><div class="ex-top"><span class="ex-n">تمرین ۴</span><span class="q-level" aria-label="سطح: متوسط"><i class="on"></i><i class="on"></i><i></i></span></div><div class="ex-q"><p>یک فرش گرد به قطر ۲ متر داری. مساحتش چقدر است؟ (π را ۳٫۱۴ بگیر.)</p></div><details class="solution"><summary><span class="when-closed">دیدن راه‌حل</span><span class="when-open">بستن راه‌حل</span></summary><ol class="solution-steps"><li>شعاع: <span class="eq">۲ ÷ ۲ = ۱</span> متر</li><li><span class="eq">۱ × ۱ × ۳٫۱۴ = <b>۳٫۱۴</b></span> متر مربع.</li></ol></details></div>
+<div class="exercise" id="g2-q5" data-answer="6" data-unit="قوطی"><div class="ex-top"><span class="ex-n">تمرین ۵</span><span class="q-level" aria-label="سطح: سخت"><i class="on"></i><i class="on"></i><i class="on"></i></span></div><div class="ex-q"><p>دیواری ۵ متر در ۳ متر را می‌خواهی دو دست رنگ کنی. هر قوطی ۵ متر مربع را یک دست می‌پوشاند. چند قوطی لازم است؟</p></div><details class="solution"><summary><span class="when-closed">دیدن راه‌حل</span><span class="when-open">بستن راه‌حل</span></summary><ol class="solution-steps"><li>مساحت دیوار: <span class="eq">۵ × ۳ = ۱۵</span> متر مربع</li><li>دو دست: <span class="eq">۱۵ × ۲ = ۳۰</span> متر مربع</li><li><span class="eq">۳۰ ÷ ۵ = <b>۶</b></span> قوطی.</li></ol></details></div>
+</div></div>
+<aside class="tip" aria-label="ترفند سرانگشتی"><p class="kicker">ترفند سرانگشتی</p><h3>قطر دو برابر، مساحت چهار برابر</h3>
+<p>اگر طول و عرض (یا قطر) چیزی دو برابر شود، مساحتش ۴ برابر می‌شود، نه ۲ برابر. اگر ۱٫۵ برابر شود، مساحت <span class="eq">۱٫۵ × ۱٫۵ = ۲٫۲۵</span> برابر می‌شود.</p>
+<p class="trick-example">پیتزای ۳۰ سانتی حدود <b>۲٫۲۵ برابر</b> پیتزای ۲۰ سانتی است؛ پس اگر کمتر از ۲٫۲۵ برابر قیمت دارد، به‌صرفه‌تر است.</p>
+</aside>
+</div>
+</section>
+<section class="lesson" id="g3" aria-labelledby="g3-t">
+<div class="container">
+<header class="lesson-head"><span class="lesson-n" aria-hidden="true">۳</span><div><p class="kicker">زیردرس ۳ از ۴</p><h2 id="g3-t">حجم و گنجایش</h2></div></header>
+<div class="part part-see"><h3 class="part-label"><span class="pn" aria-hidden="true">۱</span>ببین</h3><div class="prose">
+<p>حجم یعنی یک چیز چقدر «جا» دارد. برای آکواریوم، مخزن آب، کارتن اسباب‌کشی یا بتن‌ریزی به حجم نیاز داری. واحدش متر مکعب یا لیتر است.</p>
+<figure class="figure"><svg viewBox="0 0 270 190" width="270" height="190" role="img" aria-label="مکعب مستطیل با طول ۶۰، عرض ۳۰ و ارتفاع ۴۰ سانتی‌متر"><polygon points="40,62 82,30 230,30 188,62" class="fill-c2 stroke"/><polygon points="188,62 230,30 230,128 188,160" class="fill-c stroke"/><rect x="40" y="62" width="148" height="98" class="fill-c stroke"/><text x="114" y="182" text-anchor="middle">طول ۶۰</text><text x="24" y="113" text-anchor="middle" transform="rotate(-90 24 113)">ارتفاع ۴۰</text><text x="246" y="66" text-anchor="middle" transform="rotate(-53 246 66)">عرض ۳۰</text></svg><figcaption>حجم = طول × عرض × ارتفاع</figcaption></figure>
+<div class="key"><b>مکعب مستطیل</b> (جعبه، آکواریوم، اتاق): طول × عرض × ارتفاع ؛ <b>استوانه</b> (بشکه، لیوان، منبع آب گرد): مساحت دایره‌ی کف × ارتفاع</div>
+<div class="key"><b>تبدیل طلایی:</b> ۱ لیتر = ۱۰۰۰ سانتی‌متر مکعب (یک مکعب ۱۰ در ۱۰ در ۱۰ سانتی) ؛ ۱ متر مکعب = ۱۰۰۰ لیتر</div>
+<p>اگر ابعاد را به سانتی‌متر حساب کنی، حجم را بر ۱۰۰۰ تقسیم کن تا لیتر شود. ولی یک میان‌بر قشنگ‌تر هم هست: ابعاد را به <strong>دسی‌متر</strong> (هر دسی‌متر = ۱۰ سانتی) بنویس؛ آن‌وقت حاصل‌ضرب مستقیم لیتر است!</p>
+</div></div>
+<div class="part part-solved"><h3 class="part-label"><span class="pn" aria-hidden="true">۲</span>حل‌شده</h3><div class="examples">
+<article class="question card-paper"><div class="q-top"><span class="q-tag">مثال ۱</span><span class="q-level" aria-label="سطح: متوسط"><i class="on"></i><i class="on"></i><i></i></span></div><h4>آکواریوم</h4><p>آکواریومی ۶۰ سانتی‌متر طول، ۳۰ سانتی‌متر عرض و ۴۰ سانتی‌متر ارتفاع دارد. چند لیتر آب می‌گیرد؟</p><details class="solution"><summary><span class="when-closed">نمایش راه‌حل گام‌به‌گام</span><span class="when-open">بستن راه‌حل</span></summary><ol class="solution-steps"><li>به دسی‌متر: ۶ در ۳ در ۴</li><li><span class="eq">۶ × ۳ × ۴ = <b>۷۲</b></span> لیتر.</li></ol><p class="check">با سانتی‌متر: <span class="eq">۶۰ × ۳۰ × ۴۰ = ۷۲٬۰۰۰</span> سانتی‌متر مکعب؛ تقسیم بر ۱۰۰۰ ← ۷۲ لیتر ✓</p></details></article>
+<article class="question card-paper"><div class="q-top"><span class="q-tag">مثال ۲</span><span class="q-level" aria-label="سطح: سخت"><i class="on"></i><i class="on"></i><i class="on"></i></span></div><h4>بشکه‌ی آب</h4><p>یک بشکه‌ی استوانه‌ای قطر ۶۰ سانتی‌متر و ارتفاع ۱ متر دارد. چند لیتر آب می‌گیرد؟</p><details class="solution"><summary><span class="when-closed">نمایش راه‌حل گام‌به‌گام</span><span class="when-open">بستن راه‌حل</span></summary><ol class="solution-steps"><li>به دسی‌متر: قطر ۶، پس شعاع ۳؛ ارتفاع ۱۰.</li><li>مساحت کف: <span class="eq">۳ × ۳ × ۳٫۱۴ = ۲۸٫۲۶</span> دسی‌متر مربع</li><li>حجم: <span class="eq">۲۸٫۲۶ × ۱۰ = ۲۸۲٫۶</span> ← حدود <b>۲۸۳ لیتر</b>.</li></ol></details></article>
+</div></div>
+<div class="part part-try"><h3 class="part-label"><span class="pn" aria-hidden="true">۳</span>خودت امتحان کن</h3><div class="exercises">
+<div class="exercise" id="g3-q1" data-answer="1000" data-unit="لیتر"><div class="ex-top"><span class="ex-n">تمرین ۱</span><span class="q-level" aria-label="سطح: آسان"><i class="on"></i><i></i><i></i></span></div><div class="ex-q"><p>مخزنی ۱ متر در ۱ متر در ۱ متر چند لیتر آب می‌گیرد؟</p></div><details class="solution"><summary><span class="when-closed">دیدن راه‌حل</span><span class="when-open">بستن راه‌حل</span></summary><ol class="solution-steps"><li>حجم: ۱ متر مکعب = <b>۱۰۰۰</b> لیتر.</li></ol></details></div>
+<div class="exercise" id="g3-q2" data-answer="24" data-unit="لیتر" data-hint="ابعاد را به دسی‌متر بنویس."><div class="ex-top"><span class="ex-n">تمرین ۲</span><span class="q-level" aria-label="سطح: متوسط"><i class="on"></i><i class="on"></i><i></i></span></div><div class="ex-q"><p>ظرفی ۴۰ در ۲۰ در ۳۰ سانتی‌متر است. چند لیتر جا دارد؟</p></div><details class="solution"><summary><span class="when-closed">دیدن راه‌حل</span><span class="when-open">بستن راه‌حل</span></summary><ol class="solution-steps"><li>به دسی‌متر: ۴ در ۲ در ۳</li><li><span class="eq">۴ × ۲ × ۳ = <b>۲۴</b></span> لیتر.</li></ol></details></div>
+<div class="exercise" id="g3-q3" data-answer="12" data-unit="متر مکعب" data-hint="۳۰ سانتی‌متر چند متر است؟"><div class="ex-top"><span class="ex-n">تمرین ۳</span><span class="q-level" aria-label="سطح: متوسط"><i class="on"></i><i class="on"></i><i></i></span></div><div class="ex-q"><p>برای بتن‌ریزی کف حیاطی ۸ متر در ۵ متر با ضخامت ۳۰ سانتی‌متر، چند متر مکعب بتن لازم است؟</p></div><details class="solution"><summary><span class="when-closed">دیدن راه‌حل</span><span class="when-open">بستن راه‌حل</span></summary><ol class="solution-steps"><li>۳۰ سانتی‌متر = ۰٫۳ متر</li><li><span class="eq">۸ × ۵ × ۰٫۳ = ۴۰ × ۰٫۳ = <b>۱۲</b></span> متر مکعب.</li></ol></details></div>
+<div class="exercise" id="g3-q4" data-answer="2000" data-unit="لیتر"><div class="ex-top"><span class="ex-n">تمرین ۴</span><span class="q-level" aria-label="سطح: متوسط"><i class="on"></i><i class="on"></i><i></i></span></div><div class="ex-q"><p>یک استخر بادی ۲ متر در ۲ متر است و تا عمق ۵۰ سانتی‌متر آب می‌گیرد. چند لیتر آب لازم است؟</p></div><details class="solution"><summary><span class="when-closed">دیدن راه‌حل</span><span class="when-open">بستن راه‌حل</span></summary><ol class="solution-steps"><li><span class="eq">۲ × ۲ × ۰٫۵ = ۲</span> متر مکعب</li><li><span class="eq">۲ × ۱٬۰۰۰ = <b>۲٬۰۰۰</b></span> لیتر.</li></ol></details></div>
+</div></div>
+<aside class="tip" aria-label="ترفند سرانگشتی"><p class="kicker">ترفند سرانگشتی</p><h3>دسی‌متر؛ میان‌بر لیتر</h3>
+<p>ابعاد را به دسی‌متر بنویس (سانتی‌متر ÷ ۱۰) و در هم ضرب کن؛ جواب مستقیم لیتر است.</p>
+<p class="trick-example">ظرف ۲۰ در ۲۰ در ۲۵ سانتی ← <span class="eq">۲ × ۲ × ۲٫۵ = <b>۱۰</b></span> لیتر</p>
+</aside>
+</div>
+</section>
+<section class="lesson" id="g4" aria-labelledby="g4-t">
+<div class="container">
+<header class="lesson-head"><span class="lesson-n" aria-hidden="true">۴</span><div><p class="kicker">زیردرس ۴ از ۴</p><h2 id="g4-t">تبدیل واحدهای طول، مساحت و حجم</h2></div></header>
+<div class="part part-see"><h3 class="part-label"><span class="pn" aria-hidden="true">۱</span>ببین</h3><div class="prose">
+<div class="key"><b>طول:</b> ۱ متر = ۱۰۰ سانتی‌متر = ۱۰۰۰ میلی‌متر ؛ ۱ کیلومتر = ۱۰۰۰ متر</div>
+<p><strong>تله‌ی بزرگ:</strong> ۱ متر مربع، ۱۰۰ سانتی‌متر مربع <u>نیست</u>! یک مربع ۱ متری، ۱۰۰ سانتی‌متر در ۱۰۰ سانتی‌متر است؛ پس ۱ متر مربع = <span class="eq">۱۰۰ × ۱۰۰ = ۱۰٬۰۰۰</span> سانتی‌متر مربع.</p>
+<p>همین‌طور ۱ متر مکعب = <span class="eq">۱۰۰ × ۱۰۰ × ۱۰۰ = ۱٬۰۰۰٬۰۰۰</span> سانتی‌متر مکعب.</p>
+<div class="table-wrap"><table class="data-table"><thead><tr><th>از متر به سانتی‌متر</th><th>ضرب در</th></tr></thead><tbody><tr><td>طول</td><td>۱۰۰</td></tr><tr><td>مساحت</td><td>۱۰٬۰۰۰</td></tr><tr><td>حجم</td><td>۱٬۰۰۰٬۰۰۰</td></tr></tbody></table></div>
+<div class="key"><b>قانون:</b> در مساحت، ضریب تبدیل را <b>دو بار</b> و در حجم <b>سه بار</b> اعمال کن.</div>
+<ul class="dots"><li>بهترین کار: قبل از ضرب، همه‌ی طول‌ها را به یک واحد ببر؛ بعد ضرب کن.</li><li>واحد زمین‌های بزرگ: ۱ هکتار = ۱۰٬۰۰۰ متر مربع (یک مربع ۱۰۰ در ۱۰۰ متر).</li></ul>
+</div></div>
+<div class="part part-solved"><h3 class="part-label"><span class="pn" aria-hidden="true">۲</span>حل‌شده</h3><div class="examples">
+<article class="question card-paper"><div class="q-top"><span class="q-tag">مثال ۱</span><span class="q-level" aria-label="سطح: متوسط"><i class="on"></i><i class="on"></i><i></i></span></div><h4>کاشی حمام</h4><p>کف حمامی ۲ متر در ۱٫۵ متر است و کاشی‌ها ۳۰ در ۳۰ سانتی‌متراند. حدوداً چند کاشی لازم است؟</p><details class="solution"><summary><span class="when-closed">نمایش راه‌حل گام‌به‌گام</span><span class="when-open">بستن راه‌حل</span></summary><ol class="solution-steps"><li>همه را سانتی‌متر کن: کف ۲۰۰ در ۱۵۰ سانتی‌متر است.</li><li>در طول: <span class="eq">۲۰۰ ÷ ۳۰ ≈ ۶٫۷</span> ← ۷ کاشی (تکه‌ی بریده هم یک کاشی کامل مصرف می‌کند)</li><li>در عرض: <span class="eq">۱۵۰ ÷ ۳۰ = ۵</span> کاشی</li><li><span class="eq">۷ × ۵ = <b>۳۵</b></span> کاشی.</li></ol><p class="check">بررسی با مساحت: کف ۳ متر مربع = ۳۰٬۰۰۰ سانتی‌متر مربع و هر کاشی ۹۰۰ سانتی‌متر مربع ← حدود ۳۳٫۳ کاشی؛ با پرت، ۳۵ معقول است ✓</p></details></article>
+<article class="question card-paper"><div class="q-top"><span class="q-tag">مثال ۲</span><span class="q-level" aria-label="سطح: متوسط"><i class="on"></i><i class="on"></i><i></i></span></div><h4>زمین کشاورزی</h4><p>زمینی ۲۵۰ متر در ۸۰ متر است. چند هکتار است؟</p><details class="solution"><summary><span class="when-closed">نمایش راه‌حل گام‌به‌گام</span><span class="when-open">بستن راه‌حل</span></summary><ol class="solution-steps"><li><span class="eq">۲۵۰ × ۸۰ = ۲۰٬۰۰۰</span> متر مربع</li><li><span class="eq">۲۰٬۰۰۰ ÷ ۱۰٬۰۰۰ = <b>۲</b></span> هکتار.</li></ol></details></article>
+</div></div>
+<div class="part part-try"><h3 class="part-label"><span class="pn" aria-hidden="true">۳</span>خودت امتحان کن</h3><div class="exercises">
+<div class="exercise" id="g4-q1" data-answer="2.5" data-unit="متر"><div class="ex-top"><span class="ex-n">تمرین ۱</span><span class="q-level" aria-label="سطح: آسان"><i class="on"></i><i></i><i></i></span></div><div class="ex-q"><p>۲۵۰ سانتی‌متر چند متر است؟</p></div><details class="solution"><summary><span class="when-closed">دیدن راه‌حل</span><span class="when-open">بستن راه‌حل</span></summary><ol class="solution-steps"><li><span class="eq">۲۵۰ ÷ ۱۰۰ = <b>۲٫۵</b></span> متر.</li></ol></details></div>
+<div class="exercise" id="g4-q2" data-answer="35000" data-unit="سانتی‌متر مربع" data-hint="هر متر مربع ۱۰٬۰۰۰ سانتی‌متر مربع است."><div class="ex-top"><span class="ex-n">تمرین ۲</span><span class="q-level" aria-label="سطح: متوسط"><i class="on"></i><i class="on"></i><i></i></span></div><div class="ex-q"><p>۳٫۵ متر مربع چند سانتی‌متر مربع است؟</p></div><details class="solution"><summary><span class="when-closed">دیدن راه‌حل</span><span class="when-open">بستن راه‌حل</span></summary><ol class="solution-steps"><li><span class="eq">۳٫۵ × ۱۰٬۰۰۰ = <b>۳۵٬۰۰۰</b></span> سانتی‌متر مربع.</li></ol></details></div>
+<div class="exercise" id="g4-q3" data-answer="40" data-unit="کاشی"><div class="ex-top"><span class="ex-n">تمرین ۳</span><span class="q-level" aria-label="سطح: متوسط"><i class="on"></i><i class="on"></i><i></i></span></div><div class="ex-q"><p>دیواری ۲ متر در ۸۰ سانتی‌متر را با کاشی‌های ۲۰ در ۲۰ سانتی‌متری می‌پوشانی. چند کاشی لازم است؟</p></div><details class="solution"><summary><span class="when-closed">دیدن راه‌حل</span><span class="when-open">بستن راه‌حل</span></summary><ol class="solution-steps"><li>دیوار: ۲۰۰ در ۸۰ سانتی‌متر.</li><li>در طول: <span class="eq">۲۰۰ ÷ ۲۰ = ۱۰</span> کاشی؛ در عرض: <span class="eq">۸۰ ÷ ۲۰ = ۴</span> کاشی</li><li><span class="eq">۱۰ × ۴ = <b>۴۰</b></span> کاشی.</li></ol></details></div>
+<div class="exercise" id="g4-q4" data-answer="0.6" data-unit="متر مربع" data-hint="اول هر دو طول را به متر تبدیل کن."><div class="ex-top"><span class="ex-n">تمرین ۴</span><span class="q-level" aria-label="سطح: متوسط"><i class="on"></i><i class="on"></i><i></i></span></div><div class="ex-q"><p>یک تخته ۱۲۰ سانتی‌متر در ۵۰ سانتی‌متر است. چند متر مربع است؟</p></div><details class="solution"><summary><span class="when-closed">دیدن راه‌حل</span><span class="when-open">بستن راه‌حل</span></summary><ol class="solution-steps"><li>۱۲۰ سانتی‌متر = ۱٫۲ متر و ۵۰ سانتی‌متر = ۰٫۵ متر</li><li><span class="eq">۱٫۲ × ۰٫۵ = <b>۰٫۶</b></span> متر مربع.</li></ol><p class="check">اگر اول ضرب می‌کردی (<span class="eq">۱۲۰ × ۵۰ = ۶٬۰۰۰</span> سانتی‌متر مربع) باید بر ۱۰٬۰۰۰ تقسیم می‌کردی، نه ۱۰۰.</p></details></div>
+</div></div>
+<aside class="tip" aria-label="ترفند سرانگشتی"><p class="kicker">ترفند سرانگشتی</p><h3>اول واحد، بعد ضرب</h3>
+<p>اگر همه‌ی طول‌ها را قبل از ضرب به متر تبدیل کنی، دیگر لازم نیست ضریب‌های بزرگ مساحت و حجم را به خاطر بسپاری.</p>
+<p class="trick-example">۸۰ سانتی در ۶۰ سانتی ← <span class="eq">۰٫۸ × ۰٫۶ = <b>۰٫۴۸</b></span> متر مربع</p>
+</aside>
+</div>
+</section>
+
+<nav class="lesson-nav container" aria-label="موضوع قبلی و بعدی">
+<a class="prev" href="estimation.html"><small>→ موضوع قبلی</small><strong>تخمین ذهنی</strong></a>
+<a class="next" href="stats.html"><small>موضوع بعدی ←</small><strong>آمار و احتمال</strong></a>
+</nav>
+  </main>
+
+  <!-- ============ فوتر ============ -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p class="footer-brand">ریاضی روزمره</p>
+      <p class="footer-note">جواب‌ها را در کادر بنویس و «بررسی» را بزن؛ ارقام فارسی و انگلیسی هر دو قبول است و ممیز را می‌توانی با «/» یا «.» بنویسی. پیشرفتت فقط در همین مرورگر ذخیره می‌شود.</p>
+      <a class="to-top" href="#top">
+        بازگشت به بالا
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M6 11l6-6 6 6"/></svg>
+      </a>
+    </div>
+  </footer>
+
+  <script src="../js/main.js" defer></script>
+</body>
+</html>

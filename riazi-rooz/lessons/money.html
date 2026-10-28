@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>پول و حساب‌وکتاب شخصی | ریاضی روزمره</title>
+  <meta name="description" content="آموزش ساده‌ی بودجه‌بندی، سود ساده و مرکب، حساب قسط و هزینه‌ی واقعی وام، و تورم و قدرت خرید، با مثال و تمرین.">
+  <meta name="theme-color" content="#fbf7ee" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0f1226" media="(prefers-color-scheme: dark)">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <script>
+    /* تم را پیش از اولین رندر تنظیم می‌کند تا چشمک نزند */
+    (function () {
+      var root = document.documentElement, theme = null;
+      root.classList.add('js');
+      try { theme = localStorage.getItem('theme'); } catch (e) {}
+      if (theme !== 'light' && theme !== 'dark') {
+        theme = window.matchMedia && matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      }
+      root.setAttribute('data-theme', theme);
+    })();
+  </script>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body class="lesson-page" data-topic="money" style="--c:var(--c-money);--c-ink:var(--c-money-ink)">
+  <a class="skip-link" href="#main">پرش به محتوا</a>
+
+  <!-- ============ هدر ============ -->
+  <header class="site-header" id="top">
+    <div class="container header-inner">
+      <a class="brand" href="../index.html" aria-label="ریاضی روزمره، صفحه اصلی">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 32 32" width="32" height="32"><rect width="32" height="32" rx="10" fill="currentColor"/><circle cx="16" cy="9.5" r="2.4" fill="var(--bg)"/><circle cx="16" cy="22.5" r="2.4" fill="var(--bg)"/><rect x="7.5" y="14.7" width="17" height="2.6" rx="1.3" fill="var(--bg)"/></svg>
+        </span>
+        <span class="brand-name">ریاضی روزمره</span>
+      </a>
+
+      <nav class="main-nav" id="main-nav" aria-label="منوی اصلی">
+        <a href="../index.html#topics">همه‌ی موضوع‌ها</a>
+        <a href="#toc">زیردرس‌ها</a>
+        <a href="../index.html#tricks">ترفند سرانگشتی</a>
+      </nav>
+
+      <div class="header-actions">
+        <button class="icon-btn" id="theme-toggle" type="button" aria-label="تغییر حالت روشن/تیره" title="تغییر حالت روشن/تیره">
+          <svg class="i-sun" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+          <svg class="i-moon" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+        </button>
+        <button class="icon-btn menu-btn" id="menu-btn" type="button" aria-label="باز و بسته کردن منو" aria-expanded="false" aria-controls="main-nav">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path class="bar b1" d="M4 7h16"/><path class="bar b2" d="M4 12h16"/><path class="bar b3" d="M4 17h16"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+<section class="lesson-hero" aria-labelledby="page-title">
+<div class="container">
+<nav class="crumbs" aria-label="مسیر"><a href="../index.html">خانه</a><span aria-hidden="true">/</span><a href="../index.html#topics">موضوع‌ها</a><span aria-hidden="true">/</span><span aria-current="page">پول و حساب‌وکتاب</span></nav>
+<div class="lh-grid">
+<div class="lh-copy">
+<p class="kicker">موضوع ۷ از ۸</p>
+<h1 id="page-title">پول و <span class="mark">حساب‌وکتاب</span> شخصی</h1>
+<p class="lead">بودجه، سود بانکی، قسط و تورم؛ مهم‌ترین ریاضیِ زندگی همین است. با چند حساب ساده، تصمیم‌های مالی بهتری می‌گیری و کمتر غافلگیر می‌شوی.</p>
+<div class="progress">
+<span class="progress-track" aria-hidden="true"><span class="progress-fill" id="progress-fill"></span></span>
+<span class="progress-text" id="progress-text">۰ از ۱۶ تمرین حل شده</span>
+<button type="button" class="link-btn" id="progress-reset">از نو</button>
+</div>
+</div>
+<nav class="toc card-sticker" id="toc" aria-labelledby="toc-title">
+<span class="tape" aria-hidden="true"></span>
+<h2 id="toc-title">زیردرس‌ها</h2>
+<ol class="toc-list"><li><a href="#m1">بودجه‌بندی</a></li><li><a href="#m2">سود بانکی: ساده و مرکب</a></li><li><a href="#m3">قسط و وام</a></li><li><a href="#m4">تورم و قدرت خرید</a></li></ol>
+<p class="toc-meta">۴ زیردرس · ۸ مثال حل‌شده · ۱۶ تمرین</p>
+</nav>
+</div>
+</div>
+</section>
+
+<section class="lesson" id="m1" aria-labelledby="m1-t">
+<div class="container">
+<header class="lesson-head"><span class="lesson-n" aria-hidden="true">۱</span><div><p class="kicker">زیردرس ۱ از ۴</p><h2 id="m1-t">بودجه‌بندی</h2></div></header>
+<div class="part part-see"><h3 class="part-label"><span class="pn" aria-hidden="true">۱</span>ببین</h3><div class="prose">
+<p>بودجه یعنی قبل از اینکه پول خرج شود، تصمیم بگیری کجا برود. پایه‌اش یک تفریق ساده است:</p>
+<p class="formula"><span class="eq eq-fa">پس‌انداز = درآمد − هزینه‌ها</span></p>
+<div class="key"><b>قاعده‌ی ۵۰/۳۰/۲۰</b> (یک راهنمای ساده، نه قانون قطعی): ۵۰٪ درآمد برای <b>نیازها</b> (اجاره، خوراک، قبض، رفت‌وآمد)، ۳۰٪ برای <b>خواسته‌ها</b> (تفریح، رستوران، خرید غیرضروری) و ۲۰٪ برای <b>پس‌انداز</b> و پرداخت بدهی.</div>
+<p>در شرایطی که قیمت‌ها بالاست، ممکن است نیازها بیشتر از ۵۰٪ درآمد شوند و این طبیعی است. مهم این است که بدانی پولت دقیقاً کجا می‌رود.</p>
+<ul class="dots"><li><b>هزینه‌های ثابت:</b> هر ماه تقریباً یکی‌اند (اجاره، اینترنت، قسط).</li><li><b>هزینه‌های متغیر:</b> کم و زیاد می‌شوند (خوراک، تفریح، لباس).</li><li><b>خرج‌های کوچک تکراری را دست‌کم نگیر:</b> روزی یک قهوه‌ی ۸۰ هزار تومانی، در ماه می‌شود ۲٫۴ میلیون تومان!</li></ul>
+<p><strong>ترفند:</strong> هزینه‌ها را به یک بازه‌ی زمانی ببر تا بهتر حسشان کنی. ماهانه = روزانه × ۳۰ و سالانه = ماهانه × ۱۲.</p>
+</div></div>
+<div class="part part-solved"><h3 class="part-label"><span class="pn" aria-hidden="true">۲</span>حل‌شده</h3><div class="examples">
+<article class="question card-paper"><div class="q-top"><span class="q-tag">مثال ۱</span><span class="q-level" aria-label="سطح: متوسط"><i class="on"></i><i class="on"></i><i></i></span></div><h4>بودجه‌ی ۵۰/۳۰/۲۰</h4><p>درآمد ماهانه‌ات ۳۰٬۰۰۰٬۰۰۰ تومان است. طبق قاعده‌ی ۵۰/۳۰/۲۰ سهم هر بخش چقدر می‌شود؟</p><details class="solution"><summary><span class="when-closed">نمایش راه‌حل گام‌به‌گام</span><span class="when-open">بستن راه‌حل</span></summary><ol class="solution-steps"><li>نیازها (۵۰٪ = نصف): <span class="eq">۳۰٬۰۰۰٬۰۰۰ ÷ ۲ = ۱۵٬۰۰۰٬۰۰۰</span></li><li>۱۰٪ درآمد ۳ میلیون است؛ پس خواسته‌ها (۳۰٪): <span class="eq">۳ × ۳٬۰۰۰٬۰۰۰ = ۹٬۰۰۰٬۰۰۰</span></li><li>پس‌انداز (۲۰٪): <span class="eq">۲ × ۳٬۰۰۰٬۰۰۰ = <b>۶٬۰۰۰٬۰۰۰</b></span></li></ol><p class="check">بررسی: <span class="eq">۱۵ + ۹ + ۶ = ۳۰</span> میلیون ✓</p></details></article>
+<article class="question card-paper"><div class="q-top"><span class="q-tag">مثال ۲</span><span class="q-level" aria-label="سطح: متوسط"><i class="on"></i><i class="on"></i><i></i></span></div><h4>خرج‌های کوچک</h4><p>هر روز کاری (۲۲ روز در ماه) یک قهوه و کیک به قیمت ۱۲۰٬۰۰۰ تومان می‌خری. در یک سال چقدر می‌شود؟</p><details class="solution"><summary><span class="when-closed">نمایش راه‌حل گام‌به‌گام</span><span class="when-open">بستن راه‌حل</span></summary><ol class="solution-steps"><li>ماهانه: <span class="eq">۲۲ × ۱۲۰٬۰۰۰ = ۲٬۶۴۰٬۰۰۰</span> تومان</li><li>سالانه: <span class="eq">۱۲ × ۲٬۶۴۰٬۰۰۰ = <b>۳۱٬۶۸۰٬۰۰۰</b></span> تومان.</li></ol><p class="check">بیش از ۳۰ میلیون تومان در سال؛ تقریباً قیمت یک گوشی خوب!</p></details></article>
+</div></div>
+<div class="part part-try"><h3 class="part-label"><span class="pn" aria-hidden="true">۳</span>خودت امتحان کن</h3><div class="exercises">
+<div class="exercise" id="m1-q1" data-answer="4500000" data-unit="تومان"><div class="ex-top"><span class="ex-n">تمرین ۱</span><span class="q-level" aria-label="سطح: آسان"><i class="on"></i><i></i><i></i></span></div><div class="ex-q"><p>درآمد ماهانه‌ات ۲۵٬۰۰۰٬۰۰۰ تومان و هزینه‌هایت ۲۰٬۵۰۰٬۰۰۰ تومان است. چقدر پس‌انداز می‌کنی؟</p></div><details class="solution"><summary><span class="when-closed">دیدن راه‌حل</span><span class="when-open">بستن راه‌حل</span></summary><ol class="solution-steps"><li><span class="eq">۲۵٬۰۰۰٬۰۰۰ − ۲۰٬۵۰۰٬۰۰۰ = <b>۴٬۵۰۰٬۰۰۰</b></span> تومان.</li></ol></details></div>
+<div class="exercise" id="m1-q2" data-answer="20" data-unit="٪" data-hint="جزء (پس‌انداز) را بر کل (درآمد) تقسیم کن."><div class="ex-top"><span class="ex-n">تمرین ۲</span><span class="q-level" aria-label="سطح: متوسط"><i class="on"></i><i class="on"></i><i></i></span></div><div class="ex-q"><p>درآمدت ۲۰ میلیون است و ۴ میلیونش را پس‌انداز می‌کنی. چند درصد درآمدت را پس‌انداز می‌کنی؟</p></div><details class="solution"><summary><span class="when-closed">دیدن راه‌حل</span><span class="when-open">بستن راه‌حل</span></summary><ol class="solution-steps"><li><span class="eq">۴ ÷ ۲۰ = <span class="frac"><span>۱</span><span>۵</span></span> = <b>۲۰٪</b></span></li></ol></details></div>
+<div class="exercise" id="m1-q3" data-answer="1500000" data-unit="تومان"><div class="ex-top"><span class="ex-n">تمرین ۳</span><span class="q-level" aria-label="سطح: متوسط"><i class="on"></i><i class="on"></i><i></i></span></div><div class="ex-q"><p>اگر یک اشتراک ماهانه‌ی ۱۲۵٬۰۰۰ تومانی را که استفاده نمی‌کنی لغو کنی، در یک سال چقدر صرفه‌جویی می‌کنی؟</p></div><details class="solution"><summary><span class="when-closed">دیدن راه‌حل</span><span class="when-open">بستن راه‌حل</span></summary><ol class="solution-steps"><li><span class="eq">۱۲۵٬۰۰۰ × ۱۲ = <b>۱٬۵۰۰٬۰۰۰</b></span> تومان.</li></ol><p class="check">ضرب در ۱۲ = ضرب در ۱۰ + ضرب در ۲: <span class="eq">۱٬۲۵۰٬۰۰۰ + ۲۵۰٬۰۰۰</span></p></details></div>
+<div class="exercise" id="m1-q4" data-answer="8" data-unit="ماه"><div class="ex-top"><span class="ex-n">تمرین ۴</span><span class="q-level" aria-label="سطح: متوسط"><i class="on"></i><i class="on"></i><i></i></span></div><div class="ex-q"><p>می‌خواهی برای خرید لپ‌تاپ ۴۰ میلیون تومان جمع کنی و ماهی ۵ میلیون کنار می‌گذاری. چند ماه طول می‌کشد؟</p></div><details class="solution"><summary><span class="when-closed">دیدن راه‌حل</span><span class="when-open">بستن راه‌حل</span></summary><ol class="solution-steps"><li><span class="eq">۴۰ ÷ ۵ = <b>۸</b></span> ماه.</li></ol><p class="check">البته اگر قیمت لپ‌تاپ در این مدت ثابت بماند؛ زیردرس «تورم» را ببین.</p></details></div>
+</div></div>
+<aside class="tip" aria-label="ترفند سرانگشتی"><p class="kicker">ترفند سرانگشتی</p><h3>ماهانه به سالانه، ذهنی</h3>
+<p>ضرب در ۱۲ یعنی ضرب در ۱۰ به‌اضافه‌ی ضرب در ۲.</p>
+<p class="trick-example">۳٫۵ میلیون در ماه ← <span class="eq">۳۵ + ۷ = <b>۴۲</b></span> میلیون در سال</p>
+</aside>
+</div>
+</section>
+<section class="lesson" id="m2" aria-labelledby="m2-t">
+<div class="container">
+<header class="lesson-head"><span class="lesson-n" aria-hidden="true">۲</span><div><p class="kicker">زیردرس ۲ از ۴</p><h2 id="m2-t">سود بانکی: ساده و مرکب</h2></div></header>
+<div class="part part-see"><h3 class="part-label"><span class="pn" aria-hidden="true">۱</span>ببین</h3><div class="prose">
+<p>وقتی پول را در بانک سپرده می‌کنی، بانک به تو «سود» می‌دهد. نرخ سود تقریباً همیشه <strong>سالانه</strong> گفته می‌شود.</p>
+<div class="key"><b>سود ساده:</b> سود سالانه = مبلغ × نرخ سود ؛ سود ماهانه = سود سالانه ÷ ۱۲</div>
+<p>مثال: ۱۰۰ میلیون تومان با سود سالانه‌ی ۲۰٪ ← سالی ۲۰ میلیون ← ماهی حدود ۱٫۶۷ میلیون تومان.</p>
+<div class="key"><b>سود مرکب:</b> اگر سود را برنداری و کنار اصل پول بماند، سال بعد «سودِ سود» هم می‌گیری. یعنی هر سال، پول × (۱ + نرخ) می‌شود.</div>
+<p>ببین فرقشان در طول زمان چقدر می‌شود (۱۰۰ میلیون تومان، سود سالانه ۲۰٪، به میلیون تومان):</p>
+<div class="table-wrap"><table class="data-table"><thead><tr><th>بعد از</th><th>سود ساده</th><th>سود مرکب</th></tr></thead><tbody><tr><td>۱ سال</td><td>۱۲۰</td><td>۱۲۰</td></tr><tr><td>۲ سال</td><td>۱۴۰</td><td>۱۴۴</td></tr><tr><td>۳ سال</td><td>۱۶۰</td><td>۱۷۲٫۸</td></tr><tr><td>۵ سال</td><td>۲۰۰</td><td>۲۴۸٫۸</td></tr><tr><td>۱۰ سال</td><td>۳۰۰</td><td>۶۱۹٫۲</td></tr></tbody></table></div>
+<div class="key"><b>قاعده‌ی ۷۲:</b> برای اینکه بفهمی پولت با سود مرکب حدوداً چند ساله دو برابر می‌شود، ۷۲ را بر درصد سود سالانه تقسیم کن. با سود ۲۰٪: <span class="eq">۷۲ ÷ ۲۰ ≈ ۳٫۶</span> سال.</div>
+</div></div>
+<div class="part part-solved"><h3 class="part-label"><span class="pn" aria-hidden="true">۲</span>حل‌شده</h3><div class="examples">
+<article class="question card-paper"><div class="q-top"><span class="q-tag">مثال ۱</span><span class="q-level" aria-label="سطح: متوسط"><i class="on"></i><i class="on"></i><i></i></span></div><h4>سود ماهانه‌ی سپرده</h4><p>۵۰ میلیون تومان با سود ساده‌ی سالانه‌ی ۱۸٪ در بانک گذاشته‌ای. ماهانه چقدر سود می‌گیری؟</p><details class="solution"><summary><span class="when-closed">نمایش راه‌حل گام‌به‌گام</span><span class="when-open">بستن راه‌حل</span></summary><ol class="solution-steps"><li>۱۰٪ = ۵ میلیون و ۸٪ = ۴ میلیون ← ۱۸٪ = ۹ میلیون سود در سال.</li><li>ماهانه: <span class="eq">۹٬۰۰۰٬۰۰۰ ÷ ۱۲ = <b>۷۵۰٬۰۰۰</b></span> تومان.</li></ol></details></article>
+<article class="question card-paper"><div class="q-top"><span class="q-tag">مثال ۲</span><span class="q-level" aria-label="سطح: سخت"><i class="on"></i><i class="on"></i><i class="on"></i></span></div><h4>سود مرکب دو ساله</h4><p>۲۰ میلیون تومان را با سود مرکب سالانه‌ی ۲۵٪ برای دو سال سپرده می‌کنی. آخر سال دوم چقدر داری؟</p><details class="solution"><summary><span class="when-closed">نمایش راه‌حل گام‌به‌گام</span><span class="when-open">بستن راه‌حل</span></summary><ol class="solution-steps"><li>سال اول: <span class="eq">۲۰ × ۱٫۲۵ = ۲۵</span> میلیون</li><li>سال دوم (روی ۲۵ میلیون): <span class="eq">۲۵ × ۱٫۲۵ = ۳۱٫۲۵</span> میلیون ← <b>۳۱٬۲۵۰٬۰۰۰</b> تومان.</li></ol><p class="check">با سود ساده: <span class="eq">۲۰ + ۵ + ۵ = ۳۰</span> میلیون. آن ۱٫۲۵ میلیون اضافه، همان «سودِ سود» است.</p></details></article>
+</div></div>
+<div class="part part-try"><h3 class="part-label"><span class="pn" aria-hidden="true">۳</span>خودت امتحان کن</h3><div class="exercises">
+<div class="exercise" id="m2-q1" data-answer="4000000" data-unit="تومان"><div class="ex-top"><span class="ex-n">تمرین ۱</span><span class="q-level" aria-label="سطح: آسان"><i class="on"></i><i></i><i></i></span></div><div class="ex-q"><p>۲۰ میلیون تومان با سود ساده‌ی سالانه‌ی ۲۰٪. سود یک سال چقدر است؟</p></div><details class="solution"><summary><span class="when-closed">دیدن راه‌حل</span><span class="when-open">بستن راه‌حل</span></summary><ol class="solution-steps"><li><span class="eq">۲۰٬۰۰۰٬۰۰۰ × ۰٫۲ = <b>۴٬۰۰۰٬۰۰۰</b></span> تومان.</li></ol></details></div>
+<div class="exercise" id="m2-q2" data-answer="1000000" data-unit="تومان"><div class="ex-top"><span class="ex-n">تمرین ۲</span><span class="q-level" aria-label="سطح: متوسط"><i class="on"></i><i class="on"></i><i></i></span></div><div class="ex-q"><p>۶۰ میلیون تومان با سود ساده‌ی سالانه‌ی ۲۰٪. سود ماهانه چقدر است؟</p></div><details class="solution"><summary><span class="when-closed">دیدن راه‌حل</span><span class="when-open">بستن راه‌حل</span></summary><ol class="solution-steps"><li>سود سالانه: <span class="eq">۶۰ × ۰٫۲ = ۱۲</span> میلیون</li><li>ماهانه: <span class="eq">۱۲ ÷ ۱۲ = ۱</span> میلیون ← <b>۱٬۰۰۰٬۰۰۰</b> تومان.</li></ol></details></div>
+<div class="exercise" id="m2-q3" data-answer="144" data-unit="میلیون تومان"><div class="ex-top"><span class="ex-n">تمرین ۳</span><span class="q-level" aria-label="سطح: متوسط"><i class="on"></i><i class="on"></i><i></i></span></div><div class="ex-q"><p>۱۰۰ میلیون تومان با سود مرکب سالانه‌ی ۲۰٪. بعد از ۲ سال چقدر می‌شود؟</p></div><details class="solution"><summary><span class="when-closed">دیدن راه‌حل</span><span class="when-open">بستن راه‌حل</span></summary><ol class="solution-steps"><li>سال اول: <span class="eq">۱۰۰ × ۱٫۲ = ۱۲۰</span></li><li>سال دوم: <span class="eq">۱۲۰ × ۱٫۲ = <b>۱۴۴</b></span> میلیون تومان.</li></ol></details></div>
+<div class="exercise" id="m2-q4" data-answer="4" data-unit="سال" data-hint="۷۲ را بر درصد سود تقسیم کن."><div class="ex-top"><span class="ex-n">تمرین ۴</span><span class="q-level" aria-label="سطح: متوسط"><i class="on"></i><i class="on"></i><i></i></span></div><div class="ex-q"><p>طبق قاعده‌ی ۷۲، پولی با سود مرکب سالانه‌ی ۱۸٪ حدوداً چند ساله دو برابر می‌شود؟</p></div><details class="solution"><summary><span class="when-closed">دیدن راه‌حل</span><span class="when-open">بستن راه‌حل</span></summary><ol class="solution-steps"><li><span class="eq">۷۲ ÷ ۱۸ = <b>۴</b></span> سال.</li></ol></details></div>
+</div></div>
+<aside class="tip" aria-label="ترفند سرانگشتی"><p class="kicker">ترفند سرانگشتی</p><h3>نرخ سالانه ÷ ۱۲ = نرخ ماهانه</h3>
+<p>اگر سود سالانه ۲۴٪ باشد، ماهی دقیقاً ۲٪ سود می‌گیری. ۲٪ هم یعنی دو تا ۱٪ (دو صفر کم کن و دو برابر کن).</p>
+<p class="trick-example">۵۰ میلیون با سود ۲۴٪ ← ماهی ۲٪ ← <b>۱ میلیون</b> تومان</p>
+</aside>
+</div>
+</section>
+<section class="lesson" id="m3" aria-labelledby="m3-t">
+<div class="container">
+<header class="lesson-head"><span class="lesson-n" aria-hidden="true">۳</span><div><p class="kicker">زیردرس ۳ از ۴</p><h2 id="m3-t">قسط و وام</h2></div></header>
+<div class="part part-see"><h3 class="part-label"><span class="pn" aria-hidden="true">۱</span>ببین</h3><div class="prose">
+<p>وام یعنی پول را الان می‌گیری و بعداً، کم‌کم و با مبلغی «اضافه» پس می‌دهی. همین اضافه، هزینه‌ی واقعی وام است. خرید قسطی هم دقیقاً همین است.</p>
+<div class="key"><b>مهم‌ترین عدد، جمع کل پرداختی است:</b> مبلغ هر قسط × تعداد قسط‌ها (به‌اضافه‌ی پیش‌پرداخت، اگر هست). هزینه‌ی وام = جمع کل پرداختی − مبلغ وام.</div>
+<p class="formula"><span class="eq eq-fa">هزینه‌ی وام = (قسط × تعداد قسط) − مبلغ وام</span></p>
+<ul class="dots"><li><b>خرید قسطی:</b> قیمت نقد را با «پیش‌پرداخت + جمع قسط‌ها» مقایسه کن.</li><li><b>فریب قسط کم را نخور:</b> قسط ماهانه‌ی کم با تعداد قسط زیاد ممکن است خیلی گران‌تر تمام شود.</li><li><b>با درآمدت بسنج:</b> یک قاعده‌ی رایج این است که جمع قسط‌های ماهانه از حدود یک‌سوم درآمد بیشتر نشود.</li></ul>
+<p>در بیشتر وام‌ها سود روی «باقی‌مانده‌ی بدهی» حساب می‌شود؛ هرچه بیشتر پس می‌دهی، سود کمتری تعلق می‌گیرد. برای همین هزینه‌ی واقعی وام دقیقاً «مبلغ × نرخ × سال» نیست. ولی جمع کل پرداختی همیشه حقیقت را می‌گوید.</p>
+</div></div>
+<div class="part part-solved"><h3 class="part-label"><span class="pn" aria-hidden="true">۲</span>حل‌شده</h3><div class="examples">
+<article class="question card-paper"><div class="q-top"><span class="q-tag">مثال ۱</span><span class="q-level" aria-label="سطح: متوسط"><i class="on"></i><i class="on"></i><i></i></span></div><h4>یخچال نقد یا قسطی؟</h4><p>یخچالی نقد ۶۰٬۰۰۰٬۰۰۰ تومان است. قسطی‌اش ۱۵٬۰۰۰٬۰۰۰ تومان پیش‌پرداخت و ۱۲ قسط ۴٬۵۰۰٬۰۰۰ تومانی دارد. قسطی چقدر گران‌تر است؟</p><details class="solution"><summary><span class="when-closed">نمایش راه‌حل گام‌به‌گام</span><span class="when-open">بستن راه‌حل</span></summary><ol class="solution-steps"><li>قسط‌ها: <span class="eq">۱۲ × ۴٬۵۰۰٬۰۰۰ = ۵۴٬۰۰۰٬۰۰۰</span></li><li>کل پرداختی: <span class="eq">۱۵٬۰۰۰٬۰۰۰ + ۵۴٬۰۰۰٬۰۰۰ = ۶۹٬۰۰۰٬۰۰۰</span></li><li>اضافه: <span class="eq">۶۹٬۰۰۰٬۰۰۰ − ۶۰٬۰۰۰٬۰۰۰ = <b>۹٬۰۰۰٬۰۰۰</b></span> تومان (یعنی ۱۵٪ گران‌تر).</li></ol></details></article>
+<article class="question card-paper"><div class="q-top"><span class="q-tag">مثال ۲</span><span class="q-level" aria-label="سطح: سخت"><i class="on"></i><i class="on"></i><i class="on"></i></span></div><h4>کدام وام ارزان‌تر است؟</h4><p>وام ۱۰۰ میلیون تومانی. پیشنهاد الف: ۱۲ قسط ۹٬۸۰۰٬۰۰۰ تومانی. پیشنهاد ب: ۲۴ قسط ۵٬۴۰۰٬۰۰۰ تومانی. کدام ارزان‌تر است؟</p><details class="solution"><summary><span class="when-closed">نمایش راه‌حل گام‌به‌گام</span><span class="when-open">بستن راه‌حل</span></summary><ol class="solution-steps"><li>الف: <span class="eq">۱۲ × ۹٬۸۰۰٬۰۰۰ = ۱۱۷٬۶۰۰٬۰۰۰</span> ← هزینه‌ی وام ۱۷٫۶ میلیون</li><li>ب: <span class="eq">۲۴ × ۵٬۴۰۰٬۰۰۰ = ۱۲۹٬۶۰۰٬۰۰۰</span> ← هزینه‌ی وام ۲۹٫۶ میلیون</li><li><b>الف</b> ارزان‌تر است. ب قسط کمتری دارد، ولی روی هم ۱۲ میلیون بیشتر پس می‌دهی.</li></ol><p class="check">البته قسط الف سنگین‌تر است؛ باید ببینی با درآمدت جور درمی‌آید یا نه.</p></details></article>
+</div></div>
+<div class="part part-try"><h3 class="part-label"><span class="pn" aria-hidden="true">۳</span>خودت امتحان کن</h3><div class="exercises">
+<div class="exercise" id="m3-q1" data-answer="36000000" data-unit="تومان"><div class="ex-top"><span class="ex-n">تمرین ۱</span><span class="q-level" aria-label="سطح: آسان"><i class="on"></i><i></i><i></i></span></div><div class="ex-q"><p>۱۸ قسط ۲ میلیون تومانی. جمع کل پرداختی چقدر است؟</p></div><details class="solution"><summary><span class="when-closed">دیدن راه‌حل</span><span class="when-open">بستن راه‌حل</span></summary><ol class="solution-steps"><li><span class="eq">۱۸ × ۲٬۰۰۰٬۰۰۰ = <b>۳۶٬۰۰۰٬۰۰۰</b></span> تومان.</li></ol></details></div>
+<div class="exercise" id="m3-q2" data-answer="6000000" data-unit="تومان"><div class="ex-top"><span class="ex-n">تمرین ۲</span><span class="q-level" aria-label="سطح: متوسط"><i class="on"></i><i class="on"></i><i></i></span></div><div class="ex-q"><p>وامی ۳۰ میلیون تومانی را در ۱۲ قسط ۳ میلیونی پس می‌دهی. هزینه‌ی وام (مبلغ اضافه) چقدر است؟</p></div><details class="solution"><summary><span class="when-closed">دیدن راه‌حل</span><span class="when-open">بستن راه‌حل</span></summary><ol class="solution-steps"><li>جمع پرداختی: <span class="eq">۱۲ × ۳ = ۳۶</span> میلیون</li><li>هزینه: <span class="eq">۳۶ − ۳۰ = ۶</span> میلیون ← <b>۶٬۰۰۰٬۰۰۰</b> تومان.</li></ol></details></div>
+<div class="exercise" id="m3-q3" data-choices="نقد|قسطی|یکسان‌اند" data-correct="0"><div class="ex-top"><span class="ex-n">تمرین ۳</span><span class="q-level" aria-label="سطح: متوسط"><i class="on"></i><i class="on"></i><i></i></span></div><div class="ex-q"><p>گوشی‌ای نقد ۳۰ میلیون تومان است. قسطی‌اش ۱۰ میلیون پیش‌پرداخت و ۶ قسط ۴ میلیونی دارد. کدام به‌صرفه‌تر است؟</p></div><details class="solution"><summary><span class="when-closed">دیدن راه‌حل</span><span class="when-open">بستن راه‌حل</span></summary><ol class="solution-steps"><li>قسطی: <span class="eq">۱۰ + ۶ × ۴ = ۱۰ + ۲۴ = ۳۴</span> میلیون</li><li><b>نقد</b> ۴ میلیون ارزان‌تر است.</li></ol></details></div>
+<div class="exercise" id="m3-q4" data-answer="10" data-unit="میلیون تومان"><div class="ex-top"><span class="ex-n">تمرین ۴</span><span class="q-level" aria-label="سطح: آسان"><i class="on"></i><i></i><i></i></span></div><div class="ex-q"><p>درآمدت ۳۰ میلیون تومان است. طبق قاعده‌ی «حداکثر یک‌سوم درآمد»، جمع قسط‌های ماهانه‌ات حداکثر چقدر باشد؟</p></div><details class="solution"><summary><span class="when-closed">دیدن راه‌حل</span><span class="when-open">بستن راه‌حل</span></summary><ol class="solution-steps"><li><span class="eq">۳۰ ÷ ۳ = <b>۱۰</b></span> میلیون تومان.</li></ol></details></div>
+</div></div>
+<aside class="tip" aria-label="ترفند سرانگشتی"><p class="kicker">ترفند سرانگشتی</p><h3>همیشه بپرس: «روی هم چقدر؟»</h3>
+<p>فروشنده از «فقط ماهی ۲ میلیون» حرف می‌زند؛ تو بپرس چند ماه و روی هم چقدر.</p>
+<p class="trick-example">ماهی ۲ میلیون × ۳۶ ماه = <b>۷۲ میلیون</b></p>
+</aside>
+</div>
+</section>
+<section class="lesson" id="m4" aria-labelledby="m4-t">
+<div class="container">
+<header class="lesson-head"><span class="lesson-n" aria-hidden="true">۴</span><div><p class="kicker">زیردرس ۴ از ۴</p><h2 id="m4-t">تورم و قدرت خرید</h2></div></header>
+<div class="part part-see"><h3 class="part-label"><span class="pn" aria-hidden="true">۱</span>ببین</h3><div class="prose">
+<p>تورم یعنی بالا رفتن عمومی قیمت‌ها. تورم سالانه‌ی ۴۰٪ یعنی چیزی که امسال ۱۰۰ هزار تومان است، سال بعد به‌طور میانگین ۱۴۰ هزار تومان می‌شود.</p>
+<div class="key">تورم هم مثل سود مرکب روی هم انباشته می‌شود: دو سال تورم ۴۰٪ یعنی <span class="eq">۱٫۴ × ۱٫۴ = ۱٫۹۶</span>؛ تقریباً دو برابر، نه ۸۰٪ بیشتر.</div>
+<p><strong>قدرت خرید</strong> یعنی با پولت چقدر جنس می‌توانی بخری. اگر حقوقت ۲۰٪ زیاد شود ولی تورم ۴۰٪ باشد، با حقوق جدید <u>کمتر</u> از قبل می‌توانی بخری.</p>
+<p class="formula"><span class="eq eq-fa">قدرت خرید جدید ≈ (۱ + رشد درآمد) ÷ (۱ + تورم)</span></p>
+<p>در مثال بالا: <span class="eq">۱٫۲ ÷ ۱٫۴ ≈ ۰٫۸۶</span> ← قدرت خریدت حدود ۱۴٪ کم شده.</p>
+<div class="key"><b>سود واقعی:</b> اگر بانک ۲۰٪ سود بدهد و تورم ۳۰٪ باشد، با اینکه عدد پولت بیشتر شده، با آن کمتر می‌توانی بخری. یعنی سود واقعی منفی است.</div>
+<p>قاعده‌ی ۷۲ برای تورم هم کار می‌کند: با تورم ۳۶٪، قیمت‌ها حدوداً هر ۲ سال دو برابر می‌شوند (<span class="eq">۷۲ ÷ ۳۶ = ۲</span>).</p>
+</div></div>
+<div class="part part-solved"><h3 class="part-label"><span class="pn" aria-hidden="true">۲</span>حل‌شده</h3><div class="examples">
+<article class="question card-paper"><div class="q-top"><span class="q-tag">مثال ۱</span><span class="q-level" aria-label="سطح: آسان"><i class="on"></i><i></i><i></i></span></div><h4>قیمت سال بعد</h4><p>یک کیلو برنج امروز ۲۰۰ هزار تومان است. با تورم ۳۵٪، سال بعد حدوداً چند می‌شود؟</p><details class="solution"><summary><span class="when-closed">نمایش راه‌حل گام‌به‌گام</span><span class="when-open">بستن راه‌حل</span></summary><ol class="solution-steps"><li>۳۵٪ از ۲۰۰: ۱۰٪ = ۲۰، پس ۳۰٪ = ۶۰ و ۵٪ = ۱۰ ← ۷۰</li><li><span class="eq">۲۰۰ + ۷۰ = <b>۲۷۰</b></span> هزار تومان.</li></ol></details></article>
+<article class="question card-paper"><div class="q-top"><span class="q-tag">مثال ۲</span><span class="q-level" aria-label="سطح: سخت"><i class="on"></i><i class="on"></i><i class="on"></i></span></div><h4>افزایش حقوق کافی است؟</h4><p>حقوقت از ۲۰ میلیون به ۲۵ میلیون تومان رسیده و تورم سال ۴۰٪ بوده. قدرت خریدت بیشتر شده یا کمتر؟</p><details class="solution"><summary><span class="when-closed">نمایش راه‌حل گام‌به‌گام</span><span class="when-open">بستن راه‌حل</span></summary><ol class="solution-steps"><li>حقوقت ۲۵٪ زیاد شده (<span class="eq">۵ ÷ ۲۰ = ۰٫۲۵</span>).</li><li>برای اینکه قدرت خریدت ثابت بماند، حقوقت باید <span class="eq">۲۰ × ۱٫۴ = ۲۸</span> میلیون می‌شد.</li><li>۲۵ کمتر از ۲۸ است ← قدرت خرید <b>کمتر</b> شده؛ حدود <span class="eq">۲۵ ÷ ۲۸ ≈ ۰٫۸۹</span> یعنی حدود ۱۱٪ کاهش.</li></ol></details></article>
+</div></div>
+<div class="part part-try"><h3 class="part-label"><span class="pn" aria-hidden="true">۳</span>خودت امتحان کن</h3><div class="exercises">
+<div class="exercise" id="m4-q1" data-answer="130000" data-unit="تومان"><div class="ex-top"><span class="ex-n">تمرین ۱</span><span class="q-level" aria-label="سطح: آسان"><i class="on"></i><i></i><i></i></span></div><div class="ex-q"><p>بلیت سینما امسال ۱۰۰٬۰۰۰ تومان است. با تورم ۳۰٪ سال بعد چند می‌شود؟</p></div><details class="solution"><summary><span class="when-closed">دیدن راه‌حل</span><span class="when-open">بستن راه‌حل</span></summary><ol class="solution-steps"><li><span class="eq">۱۰۰٬۰۰۰ × ۱٫۳ = <b>۱۳۰٬۰۰۰</b></span> تومان.</li></ol></details></div>
+<div class="exercise" id="m4-q2" data-answer="169" data-unit="هزار تومان" data-hint="تورم سال دوم روی قیمت سال اول حساب می‌شود."><div class="ex-top"><span class="ex-n">تمرین ۲</span><span class="q-level" aria-label="سطح: متوسط"><i class="on"></i><i class="on"></i><i></i></span></div><div class="ex-q"><p>جنسی ۱۰۰ هزار تومانی دو سال پشت سر هم ۳۰٪ تورم داشته. قیمتش بعد از دو سال چقدر است؟</p></div><details class="solution"><summary><span class="when-closed">دیدن راه‌حل</span><span class="when-open">بستن راه‌حل</span></summary><ol class="solution-steps"><li>سال اول: <span class="eq">۱۰۰ × ۱٫۳ = ۱۳۰</span></li><li>سال دوم: <span class="eq">۱۳۰ × ۱٫۳ = <b>۱۶۹</b></span> هزار تومان.</li></ol><p class="check">۶۹٪ گران‌تر، نه ۶۰٪.</p></details></div>
+<div class="exercise" id="m4-q3" data-choices="ارزشش بیشتر می‌شود|ارزشش کمتر می‌شود|فرقی نمی‌کند" data-correct="1"><div class="ex-top"><span class="ex-n">تمرین ۳</span><span class="q-level" aria-label="سطح: متوسط"><i class="on"></i><i class="on"></i><i></i></span></div><div class="ex-q"><p>سود سالانه‌ی بانک ۲۰٪ و تورم ۳۵٪ است. قدرت خرید پولی که در بانک گذاشته‌ای در یک سال چه می‌شود؟</p></div><details class="solution"><summary><span class="when-closed">دیدن راه‌حل</span><span class="when-open">بستن راه‌حل</span></summary><ol class="solution-steps"><li>پولت ×۱٫۲ می‌شود ولی قیمت‌ها ×۱٫۳۵.</li><li><span class="eq">۱٫۲ ÷ ۱٫۳۵ ≈ ۰٫۸۹</span> ← <b>ارزشش کمتر می‌شود</b> (حدود ۱۱٪).</li></ol></details></div>
+<div class="exercise" id="m4-q4" data-answer="3" data-unit="سال"><div class="ex-top"><span class="ex-n">تمرین ۴</span><span class="q-level" aria-label="سطح: متوسط"><i class="on"></i><i class="on"></i><i></i></span></div><div class="ex-q"><p>با تورم سالانه‌ی ۲۴٪، طبق قاعده‌ی ۷۲ قیمت‌ها حدوداً چند ساله دو برابر می‌شوند؟</p></div><details class="solution"><summary><span class="when-closed">دیدن راه‌حل</span><span class="when-open">بستن راه‌حل</span></summary><ol class="solution-steps"><li><span class="eq">۷۲ ÷ ۲۴ = <b>۳</b></span> سال.</li></ol></details></div>
+</div></div>
+<aside class="tip" aria-label="ترفند سرانگشتی"><p class="kicker">ترفند سرانگشتی</p><h3>تورم را مرکب ببین</h3>
+<p>وقتی تورم چند سال پشت سر هم ادامه دارد، درصدها را جمع نکن؛ ضریب‌ها را در هم ضرب کن.</p>
+<p class="trick-example">سه سال تورم ۴۰٪ ← <span class="eq">۱٫۴ × ۱٫۴ × ۱٫۴ ≈ ۲٫۷</span> ← قیمت‌ها نزدیک <b>۳ برابر</b>، نه ۲٫۲ برابر</p>
+</aside>
+</div>
+</section>
+
+<nav class="lesson-nav container" aria-label="موضوع قبلی و بعدی">
+<a class="prev" href="stats.html"><small>→ موضوع قبلی</small><strong>آمار و احتمال</strong></a>
+<a class="next" href="units.html"><small>موضوع بعدی ←</small><strong>واحدها، زمان و سرعت</strong></a>
+</nav>
+  </main>
+
+  <!-- ============ فوتر ============ -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p class="footer-brand">ریاضی روزمره</p>
+      <p class="footer-note">جواب‌ها را در کادر بنویس و «بررسی» را بزن؛ ارقام فارسی و انگلیسی هر دو قبول است و ممیز را می‌توانی با «/» یا «.» بنویسی. پیشرفتت فقط در همین مرورگر ذخیره می‌شود.</p>
+      <a class="to-top" href="#top">
+        بازگشت به بالا
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M6 11l6-6 6 6"/></svg>
+      </a>
+    </div>
+  </footer>
+
+  <script src="../js/main.js" defer></script>
+</body>
+</html>

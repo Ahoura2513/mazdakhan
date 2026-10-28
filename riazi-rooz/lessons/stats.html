@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>آمار و احتمال مقدماتی | ریاضی روزمره</title>
+  <meta name="description" content="آموزش ساده‌ی میانگین، میانه و نما، احتمال ساده، خواندن نمودار و تله‌های آماری تبلیغات و خبرها، با مثال و تمرین.">
+  <meta name="theme-color" content="#fbf7ee" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0f1226" media="(prefers-color-scheme: dark)">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <script>
+    /* تم را پیش از اولین رندر تنظیم می‌کند تا چشمک نزند */
+    (function () {
+      var root = document.documentElement, theme = null;
+      root.classList.add('js');
+      try { theme = localStorage.getItem('theme'); } catch (e) {}
+      if (theme !== 'light' && theme !== 'dark') {
+        theme = window.matchMedia && matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      }
+      root.setAttribute('data-theme', theme);
+    })();
+  </script>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body class="lesson-page" data-topic="stats" style="--c:var(--c-stat);--c-ink:var(--c-stat-ink)">
+  <a class="skip-link" href="#main">پرش به محتوا</a>
+
+  <!-- ============ هدر ============ -->
+  <header class="site-header" id="top">
+    <div class="container header-inner">
+      <a class="brand" href="../index.html" aria-label="ریاضی روزمره، صفحه اصلی">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 32 32" width="32" height="32"><rect width="32" height="32" rx="10" fill="currentColor"/><circle cx="16" cy="9.5" r="2.4" fill="var(--bg)"/><circle cx="16" cy="22.5" r="2.4" fill="var(--bg)"/><rect x="7.5" y="14.7" width="17" height="2.6" rx="1.3" fill="var(--bg)"/></svg>
+        </span>
+        <span class="brand-name">ریاضی روزمره</span>
+      </a>
+
+      <nav class="main-nav" id="main-nav" aria-label="منوی اصلی">
+        <a href="../index.html#topics">همه‌ی موضوع‌ها</a>
+        <a href="#toc">زیردرس‌ها</a>
+        <a href="../index.html#tricks">ترفند سرانگشتی</a>
+      </nav>
+
+      <div class="header-actions">
+        <button class="icon-btn" id="theme-toggle" type="button" aria-label="تغییر حالت روشن/تیره" title="تغییر حالت روشن/تیره">
+          <svg class="i-sun" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+          <svg class="i-moon" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+        </button>
+        <button class="icon-btn menu-btn" id="menu-btn" type="button" aria-label="باز و بسته کردن منو" aria-expanded="false" aria-controls="main-nav">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path class="bar b1" d="M4 7h16"/><path class="bar b2" d="M4 12h16"/><path class="bar b3" d="M4 17h16"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+<section class="lesson-hero" aria-labelledby="page-title">
+<div class="container">
+<nav class="crumbs" aria-label="مسیر"><a href="../index.html">خانه</a><span aria-hidden="true">/</span><a href="../index.html#topics">موضوع‌ها</a><span aria-hidden="true">/</span><span aria-current="page">آمار و احتمال</span></nav>
+<div class="lh-grid">
+<div class="lh-copy">
+<p class="kicker">موضوع ۶ از ۸</p>
+<h1 id="page-title">آمار و <span class="mark">احتمال</span> مقدماتی</h1>
+<p class="lead">میانگین حقوق، احتمال بارش، نمودار تبلیغات… عددها گاهی گولت می‌زنند. اینجا یاد می‌گیری درست بخوانی‌شان و تصمیم بهتری بگیری.</p>
+<div class="progress">
+<span class="progress-track" aria-hidden="true"><span class="progress-fill" id="progress-fill"></span></span>
+<span class="progress-text" id="progress-text">۰ از ۱۸ تمرین حل شده</span>
+<button type="button" class="link-btn" id="progress-reset">از نو</button>
+</div>
+</div>
+<nav class="toc card-sticker" id="toc" aria-labelledby="toc-title">
+<span class="tape" aria-hidden="true"></span>
+<h2 id="toc-title">زیردرس‌ها</h2>
+<ol class="toc-list"><li><a href="#s1">میانگین</a></li><li><a href="#s2">میانه و نما؛ وقتی میانگین گول می‌زند</a></li><li><a href="#s3">احتمال ساده</a></li><li><a href="#s4">خواندن نمودار و تله‌های آماری</a></li></ol>
+<p class="toc-meta">۴ زیردرس · ۸ مثال حل‌شده · ۱۸ تمرین</p>
+</nav>
+</div>
+</div>
+</section>
+
+<section class="lesson" id="s1" aria-labelledby="s1-t">
+<div class="container">
+<header class="lesson-head"><span class="lesson-n" aria-hidden="true">۱</span><div><p class="kicker">زیردرس ۱ از ۴</p><h2 id="s1-t">میانگین</h2></div></header>
+<div class="part part-see"><h3 class="part-label"><span class="pn" aria-hidden="true">۱</span>ببین</h3><div class="prose">
+<p>میانگین یعنی «اگر همه را مساوی پخش کنیم، به هر کدام چقدر می‌رسد؟»</p>
+<div class="key"><b>میانگین</b> = جمع همه‌ی عددها ÷ تعداد عددها</div>
+<p class="formula"><span class="eq eq-fa">میانگین = جمع ÷ تعداد</span></p>
+<p>مثال: خرج روزانه‌ات در ۵ روز این‌ها بوده: ۱۲۰، ۸۰، ۲۰۰، ۱۰۰ و ۱۰۰ هزار تومان. جمعشان ۶۰۰ است؛ تقسیم بر ۵ می‌شود ۱۲۰. یعنی به‌طور میانگین روزی ۱۲۰ هزار تومان خرج کرده‌ای.</p>
+<p><strong>برعکسش هم مفید است:</strong> اگر میانگین را بدانی، جمع را هم می‌دانی. جمع = میانگین × تعداد. اگر میانگین خرج روزانه‌ات ۱۲۰ هزار باشد، در ۳۰ روز حدود ۳٫۶ میلیون خرج می‌کنی.</p>
+<p><strong>میانگین وزنی:</strong> وقتی بعضی عددها «مهم‌تر» یا «بیشتر»اند، مثل درس‌هایی که در معدل واحد بیشتری دارند. هر عدد را در وزنش ضرب کن، همه را جمع کن و بر جمع وزن‌ها تقسیم کن.</p>
+</div></div>
+<div class="part part-solved"><h3 class="part-label"><span class="pn" aria-hidden="true">۲</span>حل‌شده</h3><div class="examples">
+<article class="question card-paper"><div class="q-top"><span class="q-tag">مثال ۱</span><span class="q-level" aria-label="سطح: آسان"><i class="on"></i><i></i><i></i></span></div><h4>میانگین نمره‌ها</h4><p>نمره‌هایت ۱۵، ۱۸، ۱۲، ۱۷ و ۱۸ است. میانگینشان چند است؟</p><details class="solution"><summary><span class="when-closed">نمایش راه‌حل گام‌به‌گام</span><span class="when-open">بستن راه‌حل</span></summary><ol class="solution-steps"><li>جمع: <span class="eq">۱۵ + ۱۸ + ۱۲ + ۱۷ + ۱۸ = ۸۰</span></li><li>تعداد: ۵</li><li><span class="eq">۸۰ ÷ ۵ = <b>۱۶</b></span></li></ol></details></article>
+<article class="question card-paper"><div class="q-top"><span class="q-tag">مثال ۲</span><span class="q-level" aria-label="سطح: سخت"><i class="on"></i><i class="on"></i><i class="on"></i></span></div><h4>معدل با واحد</h4><p>ریاضی ۴ واحد است و نمره‌اش ۱۸ شد. ادبیات ۲ واحد است و نمره‌اش ۱۵ شد. معدل این دو درس چند است؟</p><details class="solution"><summary><span class="when-closed">نمایش راه‌حل گام‌به‌گام</span><span class="when-open">بستن راه‌حل</span></summary><ol class="solution-steps"><li>هر نمره ضرب در واحدش: <span class="eq">۱۸ × ۴ = ۷۲</span> و <span class="eq">۱۵ × ۲ = ۳۰</span></li><li>جمع: <span class="eq">۷۲ + ۳۰ = ۱۰۲</span></li><li>تقسیم بر جمع واحدها: <span class="eq">۱۰۲ ÷ ۶ = <b>۱۷</b></span></li></ol><p class="check">میانگین ساده‌ی دو نمره ۱۶٫۵ می‌شد؛ چون ریاضی واحد بیشتری دارد، معدل به ۱۸ نزدیک‌تر است.</p></details></article>
+</div></div>
+<div class="part part-try"><h3 class="part-label"><span class="pn" aria-hidden="true">۳</span>خودت امتحان کن</h3><div class="exercises">
+<div class="exercise" id="s1-q1" data-answer="25" data-unit="درجه"><div class="ex-top"><span class="ex-n">تمرین ۱</span><span class="q-level" aria-label="سطح: آسان"><i class="on"></i><i></i><i></i></span></div><div class="ex-q"><p>دمای هوا در ۴ روز ۲۲، ۲۵، ۲۸ و ۲۵ درجه بوده. میانگین دما چند درجه است؟</p></div><details class="solution"><summary><span class="when-closed">دیدن راه‌حل</span><span class="when-open">بستن راه‌حل</span></summary><ol class="solution-steps"><li>جمع: <span class="eq">۲۲ + ۲۵ + ۲۸ + ۲۵ = ۱۰۰</span></li><li><span class="eq">۱۰۰ ÷ ۴ = <b>۲۵</b></span> درجه.</li></ol></details></div>
+<div class="exercise" id="s1-q2" data-answer="3000000" data-unit="تومان"><div class="ex-top"><span class="ex-n">تمرین ۲</span><span class="q-level" aria-label="سطح: متوسط"><i class="on"></i><i class="on"></i><i></i></span></div><div class="ex-q"><p>هزینه‌ی خوراک در سه ماه ۲٫۸، ۳٫۴ و ۲٫۸ میلیون تومان بوده. میانگین ماهانه چقدر است؟</p></div><details class="solution"><summary><span class="when-closed">دیدن راه‌حل</span><span class="when-open">بستن راه‌حل</span></summary><ol class="solution-steps"><li>جمع: <span class="eq">۲٫۸ + ۳٫۴ + ۲٫۸ = ۹</span> میلیون</li><li><span class="eq">۹ ÷ ۳ = ۳</span> میلیون ← <b>۳٬۰۰۰٬۰۰۰</b> تومان.</li></ol></details></div>
+<div class="exercise" id="s1-q3" data-answer="88000" data-unit="تومان" data-hint="کل پول را بر کل کیلوها تقسیم کن."><div class="ex-top"><span class="ex-n">تمرین ۳</span><span class="q-level" aria-label="سطح: سخت"><i class="on"></i><i class="on"></i><i class="on"></i></span></div><div class="ex-q"><p>۲ کیلو سیب کیلویی ۱۰۰٬۰۰۰ تومان و ۳ کیلو سیب کیلویی ۸۰٬۰۰۰ تومان خریدی. میانگین قیمت هر کیلو چقدر شد؟</p></div><details class="solution"><summary><span class="when-closed">دیدن راه‌حل</span><span class="when-open">بستن راه‌حل</span></summary><ol class="solution-steps"><li>کل پول: <span class="eq">۲ × ۱۰۰٬۰۰۰ + ۳ × ۸۰٬۰۰۰ = ۲۰۰٬۰۰۰ + ۲۴۰٬۰۰۰ = ۴۴۰٬۰۰۰</span></li><li>کل کیلو: <span class="eq">۲ + ۳ = ۵</span></li><li><span class="eq">۴۴۰٬۰۰۰ ÷ ۵ = <b>۸۸٬۰۰۰</b></span> تومان.</li></ol><p class="check">میانگین ساده‌ی دو قیمت ۹۰ هزار می‌شد؛ چون از سیب ارزان‌تر بیشتر خریدی، میانگین به ۸۰ هزار نزدیک‌تر است.</p></details></div>
+<div class="exercise" id="s1-q4" data-answer="19" data-hint="جمع ۴ نمره را از روی میانگین پیدا کن."><div class="ex-top"><span class="ex-n">تمرین ۴</span><span class="q-level" aria-label="سطح: سخت"><i class="on"></i><i class="on"></i><i class="on"></i></span></div><div class="ex-q"><p>میانگین ۴ نمره‌ات ۱۶ است. نمره‌ی پنجم باید چند باشد تا میانگین هر ۵ نمره ۱۶٫۶ شود؟</p></div><details class="solution"><summary><span class="when-closed">دیدن راه‌حل</span><span class="when-open">بستن راه‌حل</span></summary><ol class="solution-steps"><li>جمع ۴ نمره: <span class="eq">۱۶ × ۴ = ۶۴</span></li><li>جمع لازم برای ۵ نمره: <span class="eq">۱۶٫۶ × ۵ = ۸۳</span></li><li>نمره‌ی پنجم: <span class="eq">۸۳ − ۶۴ = <b>۱۹</b></span></li></ol></details></div>
+</div></div>
+<aside class="tip" aria-label="ترفند سرانگشتی"><p class="kicker">ترفند سرانگشتی</p><h3>میانگین با «فاصله از یک عدد وسطی»</h3>
+<p>یک عدد رُند وسطی انتخاب کن، فاصله‌ی هر عدد را با آن بنویس (مثبت یا منفی) و میانگین فاصله‌ها را به آن اضافه کن.</p>
+<p class="trick-example">۴۸، ۵۲، ۵۵ ← نسبت به ۵۰: <span class="eq">-۲, +۲, +۵</span> ← میانگین فاصله‌ها <span class="eq">۵ ÷ ۳ ≈ ۱٫۷</span> ← حدود <b>۵۱٫۷</b></p>
+</aside>
+</div>
+</section>
+<section class="lesson" id="s2" aria-labelledby="s2-t">
+<div class="container">
+<header class="lesson-head"><span class="lesson-n" aria-hidden="true">۲</span><div><p class="kicker">زیردرس ۲ از ۴</p><h2 id="s2-t">میانه و نما؛ وقتی میانگین گول می‌زند</h2></div></header>
+<div class="part part-see"><h3 class="part-label"><span class="pn" aria-hidden="true">۱</span>ببین</h3><div class="prose">
+<p>در یک شرکت ۹ کارمند هر کدام ۲۰ میلیون حقوق می‌گیرند و مدیر ۲۲۰ میلیون. میانگین حقوق: <span class="eq">(۹ × ۲۰ + ۲۲۰) ÷ ۱۰ = ۴۰</span> میلیون! ولی ۹ نفر از ۱۰ نفر فقط نصف این را می‌گیرند. یک عدد خیلی بزرگ (یا خیلی کوچک) میانگین را به سمت خودش می‌کشد.</p>
+<div class="key"><b>میانه</b> = عدد وسطی، وقتی عددها را از کوچک به بزرگ مرتب کنی. نصف داده‌ها کمتر و نصف دیگر بیشتر از میانه‌اند.</div>
+<ul class="dots"><li>اگر تعداد عددها فرد باشد، میانه دقیقاً عدد وسطی است.</li><li>اگر تعداد عددها زوج باشد، دو عدد وسط داریم؛ میانه میانگین آن دو است.</li></ul>
+<p>در مثال شرکت، میانه ۲۰ میلیون است که خیلی بهتر وضع «یک کارمند معمولی» را نشان می‌دهد.</p>
+<div class="key"><b>نما</b> (یا مُد) = عددی که بیشتر از همه تکرار شده؛ مثلاً پرفروش‌ترین سایز کفش در یک مغازه.</div>
+<p><strong>کی از کدام استفاده کنیم؟</strong> وقتی عددهای خیلی پرت داریم (حقوق، قیمت خانه، درآمد)، میانه منصفانه‌تر است. وقتی دنبال «رایج‌ترین» هستیم، نما. وقتی عددها نزدیک هم‌اند، میانگین خوب است.</p>
+</div></div>
+<div class="part part-solved"><h3 class="part-label"><span class="pn" aria-hidden="true">۲</span>حل‌شده</h3><div class="examples">
+<article class="question card-paper"><div class="q-top"><span class="q-tag">مثال ۱</span><span class="q-level" aria-label="سطح: متوسط"><i class="on"></i><i class="on"></i><i></i></span></div><h4>قیمت خانه‌های یک محله</h4><p>قیمت ۵ آپارتمان در یک محله (به میلیارد تومان): ۳، ۴، ۳٫۵، ۴ و ۱۵. میانگین و میانه چقدر است؟</p><details class="solution"><summary><span class="when-closed">نمایش راه‌حل گام‌به‌گام</span><span class="when-open">بستن راه‌حل</span></summary><ol class="solution-steps"><li>مرتب کن: ۳، ۳٫۵، ۴، ۴، ۱۵</li><li>میانه = عدد سوم = <b>۴</b> میلیارد</li><li>میانگین: <span class="eq">(۳ + ۳٫۵ + ۴ + ۴ + ۱۵) ÷ ۵ = ۲۹٫۵ ÷ ۵ = ۵٫۹</span> میلیارد</li></ol><p class="check">آن یک خانه‌ی ۱۵ میلیاردی میانگین را بالا کشیده؛ میانه تصویر واقعی‌تری می‌دهد. نما هم ۴ است (دو بار تکرار شده).</p></details></article>
+<article class="question card-paper"><div class="q-top"><span class="q-tag">مثال ۲</span><span class="q-level" aria-label="سطح: متوسط"><i class="on"></i><i class="on"></i><i></i></span></div><h4>زمان انتظار اتوبوس</h4><p>زمان انتظار برای اتوبوس در ۶ روز (به دقیقه): ۸، ۱۲، ۵، ۹، ۱۵ و ۷. میانه چقدر است؟</p><details class="solution"><summary><span class="when-closed">نمایش راه‌حل گام‌به‌گام</span><span class="when-open">بستن راه‌حل</span></summary><ol class="solution-steps"><li>مرتب کن: ۵، ۷، ۸، ۹، ۱۲، ۱۵</li><li>تعداد زوج است؛ دو عدد وسط ۸ و ۹ هستند.</li><li>میانه: <span class="eq">(۸ + ۹) ÷ ۲ = <b>۸٫۵</b></span> دقیقه.</li></ol></details></article>
+</div></div>
+<div class="part part-try"><h3 class="part-label"><span class="pn" aria-hidden="true">۳</span>خودت امتحان کن</h3><div class="exercises">
+<div class="exercise" id="s2-q1" data-answer="7" data-hint="اول عددها را از کوچک به بزرگ مرتب کن."><div class="ex-top"><span class="ex-n">تمرین ۱</span><span class="q-level" aria-label="سطح: آسان"><i class="on"></i><i></i><i></i></span></div><div class="ex-q"><p>میانه‌ی عددهای ۳، ۹، ۷، ۱ و ۸ چند است؟</p></div><details class="solution"><summary><span class="when-closed">دیدن راه‌حل</span><span class="when-open">بستن راه‌حل</span></summary><ol class="solution-steps"><li>مرتب: ۱، ۳، ۷، ۸، ۹</li><li>عدد وسطی: <b>۷</b></li></ol></details></div>
+<div class="exercise" id="s2-q2" data-answer="42"><div class="ex-top"><span class="ex-n">تمرین ۲</span><span class="q-level" aria-label="سطح: آسان"><i class="on"></i><i></i><i></i></span></div><div class="ex-q"><p>سایز کفش‌هایی که امروز فروخته شده: ۴۰، ۴۲، ۴۱، ۴۲، ۴۳، ۴۲ و ۴۰. نما (پرتکرارترین سایز) کدام است؟</p></div><details class="solution"><summary><span class="when-closed">دیدن راه‌حل</span><span class="when-open">بستن راه‌حل</span></summary><ol class="solution-steps"><li>۴۲ سه بار، ۴۰ دو بار و بقیه یک بار تکرار شده‌اند.</li><li>نما: <b>۴۲</b></li></ol></details></div>
+<div class="exercise" id="s2-q3" data-answer="11"><div class="ex-top"><span class="ex-n">تمرین ۳</span><span class="q-level" aria-label="سطح: متوسط"><i class="on"></i><i class="on"></i><i></i></span></div><div class="ex-q"><p>میانه‌ی عددهای ۱۴، ۱۰، ۸ و ۱۲ چند است؟</p></div><details class="solution"><summary><span class="when-closed">دیدن راه‌حل</span><span class="when-open">بستن راه‌حل</span></summary><ol class="solution-steps"><li>مرتب: ۸، ۱۰، ۱۲، ۱۴</li><li>دو عدد وسط ۱۰ و ۱۲ اند: <span class="eq">(۱۰ + ۱۲) ÷ ۲ = <b>۱۱</b></span></li></ol></details></div>
+<div class="exercise" id="s2-q4" data-answer="40" data-unit="میلیون تومان"><div class="ex-top"><span class="ex-n">تمرین ۴</span><span class="q-level" aria-label="سطح: متوسط"><i class="on"></i><i class="on"></i><i></i></span></div><div class="ex-q"><p>حقوق ۵ نفر در یک شرکت کوچک (میلیون تومان): ۱۵، ۱۸، ۲۰، ۲۲ و ۱۲۵. میانگین حقوق چقدر است؟</p></div><details class="solution"><summary><span class="when-closed">دیدن راه‌حل</span><span class="when-open">بستن راه‌حل</span></summary><ol class="solution-steps"><li>جمع: <span class="eq">۱۵ + ۱۸ + ۲۰ + ۲۲ + ۱۲۵ = ۲۰۰</span></li><li><span class="eq">۲۰۰ ÷ ۵ = <b>۴۰</b></span> میلیون تومان.</li></ol><p class="check">میانه ۲۰ میلیون است. چهار نفر از پنج نفر کمتر از میانگین می‌گیرند!</p></details></div>
+<div class="exercise" id="s2-q5" data-choices="میانگین|میانه|بیشترین حقوق" data-correct="1"><div class="ex-top"><span class="ex-n">تمرین ۵</span><span class="q-level" aria-label="سطح: متوسط"><i class="on"></i><i class="on"></i><i></i></span></div><div class="ex-q"><p>برای اینکه بفهمی «یک کارمند معمولی» در یک شرکت چقدر حقوق می‌گیرد، کدام عدد بهتر است؟</p></div><details class="solution"><summary><span class="when-closed">دیدن راه‌حل</span><span class="when-open">بستن راه‌حل</span></summary><ol class="solution-steps"><li>حقوق‌های خیلی بالای مدیرها میانگین را بالا می‌کشند.</li><li><b>میانه</b> عدد وسطی است و تحت تأثیر چند عدد خیلی بزرگ قرار نمی‌گیرد.</li></ol></details></div>
+</div></div>
+<aside class="tip" aria-label="ترفند سرانگشتی"><p class="kicker">ترفند سرانگشتی</p><h3>میانگین را با میانه مقایسه کن</h3>
+<p>اگر میانگین خیلی بیشتر از میانه است، یعنی چند عدد خیلی بزرگ در داده‌ها هست. اگر خیلی کمتر است، چند عدد خیلی کوچک.</p>
+<p class="trick-example">میانگین ۴۰ و میانه ۲۰ ← <b>چند حقوق خیلی بالا</b> وجود دارد</p>
+</aside>
+</div>
+</section>
+<section class="lesson" id="s3" aria-labelledby="s3-t">
+<div class="container">
+<header class="lesson-head"><span class="lesson-n" aria-hidden="true">۳</span><div><p class="kicker">زیردرس ۳ از ۴</p><h2 id="s3-t">احتمال ساده</h2></div></header>
+<div class="part part-see"><h3 class="part-label"><span class="pn" aria-hidden="true">۱</span>ببین</h3><div class="prose">
+<p>احتمال یعنی «چقدر شانس دارد اتفاق بیفتد؟» عددی است بین ۰ (غیرممکن) و ۱ (حتمی)؛ یا اگر به درصد بگوییم، بین ۰٪ و ۱۰۰٪.</p>
+<div class="key"><b>احتمال</b> = تعداد حالت‌های دلخواه ÷ تعداد همه‌ی حالت‌ها (به شرطی که همه‌ی حالت‌ها شانس برابر داشته باشند)</div>
+<p class="formula"><span class="eq eq-fa">احتمال = حالت‌های دلخواه ÷ همه‌ی حالت‌ها</span></p>
+<p>تاس ۶ حالت دارد. احتمال آمدن ۶ برابر <span class="frac"><span>۱</span><span>۶</span></span> است. احتمال زوج آمدن (۲، ۴ یا ۶) برابر <span class="frac"><span>۳</span><span>۶</span></span> = <span class="frac"><span>۱</span><span>۲</span></span> است.</p>
+<p><strong>«احتمال بارش ۷۰٪» یعنی چه؟</strong> یعنی در روزهایی با شرایط هوایی مثل فردا، از هر ۱۰ روز حدود ۷ روز باران آمده. یعنی چتر ببر! ولی تضمین نیست؛ ممکن است اصلاً نبارد.</p>
+<div class="key"><b>احتمال «نشدن»</b> = ۱ − احتمال «شدن». اگر احتمال بارش ۷۰٪ باشد، احتمال نباریدن ۳۰٪ است.</div>
+<p><strong>دو اتفاق مستقل پشت سر هم:</strong> احتمال‌ها را در هم ضرب کن. احتمال دو بار پشت سر هم شیر آمدن سکه: <span class="eq"><span class="frac"><span>۱</span><span>۲</span></span> × <span class="frac"><span>۱</span><span>۲</span></span> = <span class="frac"><span>۱</span><span>۴</span></span></span>.</p>
+<div class="key"><b>تله‌ی قمارباز:</b> اگر سکه ۵ بار پشت سر هم خط آمده، بار ششم باز هم شانس شیر دقیقاً <span class="frac"><span>۱</span><span>۲</span></span> است. سکه حافظه ندارد!</div>
+</div></div>
+<div class="part part-solved"><h3 class="part-label"><span class="pn" aria-hidden="true">۲</span>حل‌شده</h3><div class="examples">
+<article class="question card-paper"><div class="q-top"><span class="q-tag">مثال ۱</span><span class="q-level" aria-label="سطح: آسان"><i class="on"></i><i></i><i></i></span></div><h4>کیسه‌ی آب‌نبات</h4><p>در یک کیسه ۵ آب‌نبات قرمز، ۳ زرد و ۲ سبز هست. چشم‌بسته یکی برمی‌داری. احتمال اینکه قرمز باشد چقدر است؟</p><details class="solution"><summary><span class="when-closed">نمایش راه‌حل گام‌به‌گام</span><span class="when-open">بستن راه‌حل</span></summary><ol class="solution-steps"><li>همه‌ی حالت‌ها: <span class="eq">۵ + ۳ + ۲ = ۱۰</span></li><li>حالت‌های دلخواه (قرمز): ۵</li><li><span class="eq"><span class="frac"><span>۵</span><span>۱۰</span></span> = <span class="frac"><span>۱</span><span>۲</span></span></span> یعنی <b>۵۰٪</b>.</li></ol></details></article>
+<article class="question card-paper"><div class="q-top"><span class="q-tag">مثال ۲</span><span class="q-level" aria-label="سطح: متوسط"><i class="on"></i><i class="on"></i><i></i></span></div><h4>دو تاس</h4><p>دو تاس می‌اندازی. احتمال اینکه هر دو ۶ بیایند چقدر است؟</p><details class="solution"><summary><span class="when-closed">نمایش راه‌حل گام‌به‌گام</span><span class="when-open">بستن راه‌حل</span></summary><ol class="solution-steps"><li>احتمال ۶ آمدن هر تاس: <span class="frac"><span>۱</span><span>۶</span></span></li><li>دو تاس مستقل‌اند، پس ضرب می‌کنیم: <span class="eq"><span class="frac"><span>۱</span><span>۶</span></span> × <span class="frac"><span>۱</span><span>۶</span></span> = <span class="frac"><span>۱</span><span>۳۶</span></span></span></li><li>یعنی <b><span class="frac"><span>۱</span><span>۳۶</span></span></b>؛ کمتر از ۳٪.</li></ol></details></article>
+</div></div>
+<div class="part part-try"><h3 class="part-label"><span class="pn" aria-hidden="true">۳</span>خودت امتحان کن</h3><div class="exercises">
+<div class="exercise" id="s3-q1" data-answer="25" data-unit="٪"><div class="ex-top"><span class="ex-n">تمرین ۱</span><span class="q-level" aria-label="سطح: آسان"><i class="on"></i><i></i><i></i></span></div><div class="ex-q"><p>از هر ۴ کارت یک دسته، یکی دل است. اگر یک کارت تصادفی برداری، احتمال اینکه دل باشد چند درصد است؟</p></div><details class="solution"><summary><span class="when-closed">دیدن راه‌حل</span><span class="when-open">بستن راه‌حل</span></summary><ol class="solution-steps"><li><span class="eq"><span class="frac"><span>۱</span><span>۴</span></span> = <b>۲۵٪</b></span></li></ol></details></div>
+<div class="exercise" id="s3-q2" data-answer="30" data-unit="٪"><div class="ex-top"><span class="ex-n">تمرین ۲</span><span class="q-level" aria-label="سطح: آسان"><i class="on"></i><i></i><i></i></span></div><div class="ex-q"><p>احتمال بارش فردا ۷۰٪ است. احتمال اینکه نبارد چند درصد است؟</p></div><details class="solution"><summary><span class="when-closed">دیدن راه‌حل</span><span class="when-open">بستن راه‌حل</span></summary><ol class="solution-steps"><li><span class="eq">۱۰۰٪ − ۷۰٪ = <b>۳۰٪</b></span></li></ol></details></div>
+<div class="exercise" id="s3-q3" data-choices="کمتر از ۵۰٪|دقیقاً ۵۰٪|بیشتر از ۵۰٪" data-correct="1"><div class="ex-top"><span class="ex-n">تمرین ۳</span><span class="q-level" aria-label="سطح: متوسط"><i class="on"></i><i class="on"></i><i></i></span></div><div class="ex-q"><p>سکه‌ای سالم ۵ بار پشت سر هم خط آمده. احتمال اینکه بار ششم شیر بیاید چقدر است؟</p></div><details class="solution"><summary><span class="when-closed">دیدن راه‌حل</span><span class="when-open">بستن راه‌حل</span></summary><ol class="solution-steps"><li>پرتاب‌ها به هم ربطی ندارند؛ سکه یادش نیست قبلاً چه آمده.</li><li>پس احتمال شیر باز هم <b>دقیقاً ۵۰٪</b> است.</li></ol></details></div>
+<div class="exercise" id="s3-q4" data-answer="12.5" data-unit="٪" data-hint="احتمال شیر در هر پرتاب نصف است؛ سه تا نصف را در هم ضرب کن."><div class="ex-top"><span class="ex-n">تمرین ۴</span><span class="q-level" aria-label="سطح: متوسط"><i class="on"></i><i class="on"></i><i></i></span></div><div class="ex-q"><p>سه بار سکه می‌اندازی. احتمال اینکه هر سه بار شیر بیاید چند درصد است؟</p></div><details class="solution"><summary><span class="when-closed">دیدن راه‌حل</span><span class="when-open">بستن راه‌حل</span></summary><ol class="solution-steps"><li><span class="eq"><span class="frac"><span>۱</span><span>۲</span></span> × <span class="frac"><span>۱</span><span>۲</span></span> × <span class="frac"><span>۱</span><span>۲</span></span> = <span class="frac"><span>۱</span><span>۸</span></span></span></li><li><span class="eq">۱ ÷ ۸ = ۰٫۱۲۵</span> ← <b>۱۲٫۵٪</b></li></ol></details></div>
+<div class="exercise" id="s3-q5" data-answer="33.3" data-tol="0.5" data-unit="٪"><div class="ex-top"><span class="ex-n">تمرین ۵</span><span class="q-level" aria-label="سطح: متوسط"><i class="on"></i><i class="on"></i><i></i></span></div><div class="ex-q"><p>یک تاس می‌اندازی. احتمال اینکه عدد بزرگ‌تر از ۴ بیاید چند درصد است؟ (تا یک رقم اعشار)</p></div><details class="solution"><summary><span class="when-closed">دیدن راه‌حل</span><span class="when-open">بستن راه‌حل</span></summary><ol class="solution-steps"><li>عددهای بزرگ‌تر از ۴: ۵ و ۶؛ یعنی ۲ حالت از ۶ حالت.</li><li><span class="eq"><span class="frac"><span>۲</span><span>۶</span></span> = <span class="frac"><span>۱</span><span>۳</span></span></span> ← حدود <b>۳۳٫۳٪</b></li></ol></details></div>
+</div></div>
+<aside class="tip" aria-label="ترفند سرانگشتی"><p class="kicker">ترفند سرانگشتی</p><h3>احتمال را با «از هر ۱۰ بار» تصور کن</h3>
+<p>۰٫۳ یا ۳۰٪ را این‌طور بخوان: «از هر ۱۰ بار، حدود ۳ بار». خیلی ملموس‌تر می‌شود.</p>
+<p class="trick-example">احتمال ۵٪ ← از هر ۲۰ بار، حدود <b>۱ بار</b></p>
+</aside>
+</div>
+</section>
+<section class="lesson" id="s4" aria-labelledby="s4-t">
+<div class="container">
+<header class="lesson-head"><span class="lesson-n" aria-hidden="true">۴</span><div><p class="kicker">زیردرس ۴ از ۴</p><h2 id="s4-t">خواندن نمودار و تله‌های آماری</h2></div></header>
+<div class="part part-see"><h3 class="part-label"><span class="pn" aria-hidden="true">۱</span>ببین</h3><div class="prose">
+<p>سه نمودار رایج را بشناس: <strong>میله‌ای</strong> برای مقایسه‌ی چند چیز، <strong>خطی</strong> برای دیدن تغییر در طول زمان، و <strong>دایره‌ای</strong> برای دیدن سهم هر بخش از کل.</p>
+<div class="fig-row"><figure class="figure"><svg viewBox="0 0 200 150" width="200" height="150" role="img" aria-label="نمودار با محور از صفر: دو ستون ۹۲ و ۹۶ تقریباً هم‌قد"><line x1="30" y1="10" x2="30" y2="125" class="grid-line"/><line x1="30" y1="125" x2="190" y2="125" class="grid-line"/><rect x="55" y="23.4" width="45" height="101.6" class="bar-alt"/><rect x="120" y="19" width="45" height="106" class="bar"/><text x="22" y="129" text-anchor="end" class="muted" font-size="11">۰</text><text x="77" y="144" text-anchor="middle" font-size="12">۹۲</text><text x="142" y="144" text-anchor="middle" font-size="12">۹۶</text></svg><figcaption>محور از صفر: تقریباً هم‌قد</figcaption></figure><figure class="figure"><svg viewBox="0 0 200 150" width="200" height="150" role="img" aria-label="نمودار با محور بریده از ۹۰: ستون ۹۶ سه برابر ستون ۹۲ به نظر می‌رسد"><line x1="30" y1="10" x2="30" y2="125" class="grid-line"/><line x1="30" y1="125" x2="190" y2="125" class="grid-line"/><rect x="55" y="91" width="45" height="34" class="bar-alt"/><rect x="120" y="23" width="45" height="102" class="bar"/><text x="22" y="129" text-anchor="end" class="muted" font-size="11">۹۰</text><text x="77" y="144" text-anchor="middle" font-size="12">۹۲</text><text x="142" y="144" text-anchor="middle" font-size="12">۹۶</text></svg><figcaption>محور بریده از ۹۰: «سه برابر!»</figcaption></figure></div>
+<div class="key">همان دو عدد (۹۲ و ۹۶) در دو نمودار. در نمودار دوم محور از ۹۰ شروع شده و تفاوت ۴٪ مثل سه برابر به نظر می‌رسد. <b>همیشه اول عددهای محور را نگاه کن.</b></div>
+<p>چهار تله‌ی رایج در خبرها و تبلیغات:</p>
+<ul class="dots"><li><b>محور بریده:</b> همان که در نمودار بالا دیدی.</li><li><b>درصد نسبی:</b> «خطر ۵۰٪ بیشتر شد!» شاید یعنی از ۲ نفر در ۱۰٬۰۰۰ نفر به ۳ نفر در ۱۰٬۰۰۰ نفر. همیشه بپرس: «از چند به چند؟»</li><li><b>نمونه‌ی کوچک:</b> «۸ نفر از ۱۰ نفر راضی بودند» با «۸۰۰ نفر از ۱۰۰۰ نفر» از نظر اعتبار خیلی فرق دارد.</li><li><b>همزمانی، علت نیست:</b> فروش بستنی و غرق‌شدگی هر دو در تابستان زیاد می‌شوند؛ ولی بستنی باعث غرق شدن نمی‌شود. علت مشترک هر دو، گرمای هواست.</li></ul>
+</div></div>
+<div class="part part-solved"><h3 class="part-label"><span class="pn" aria-hidden="true">۲</span>حل‌شده</h3><div class="examples">
+<article class="question card-paper"><div class="q-top"><span class="q-tag">مثال ۱</span><span class="q-level" aria-label="سطح: متوسط"><i class="on"></i><i class="on"></i><i></i></span></div><h4>تبلیغ بانک</h4><p>تبلیغی می‌گوید: «سود ما ۲۵٪ بیشتر از بانک‌های دیگر است!» اگر بانک‌های دیگر ۲۰٪ سود سالانه بدهند، این بانک چقدر سود می‌دهد؟</p><details class="solution"><summary><span class="when-closed">نمایش راه‌حل گام‌به‌گام</span><span class="when-open">بستن راه‌حل</span></summary><ol class="solution-steps"><li>«۲۵٪ بیشتر از ۲۰٪» یعنی ۲۵٪ <u>از خودِ ۲۰</u> به آن اضافه شده: <span class="eq">۲۰ × ۰٫۲۵ = ۵</span></li><li><span class="eq">۲۰ + ۵ = <b>۲۵٪</b></span> سود سالانه.</li></ol><p class="check">نه ۴۵٪! «درصدِ بیشتر» با «واحد درصدِ بیشتر» فرق دارد.</p></details></article>
+<article class="question card-paper"><div class="q-top"><span class="q-tag">مثال ۲</span><span class="q-level" aria-label="سطح: متوسط"><i class="on"></i><i class="on"></i><i></i></span></div><h4>نمودار فروش</h4><p>در یک نمودار، ستون فروش فروردین ۳ برابر بلندتر از ستون اسفند است. ولی محور از ۹۰ شروع شده و عددها ۹۲ و ۹۶ میلیون تومان‌اند. فروش واقعاً چقدر بیشتر شده؟</p><details class="solution"><summary><span class="when-closed">نمایش راه‌حل گام‌به‌گام</span><span class="when-open">بستن راه‌حل</span></summary><ol class="solution-steps"><li>تفاوت: <span class="eq">۹۶ − ۹۲ = ۴</span> میلیون</li><li>نسبت به عدد قدیمی: <span class="eq">۴ ÷ ۹۲ ≈ ۰٫۰۴۳</span></li><li>یعنی حدود <b>۴٪</b> بیشتر، نه سه برابر!</li></ol></details></article>
+</div></div>
+<div class="part part-try"><h3 class="part-label"><span class="pn" aria-hidden="true">۳</span>خودت امتحان کن</h3><div class="exercises">
+<div class="exercise" id="s4-q1" data-answer="50" data-unit="٪" data-hint="درصد تغییر = تغییر ÷ عدد قدیمی × ۱۰۰"><div class="ex-top"><span class="ex-n">تمرین ۱</span><span class="q-level" aria-label="سطح: متوسط"><i class="on"></i><i class="on"></i><i></i></span></div><div class="ex-q"><p>خطر یک بیماری از ۲ نفر در ۱۰٬۰۰۰ نفر به ۳ نفر در ۱۰٬۰۰۰ نفر رسیده. خطر چند درصد (نسبی) زیاد شده؟</p></div><details class="solution"><summary><span class="when-closed">دیدن راه‌حل</span><span class="when-open">بستن راه‌حل</span></summary><ol class="solution-steps"><li>تغییر: <span class="eq">۳ − ۲ = ۱</span></li><li>نسبت به عدد قدیمی: <span class="eq">۱ ÷ ۲ = ۰٫۵</span> ← <b>۵۰٪</b></li></ol></details></div>
+<div class="exercise" id="s4-q2" data-choices="خطرش دو برابر می‌شود|شانس ابتلا از ۰٫۰۲٪ به ۰٫۰۳٪ رسیده|از هر ۲ نفر یک نفر مبتلا می‌شود" data-correct="1"><div class="ex-top"><span class="ex-n">تمرین ۲</span><span class="q-level" aria-label="سطح: متوسط"><i class="on"></i><i class="on"></i><i></i></span></div><div class="ex-q"><p>در همان مثال (خطر از ۲ در ۱۰٬۰۰۰ به ۳ در ۱۰٬۰۰۰ رسیده)، این تغییر برای یک نفر واقعاً چه معنایی دارد؟</p></div><details class="solution"><summary><span class="when-closed">دیدن راه‌حل</span><span class="when-open">بستن راه‌حل</span></summary><ol class="solution-steps"><li><span class="eq">۲ ÷ ۱۰٬۰۰۰ = ۰٫۰۰۰۲</span> یعنی ۰٫۰۲٪ و <span class="eq">۳ ÷ ۱۰٬۰۰۰ = ۰٫۰۰۰۳</span> یعنی ۰٫۰۳٪.</li><li>پس <b>شانس ابتلا از ۰٫۰۲٪ به ۰٫۰۳٪ رسیده</b>. «۵۰٪ افزایش» ترسناک به نظر می‌رسد، ولی خطر هنوز خیلی کم است.</li></ol></details></div>
+<div class="exercise" id="s4-q3" data-choices="۹ نفر از ۱۰ مشتری راضی بودند|۷۵۰ نفر از ۱۰۰۰ مشتری تصادفی راضی بودند|هر دو به یک اندازه معتبرند" data-correct="1"><div class="ex-top"><span class="ex-n">تمرین ۳</span><span class="q-level" aria-label="سطح: آسان"><i class="on"></i><i></i><i></i></span></div><div class="ex-q"><p>کدام نظرسنجی معتبرتر است؟</p></div><details class="solution"><summary><span class="when-closed">دیدن راه‌حل</span><span class="when-open">بستن راه‌حل</span></summary><ol class="solution-steps"><li>۱۰ نفر نمونه‌ی خیلی کوچکی است و ممکن است اتفاقی باشد.</li><li><b>۱۰۰۰ نفرِ تصادفی</b> تصویر قابل‌اعتمادتری می‌دهد، حتی با درصد کمتر.</li></ol></details></div>
+<div class="exercise" id="s4-q4" data-choices="بله، کتابخانه باعث جرم می‌شود|نه؛ شهرهای بزرگ‌تر هم کتابخانه‌ی بیشتر دارند و هم جرم بیشتر|کتابخانه جرم را کم می‌کند" data-correct="1"><div class="ex-top"><span class="ex-n">تمرین ۴</span><span class="q-level" aria-label="سطح: متوسط"><i class="on"></i><i class="on"></i><i></i></span></div><div class="ex-q"><p>آماری نشان می‌دهد در شهرهایی که کتابخانه‌ی بیشتری دارند، تعداد جرم هم بیشتر است. یعنی کتابخانه باعث جرم می‌شود؟</p></div><details class="solution"><summary><span class="when-closed">دیدن راه‌حل</span><span class="when-open">بستن راه‌حل</span></summary><ol class="solution-steps"><li>همزمانی، علت نیست.</li><li><b>جمعیت</b> علت مشترک است: شهر بزرگ‌تر هم کتابخانه‌ی بیشتری دارد و هم تعداد جرم بیشتری.</li></ol></details></div>
+</div></div>
+<aside class="tip" aria-label="ترفند سرانگشتی"><p class="kicker">ترفند سرانگشتی</p><h3>سه سؤال جادویی</h3>
+<p>جلوی هر آمار هیجان‌انگیز این سه سؤال را بپرس: «از چند؟»، «به چند؟» و «روی چند نفر؟»</p>
+<p class="trick-example">«۵۰٪ افزایش» ← از ۲ به ۳؟ یا از ۲۰۰۰ به ۳۰۰۰؟ <b>خیلی فرق دارد!</b></p>
+</aside>
+</div>
+</section>
+
+<nav class="lesson-nav container" aria-label="موضوع قبلی و بعدی">
+<a class="prev" href="geometry.html"><small>→ موضوع قبلی</small><strong>هندسه کاربردی</strong></a>
+<a class="next" href="money.html"><small>موضوع بعدی ←</small><strong>پول و حساب‌وکتاب</strong></a>
+</nav>
+  </main>
+
+  <!-- ============ فوتر ============ -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p class="footer-brand">ریاضی روزمره</p>
+      <p class="footer-note">جواب‌ها را در کادر بنویس و «بررسی» را بزن؛ ارقام فارسی و انگلیسی هر دو قبول است و ممیز را می‌توانی با «/» یا «.» بنویسی. پیشرفتت فقط در همین مرورگر ذخیره می‌شود.</p>
+      <a class="to-top" href="#top">
+        بازگشت به بالا
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M6 11l6-6 6 6"/></svg>
+      </a>
+    </div>
+  </footer>
+
+  <script src="../js/main.js" defer></script>
+</body>
+</html>

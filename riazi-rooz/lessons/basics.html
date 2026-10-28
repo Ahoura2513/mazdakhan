@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>پایه‌ها: کسر، اعشار و چهار عمل | ریاضی روزمره</title>
+  <meta name="description" content="آموزش ساده‌ی چهار عمل اصلی، ترتیب انجام عملیات، کسر، جمع و ضرب کسرها و عدد اعشاری با مثال‌های روزمره و تمرین.">
+  <meta name="theme-color" content="#fbf7ee" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0f1226" media="(prefers-color-scheme: dark)">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <script>
+    /* تم را پیش از اولین رندر تنظیم می‌کند تا چشمک نزند */
+    (function () {
+      var root = document.documentElement, theme = null;
+      root.classList.add('js');
+      try { theme = localStorage.getItem('theme'); } catch (e) {}
+      if (theme !== 'light' && theme !== 'dark') {
+        theme = window.matchMedia && matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      }
+      root.setAttribute('data-theme', theme);
+    })();
+  </script>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body class="lesson-page" data-topic="basics" style="--c:var(--c-base);--c-ink:var(--c-base-ink)">
+  <a class="skip-link" href="#main">پرش به محتوا</a>
+
+  <!-- ============ هدر ============ -->
+  <header class="site-header" id="top">
+    <div class="container header-inner">
+      <a class="brand" href="../index.html" aria-label="ریاضی روزمره، صفحه اصلی">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 32 32" width="32" height="32"><rect width="32" height="32" rx="10" fill="currentColor"/><circle cx="16" cy="9.5" r="2.4" fill="var(--bg)"/><circle cx="16" cy="22.5" r="2.4" fill="var(--bg)"/><rect x="7.5" y="14.7" width="17" height="2.6" rx="1.3" fill="var(--bg)"/></svg>
+        </span>
+        <span class="brand-name">ریاضی روزمره</span>
+      </a>
+
+      <nav class="main-nav" id="main-nav" aria-label="منوی اصلی">
+        <a href="../index.html#topics">همه‌ی موضوع‌ها</a>
+        <a href="#toc">زیردرس‌ها</a>
+        <a href="../index.html#tricks">ترفند سرانگشتی</a>
+      </nav>
+
+      <div class="header-actions">
+        <button class="icon-btn" id="theme-toggle" type="button" aria-label="تغییر حالت روشن/تیره" title="تغییر حالت روشن/تیره">
+          <svg class="i-sun" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+          <svg class="i-moon" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+        </button>
+        <button class="icon-btn menu-btn" id="menu-btn" type="button" aria-label="باز و بسته کردن منو" aria-expanded="false" aria-controls="main-nav">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path class="bar b1" d="M4 7h16"/><path class="bar b2" d="M4 12h16"/><path class="bar b3" d="M4 17h16"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+<section class="lesson-hero" aria-labelledby="page-title">
+<div class="container">
+<nav class="crumbs" aria-label="مسیر"><a href="../index.html">خانه</a><span aria-hidden="true">/</span><a href="../index.html#topics">موضوع‌ها</a><span aria-hidden="true">/</span><span aria-current="page">پایه‌ها</span></nav>
+<div class="lh-grid">
+<div class="lh-copy">
+<p class="kicker">موضوع ۱ از ۸</p>
+<h1 id="page-title"><span class="mark">پایه‌ها</span>: کسر، اعشار و چهار عمل</h1>
+<p class="lead">اگر حس می‌کنی ریاضی‌ات ضعیف است، از همین‌جا شروع کن. همه‌ی موضوع‌های دیگر روی همین چهار تکه سوارند و هیچ‌کدامشان سخت نیست.</p>
+<div class="progress">
+<span class="progress-track" aria-hidden="true"><span class="progress-fill" id="progress-fill"></span></span>
+<span class="progress-text" id="progress-text">۰ از ۱۹ تمرین حل شده</span>
+<button type="button" class="link-btn" id="progress-reset">از نو</button>
+</div>
+</div>
+<nav class="toc card-sticker" id="toc" aria-labelledby="toc-title">
+<span class="tape" aria-hidden="true"></span>
+<h2 id="toc-title">زیردرس‌ها</h2>
+<ol class="toc-list"><li><a href="#b1">چهار عمل و ترتیب انجام آن‌ها</a></li><li><a href="#b2">کسر یعنی چه؟</a></li><li><a href="#b3">جمع، تفریق و ضرب کسرها</a></li><li><a href="#b4">عدد اعشاری و تبدیل کسر، اعشار و درصد</a></li></ol>
+<p class="toc-meta">۴ زیردرس · ۸ مثال حل‌شده · ۱۹ تمرین</p>
+</nav>
+</div>
+</div>
+</section>
+
+<section class="lesson" id="b1" aria-labelledby="b1-t">
+<div class="container">
+<header class="lesson-head"><span class="lesson-n" aria-hidden="true">۱</span><div><p class="kicker">زیردرس ۱ از ۴</p><h2 id="b1-t">چهار عمل و ترتیب انجام آن‌ها</h2></div></header>
+<div class="part part-see"><h3 class="part-label"><span class="pn" aria-hidden="true">۱</span>ببین</h3><div class="prose">
+<p>جمع، تفریق، ضرب و تقسیم چهار ابزار اصلی ریاضی‌اند. <strong>ضرب</strong> یعنی «جمعِ تکراری»: <span class="eq">۴ × ۳</span> یعنی چهار تا سه‌تایی، یعنی <span class="eq">۳ + ۳ + ۳ + ۳ = ۱۲</span>. <strong>تقسیم</strong> یعنی «پخش کردن مساوی»: <span class="eq">۱۲ ÷ ۳ = ۴</span> یعنی ۱۲ تا را بین ۳ نفر پخش کنیم، به هر کدام ۴ تا می‌رسد.</p>
+<p>وقتی چند عمل کنار هم می‌آیند، ترتیب مهم است. اگر ترتیب را رعایت نکنی، جواب غلط درمی‌آید.</p>
+<div class="key"><b>ترتیب انجام:</b> ۱) اول هر چه داخل پرانتز است. ۲) بعد ضرب و تقسیم. ۳) آخر از همه جمع و تفریق.</div>
+<p>مثلاً <span class="eq">۲ + ۳ × ۴</span> می‌شود ۱۴، نه ۲۰؛ چون اول ضرب را حساب می‌کنیم: <span class="eq">۳ × ۴ = ۱۲</span> و بعد <span class="eq">۲ + ۱۲ = ۱۴</span>. ولی <span class="eq">(۲ + ۳) × ۴</span> می‌شود ۲۰، چون پرانتز می‌گوید «اول این را جمع کن».</p>
+<p>چند کار که حساب ذهنی را خیلی راحت می‌کند:</p>
+<ul class="dots"><li><b>شکستن عدد:</b> <span class="eq">۴۷ + ۳۸</span>؟ دهگان‌ها را جدا جمع کن (<span class="eq">۴۰ + ۳۰ = ۷۰</span>) و یکان‌ها را جدا (<span class="eq">۷ + ۸ = ۱۵</span>)؛ بعد <span class="eq">۷۰ + ۱۵ = ۸۵</span>.</li><li><b>ضرب در ۱۰، ۱۰۰ و ۱۰۰۰:</b> فقط به تعداد صفرها، کنار عدد صفر بگذار. <span class="eq">۳۵ × ۱۰۰ = ۳٬۵۰۰</span></li><li><b>تقسیم بر ۱۰، ۱۰۰ و ۱۰۰۰:</b> به همان تعداد، از آخر عدد صفر بردار. <span class="eq">۴۸٬۰۰۰ ÷ ۱۰۰۰ = ۴۸</span></li><li><b>صفرها را کنار بگذار:</b> برای <span class="eq">۱٬۲۰۰٬۰۰۰ ÷ ۴</span>، اول <span class="eq">۱۲ ÷ ۴ = ۳</span> را حساب کن و بعد صفرها را برگردان: ۳۰۰٬۰۰۰.</li></ul>
+</div></div>
+<div class="part part-solved"><h3 class="part-label"><span class="pn" aria-hidden="true">۲</span>حل‌شده</h3><div class="examples">
+<article class="question card-paper"><div class="q-top"><span class="q-tag">مثال ۱</span><span class="q-level" aria-label="سطح: آسان"><i class="on"></i><i></i><i></i></span></div><h4>حساب خرید از نانوایی و لبنیاتی</h4><p>۳ تا نان، هر کدام ۱۵٬۰۰۰ تومان، و ۲ بطری شیر، هر کدام ۴۰٬۰۰۰ تومان خریدی. روی هم چقدر شد؟</p><details class="solution"><summary><span class="when-closed">نمایش راه‌حل گام‌به‌گام</span><span class="when-open">بستن راه‌حل</span></summary><ol class="solution-steps"><li>خرید را این‌طور می‌نویسیم: <span class="eq">۳ × ۱۵٬۰۰۰ + ۲ × ۴۰٬۰۰۰</span></li><li>اول ضرب‌ها: <span class="eq">۳ × ۱۵٬۰۰۰ = ۴۵٬۰۰۰</span> و <span class="eq">۲ × ۴۰٬۰۰۰ = ۸۰٬۰۰۰</span></li><li>بعد جمع: <span class="eq">۴۵٬۰۰۰ + ۸۰٬۰۰۰ = <b>۱۲۵٬۰۰۰</b></span> تومان.</li></ol><p class="check">بررسی سریع: نان‌ها کمتر از ۵۰ هزار و شیرها ۸۰ هزار؛ جمعش کمی کمتر از ۱۳۰ هزار است ✓</p></details></article>
+<article class="question card-paper"><div class="q-top"><span class="q-tag">مثال ۲</span><span class="q-level" aria-label="سطح: متوسط"><i class="on"></i><i class="on"></i><i></i></span></div><h4>دنگی حساب کردن در رستوران</h4><p>۴ نفر با هم رستوران رفتید. صورتحساب ۱٬۳۶۰٬۰۰۰ تومان شد و ۱۰۰٬۰۰۰ تومان هم انعام گذاشتید. سهم هر نفر چقدر است؟</p><details class="solution"><summary><span class="when-closed">نمایش راه‌حل گام‌به‌گام</span><span class="when-open">بستن راه‌حل</span></summary><ol class="solution-steps"><li>کل پول: <span class="eq">۱٬۳۶۰٬۰۰۰ + ۱۰۰٬۰۰۰ = ۱٬۴۶۰٬۰۰۰</span> تومان.</li><li>این را باید بین ۴ نفر پخش کنیم: <span class="eq">(۱٬۳۶۰٬۰۰۰ + ۱۰۰٬۰۰۰) ÷ ۴</span>. پرانتز یعنی «اول جمع کن، بعد تقسیم».</li><li>تقسیم بر ۴ یعنی دو بار نصف کردن: <span class="eq">۱٬۴۶۰٬۰۰۰ ÷ ۲ = ۷۳۰٬۰۰۰</span> و <span class="eq">۷۳۰٬۰۰۰ ÷ ۲ = <b>۳۶۵٬۰۰۰</b></span> تومان.</li></ol><p class="check">بررسی: <span class="eq">۳۶۵٬۰۰۰ × ۴ = ۱٬۴۶۰٬۰۰۰</span> ✓</p></details></article>
+</div></div>
+<div class="part part-try"><h3 class="part-label"><span class="pn" aria-hidden="true">۳</span>خودت امتحان کن</h3><div class="exercises">
+<div class="exercise" id="b1-q1" data-answer="8" data-hint="اول ضرب را انجام بده، بعد تفریق."><div class="ex-top"><span class="ex-n">تمرین ۱</span><span class="q-level" aria-label="سطح: آسان"><i class="on"></i><i></i><i></i></span></div><div class="ex-q"><p>حاصل <span class="eq">۲۰ − ۴ × ۳</span> چند است؟</p></div><details class="solution"><summary><span class="when-closed">دیدن راه‌حل</span><span class="when-open">بستن راه‌حل</span></summary><ol class="solution-steps"><li>اول ضرب: <span class="eq">۴ × ۳ = ۱۲</span></li><li>بعد تفریق: <span class="eq">۲۰ − ۱۲ = <b>۸</b></span></li></ol><p class="check">اگر از چپ به راست می‌رفتی (<span class="eq">۲۰ − ۴ = ۱۶</span> و بعد <span class="eq">۱۶ × ۳</span>) به ۴۸ می‌رسیدی که غلط است.</p></details></div>
+<div class="exercise" id="b1-q2" data-answer="30"><div class="ex-top"><span class="ex-n">تمرین ۲</span><span class="q-level" aria-label="سطح: آسان"><i class="on"></i><i></i><i></i></span></div><div class="ex-q"><p>حاصل <span class="eq">(۸ + ۲) × ۳</span> چند است؟</p></div><details class="solution"><summary><span class="when-closed">دیدن راه‌حل</span><span class="when-open">بستن راه‌حل</span></summary><ol class="solution-steps"><li>اول پرانتز: <span class="eq">۸ + ۲ = ۱۰</span></li><li>بعد ضرب: <span class="eq">۱۰ × ۳ = <b>۳۰</b></span></li></ol></details></div>
+<div class="exercise" id="b1-q3" data-answer="97" data-hint="دهگان‌ها را جدا و یکان‌ها را جدا جمع کن."><div class="ex-top"><span class="ex-n">تمرین ۳</span><span class="q-level" aria-label="سطح: متوسط"><i class="on"></i><i class="on"></i><i></i></span></div><div class="ex-q"><p>بدون کاغذ حساب کن: <span class="eq">۵۸ + ۳۹</span></p></div><details class="solution"><summary><span class="when-closed">دیدن راه‌حل</span><span class="when-open">بستن راه‌حل</span></summary><ol class="solution-steps"><li>دهگان‌ها: <span class="eq">۵۰ + ۳۰ = ۸۰</span></li><li>یکان‌ها: <span class="eq">۸ + ۹ = ۱۷</span></li><li>جمع: <span class="eq">۸۰ + ۱۷ = <b>۹۷</b></span></li></ol><p class="check">راه دیگر: ۳۹ تقریباً ۴۰ است. <span class="eq">۵۸ + ۴۰ = ۹۸</span> و چون یکی اضافه گذاشتیم، یکی کم می‌کنیم: ۹۷.</p></details></div>
+<div class="exercise" id="b1-q4" data-answer="210000" data-unit="تومان" data-hint="صفرها را کنار بگذار و اول ۱۲۶ را بر ۶ تقسیم کن."><div class="ex-top"><span class="ex-n">تمرین ۴</span><span class="q-level" aria-label="سطح: متوسط"><i class="on"></i><i class="on"></i><i></i></span></div><div class="ex-q"><p>۶ دوست می‌خواهند پول یک کیک ۱٬۲۶۰٬۰۰۰ تومانی را مساوی بدهند. هر نفر چقدر بدهد؟</p></div><details class="solution"><summary><span class="when-closed">دیدن راه‌حل</span><span class="when-open">بستن راه‌حل</span></summary><ol class="solution-steps"><li>باید حساب کنیم: <span class="eq">۱٬۲۶۰٬۰۰۰ ÷ ۶</span></li><li>صفرها را کنار بگذار: <span class="eq">۱۲۶ ÷ ۶ = ۲۱</span></li><li>چهار صفر را برگردان: <b>۲۱۰٬۰۰۰</b> تومان.</li></ol><p class="check">بررسی: <span class="eq">۲۱۰٬۰۰۰ × ۶ = ۱٬۲۶۰٬۰۰۰</span> ✓</p></details></div>
+</div></div>
+<aside class="tip" aria-label="ترفند سرانگشتی"><p class="kicker">ترفند سرانگشتی</p><h3>جمع ذهنی با «رُند کن و جبران کن»</h3>
+<p>وقتی یکی از عددها نزدیک یک عدد رُند است (مثل ۲۹، ۹۸ یا ۴۹۹)، آن را رُند کن، حساب کن و بعد مقدار اضافه را برگردان.</p>
+<p class="trick-example"><span class="eq">۶۷ + ۲۹ = ۶۷ + ۳۰ − ۱ = <b>۹۶</b></span></p>
+</aside>
+</div>
+</section>
+<section class="lesson" id="b2" aria-labelledby="b2-t">
+<div class="container">
+<header class="lesson-head"><span class="lesson-n" aria-hidden="true">۲</span><div><p class="kicker">زیردرس ۲ از ۴</p><h2 id="b2-t">کسر یعنی چه؟</h2></div></header>
+<div class="part part-see"><h3 class="part-label"><span class="pn" aria-hidden="true">۱</span>ببین</h3><div class="prose">
+<p>کسر یعنی «چند تکه از چند تکه». یک پیتزا را ۸ تکه‌ی مساوی کرده‌اند و تو ۳ تکه‌اش را خوردی؛ یعنی <span class="frac"><span>۳</span><span>۸</span></span> پیتزا را خوردی.</p>
+<figure class="figure fig-pizza"><svg viewBox="0 0 120 120" width="150" height="150" role="img" aria-label="پیتزای ۸ تکه که ۳ تکه‌اش رنگی است"><circle cx="60" cy="60" r="54" class="f-base"/><path d="M60 60 L60 6 A54 54 0 0 1 98.18 21.82 Z" class="f-on"/><path d="M60 60 L98.18 21.82 A54 54 0 0 1 114 60 Z" class="f-on"/><path d="M60 60 L114 60 A54 54 0 0 1 98.18 98.18 Z" class="f-on"/><g class="f-lines"><line x1="60" y1="6" x2="60" y2="114"/><line x1="6" y1="60" x2="114" y2="60"/><line x1="21.82" y1="21.82" x2="98.18" y2="98.18"/><line x1="21.82" y1="98.18" x2="98.18" y2="21.82"/></g><circle cx="60" cy="60" r="54" class="f-rim"/></svg><figcaption>۳ تکه از ۸ تکه = <span class="frac"><span>۳</span><span>۸</span></span></figcaption></figure>
+<ul class="dots"><li><b>عدد پایین (مخرج)</b> می‌گوید کل چیز به چند قسمت <u>مساوی</u> تقسیم شده.</li><li><b>عدد بالا (صورت)</b> می‌گوید چند قسمتش را برداشته‌ایم.</li></ul>
+<div class="key"><b>کسرهای مساوی:</b> اگر بالا و پایین کسر را در یک عدد ضرب کنی (یا بر یک عدد تقسیم کنی)، مقدارش عوض نمی‌شود. <span class="eq"><span class="frac"><span>۱</span><span>۲</span></span> = <span class="frac"><span>۲</span><span>۴</span></span> = <span class="frac"><span>۴</span><span>۸</span></span></span>؛ نصف پیتزا همان ۴ تکه از ۸ تکه است.</div>
+<p><strong>ساده کردن</strong> یعنی بالا و پایین را بر یک عدد مشترک تقسیم کنی تا عددها کوچک‌تر و خواناتر شوند: <span class="eq"><span class="frac"><span>۶</span><span>۸</span></span> = <span class="frac"><span>۳</span><span>۴</span></span></span> (هر دو را بر ۲ تقسیم کردیم).</p>
+<p><strong>کسری از یک عدد:</strong> برای پیدا کردن <span class="frac"><span>۳</span><span>۴</span></span> از ۲۰۰، اول ۲۰۰ را بر عدد پایین تقسیم کن تا اندازه‌ی «یک تکه» پیدا شود (<span class="eq">۲۰۰ ÷ ۴ = ۵۰</span>)، بعد در عدد بالا ضرب کن تا «سه تکه» شود (<span class="eq">۵۰ × ۳ = ۱۵۰</span>).</p>
+<p class="formula"><span class="eq eq-fa">(عدد ÷ پایین) × بالا</span></p>
+</div></div>
+<div class="part part-solved"><h3 class="part-label"><span class="pn" aria-hidden="true">۲</span>حل‌شده</h3><div class="examples">
+<article class="question card-paper"><div class="q-top"><span class="q-tag">مثال ۱</span><span class="q-level" aria-label="سطح: آسان"><i class="on"></i><i></i><i></i></span></div><h4>سهم از پیتزا</h4><p>یک پیتزا را ۸ تکه کرده‌اند. علی ۲ تکه و سارا ۴ تکه خورد. روی هم چه کسری از پیتزا خورده شد؟ ساده‌اش هم بکن.</p><details class="solution"><summary><span class="when-closed">نمایش راه‌حل گام‌به‌گام</span><span class="when-open">بستن راه‌حل</span></summary><ol class="solution-steps"><li>روی هم <span class="eq">۲ + ۴ = ۶</span> تکه از ۸ تکه خورده شد، یعنی <span class="frac"><span>۶</span><span>۸</span></span>.</li><li>بالا و پایین هر دو زوج‌اند؛ بر ۲ تقسیم می‌کنیم: <span class="eq"><span class="frac"><span>۶</span><span>۸</span></span> = <span class="frac"><span>۳</span><span>۴</span></span></span></li><li>یعنی <b>سه‌چهارم</b> پیتزا خورده شد و یک‌چهارم آن (۲ تکه) مانده.</li></ol></details></article>
+<article class="question card-paper"><div class="q-top"><span class="q-tag">مثال ۲</span><span class="q-level" aria-label="سطح: متوسط"><i class="on"></i><i class="on"></i><i></i></span></div><h4>کسری از حقوق</h4><p>حقوقت ۲۴٬۰۰۰٬۰۰۰ تومان است و <span class="frac"><span>۲</span><span>۵</span></span> آن را برای اجاره کنار می‌گذاری. اجاره چقدر است؟</p><details class="solution"><summary><span class="when-closed">نمایش راه‌حل گام‌به‌گام</span><span class="when-open">بستن راه‌حل</span></summary><ol class="solution-steps"><li>یک‌پنجم: <span class="eq">۲۴٬۰۰۰٬۰۰۰ ÷ ۵ = ۴٬۸۰۰٬۰۰۰</span></li><li>دو‌پنجم: <span class="eq">۴٬۸۰۰٬۰۰۰ × ۲ = <b>۹٬۶۰۰٬۰۰۰</b></span> تومان.</li></ol><p class="check">بررسی: <span class="frac"><span>۲</span><span>۵</span></span> کمی کمتر از نصف است و ۹٫۶ میلیون هم کمی کمتر از نصف ۲۴ میلیون (یعنی ۱۲ میلیون) است ✓</p></details></article>
+</div></div>
+<div class="part part-try"><h3 class="part-label"><span class="pn" aria-hidden="true">۳</span>خودت امتحان کن</h3><div class="exercises">
+<div class="exercise" id="b2-q1" data-choices="۳/۶|۲/۵|۴/۶" data-correct="0"><div class="ex-top"><span class="ex-n">تمرین ۱</span><span class="q-level" aria-label="سطح: آسان"><i class="on"></i><i></i><i></i></span></div><div class="ex-q"><p>کدام کسر با <span class="frac"><span>۱</span><span>۲</span></span> برابر است؟</p></div><details class="solution"><summary><span class="when-closed">دیدن راه‌حل</span><span class="when-open">بستن راه‌حل</span></summary><ol class="solution-steps"><li>در <span class="frac"><span>۳</span><span>۶</span></span>، عدد بالا دقیقاً نصفِ عدد پایین است؛ پس برابر نصف است.</li><li>اگر بالا و پایین را بر ۳ تقسیم کنی: <span class="eq"><span class="frac"><span>۳</span><span>۶</span></span> = <span class="frac"><span>۱</span><span>۲</span></span></span> ✓</li></ol></details></div>
+<div class="exercise" id="b2-q2" data-answer="45" data-hint="اول ۶۰ را بر ۴ تقسیم کن."><div class="ex-top"><span class="ex-n">تمرین ۲</span><span class="q-level" aria-label="سطح: آسان"><i class="on"></i><i></i><i></i></span></div><div class="ex-q"><p><span class="frac"><span>۳</span><span>۴</span></span> از ۶۰ چند است؟</p></div><details class="solution"><summary><span class="when-closed">دیدن راه‌حل</span><span class="when-open">بستن راه‌حل</span></summary><ol class="solution-steps"><li>یک تکه (یک‌چهارم): <span class="eq">۶۰ ÷ ۴ = ۱۵</span></li><li>سه تکه: <span class="eq">۱۵ × ۳ = <b>۴۵</b></span></li></ol></details></div>
+<div class="exercise" id="b2-q3" data-choices="۳/۴|۶/۴|۲/۳" data-correct="0"><div class="ex-top"><span class="ex-n">تمرین ۳</span><span class="q-level" aria-label="سطح: آسان"><i class="on"></i><i></i><i></i></span></div><div class="ex-q"><p><span class="frac"><span>۱۲</span><span>۱۶</span></span> را ساده کن. کدام می‌شود؟</p></div><details class="solution"><summary><span class="when-closed">دیدن راه‌حل</span><span class="when-open">بستن راه‌حل</span></summary><ol class="solution-steps"><li>۱۲ و ۱۶ هر دو بر ۴ بخش‌پذیرند.</li><li><span class="eq">۱۲ ÷ ۴ = ۳</span> و <span class="eq">۱۶ ÷ ۴ = ۴</span>، پس جواب <b><span class="frac"><span>۳</span><span>۴</span></span></b> است.</li></ol></details></div>
+<div class="exercise" id="b2-q4" data-answer="8" data-unit="لیوان" data-hint="هر لیتر چند تا یک‌چهارم لیتر دارد؟"><div class="ex-top"><span class="ex-n">تمرین ۴</span><span class="q-level" aria-label="سطح: متوسط"><i class="on"></i><i class="on"></i><i></i></span></div><div class="ex-q"><p>یک بطری ۲ لیتری آب داریم و هر لیوان <span class="frac"><span>۱</span><span>۴</span></span> لیتر جا می‌گیرد. با این بطری چند لیوان پر می‌شود؟</p></div><details class="solution"><summary><span class="when-closed">دیدن راه‌حل</span><span class="when-open">بستن راه‌حل</span></summary><ol class="solution-steps"><li>هر ۱ لیتر، ۴ تا <span class="frac"><span>۱</span><span>۴</span></span> لیتر دارد؛ پس با هر لیتر ۴ لیوان پر می‌شود.</li><li>۲ لیتر: <span class="eq">۲ × ۴ = <b>۸</b></span> لیوان.</li></ol></details></div>
+<div class="exercise" id="b2-q5" data-answer="180000" data-unit="تومان"><div class="ex-top"><span class="ex-n">تمرین ۵</span><span class="q-level" aria-label="سطح: متوسط"><i class="on"></i><i class="on"></i><i></i></span></div><div class="ex-q"><p>کتابی ۲۴۰٬۰۰۰ تومانی را با <span class="frac"><span>۱</span><span>۴</span></span> تخفیف خریدی. چقدر پرداختی؟</p></div><details class="solution"><summary><span class="when-closed">دیدن راه‌حل</span><span class="when-open">بستن راه‌حل</span></summary><ol class="solution-steps"><li>یک‌چهارم قیمت (تخفیف): <span class="eq">۲۴۰٬۰۰۰ ÷ ۴ = ۶۰٬۰۰۰</span></li><li>پرداختی: <span class="eq">۲۴۰٬۰۰۰ − ۶۰٬۰۰۰ = <b>۱۸۰٬۰۰۰</b></span> تومان.</li></ol><p class="check">راه دیگر: وقتی <span class="frac"><span>۱</span><span>۴</span></span> تخفیف می‌گیری، <span class="frac"><span>۳</span><span>۴</span></span> قیمت را می‌پردازی: <span class="eq">۶۰٬۰۰۰ × ۳ = ۱۸۰٬۰۰۰</span> ✓</p></details></div>
+</div></div>
+<aside class="tip" aria-label="ترفند سرانگشتی"><p class="kicker">ترفند سرانگشتی</p><h3>کسرهایی که بهتر است از بر باشی</h3>
+<p>این‌ها را که بدانی، نصف حساب‌های روزمره را ذهنی انجام می‌دهی: <span class="frac"><span>۱</span><span>۲</span></span> = ۵۰٪، <span class="frac"><span>۱</span><span>۴</span></span> = ۲۵٪، <span class="frac"><span>۳</span><span>۴</span></span> = ۷۵٪، <span class="frac"><span>۱</span><span>۵</span></span> = ۲۰٪ و <span class="frac"><span>۱</span><span>۱۰</span></span> = ۱۰٪.</p>
+<p class="trick-example"><span class="frac"><span>۱</span><span>۵</span></span> از ۳۵۰ = <span class="eq">۳۵۰ ÷ ۵ = <b>۷۰</b></span></p>
+</aside>
+</div>
+</section>
+<section class="lesson" id="b3" aria-labelledby="b3-t">
+<div class="container">
+<header class="lesson-head"><span class="lesson-n" aria-hidden="true">۳</span><div><p class="kicker">زیردرس ۳ از ۴</p><h2 id="b3-t">جمع، تفریق و ضرب کسرها</h2></div></header>
+<div class="part part-see"><h3 class="part-label"><span class="pn" aria-hidden="true">۱</span>ببین</h3><div class="prose">
+<p>اگر عدد پایین (مخرج) کسرها یکی باشد، کار راحت است: فقط بالاها را جمع کن و پایین همان می‌ماند. <span class="eq"><span class="frac"><span>۱</span><span>۵</span></span> + <span class="frac"><span>۲</span><span>۵</span></span> = <span class="frac"><span>۳</span><span>۵</span></span></span>. مثل این است که بگویی «۱ تکه + ۲ تکه = ۳ تکه»؛ اندازه‌ی تکه‌ها عوض نشده.</p>
+<div class="key"><b>هیچ‌وقت عددهای پایین را با هم جمع نکن.</b> <span class="eq"><span class="frac"><span>۱</span><span>۲</span></span> + <span class="frac"><span>۱</span><span>۲</span></span></span> می‌شود ۱ (یک پیتزای کامل)، نه <span class="frac"><span>۲</span><span>۴</span></span>.</div>
+<p>اگر عددهای پایین فرق دارند، اول تکه‌ها را هم‌اندازه کن. برای <span class="eq"><span class="frac"><span>۱</span><span>۲</span></span> + <span class="frac"><span>۱</span><span>۴</span></span></span>: نصف همان دو‌چهارم است، پس <span class="eq"><span class="frac"><span>۲</span><span>۴</span></span> + <span class="frac"><span>۱</span><span>۴</span></span> = <span class="frac"><span>۳</span><span>۴</span></span></span>.</p>
+<p>روش کلی: یک عدد پیدا کن که بر هر دو عدد پایین بخش‌پذیر باشد. برای <span class="eq"><span class="frac"><span>۱</span><span>۳</span></span> + <span class="frac"><span>۱</span><span>۴</span></span></span>، عدد ۱۲ هم بر ۳ و هم بر ۴ بخش‌پذیر است: <span class="eq"><span class="frac"><span>۴</span><span>۱۲</span></span> + <span class="frac"><span>۳</span><span>۱۲</span></span> = <span class="frac"><span>۷</span><span>۱۲</span></span></span>. تفریق هم دقیقاً همین‌طور است: <span class="eq"><span class="frac"><span>۳</span><span>۴</span></span> − <span class="frac"><span>۱</span><span>۴</span></span> = <span class="frac"><span>۲</span><span>۴</span></span> = <span class="frac"><span>۱</span><span>۲</span></span></span>.</p>
+<p><strong>ضرب کسرها</strong> از جمع هم ساده‌تر است: بالا در بالا، پایین در پایین. <span class="eq"><span class="frac"><span>۱</span><span>۲</span></span> × <span class="frac"><span>۳</span><span>۴</span></span> = <span class="frac"><span>۳</span><span>۸</span></span></span>.</p>
+<div class="key">کلمه‌ی «از» در ریاضی یعنی ضرب: «نصفِ <span class="frac"><span>۳</span><span>۴</span></span>» یعنی <span class="eq"><span class="frac"><span>۱</span><span>۲</span></span> × <span class="frac"><span>۳</span><span>۴</span></span></span>.</div>
+<p><strong>عدد مخلوط:</strong> «یک و نیم پیمانه» یعنی <span class="eq">۱ + <span class="frac"><span>۱</span><span>۲</span></span></span> که همان <span class="frac"><span>۳</span><span>۲</span></span> پیمانه است (سه تا نیم‌پیمانه).</p>
+</div></div>
+<div class="part part-solved"><h3 class="part-label"><span class="pn" aria-hidden="true">۲</span>حل‌شده</h3><div class="examples">
+<article class="question card-paper"><div class="q-top"><span class="q-tag">مثال ۱</span><span class="q-level" aria-label="سطح: متوسط"><i class="on"></i><i class="on"></i><i></i></span></div><h4>نصف دستور کیک</h4><p>در دستور کیک <span class="frac"><span>۳</span><span>۴</span></span> پیمانه شکر لازم است. می‌خواهی نصف دستور را درست کنی. چقدر شکر بریزی؟</p><details class="solution"><summary><span class="when-closed">نمایش راه‌حل گام‌به‌گام</span><span class="when-open">بستن راه‌حل</span></summary><ol class="solution-steps"><li>نصفِ <span class="frac"><span>۳</span><span>۴</span></span> یعنی <span class="eq"><span class="frac"><span>۱</span><span>۲</span></span> × <span class="frac"><span>۳</span><span>۴</span></span></span></li><li>بالا در بالا: <span class="eq">۱ × ۳ = ۳</span>؛ پایین در پایین: <span class="eq">۲ × ۴ = ۸</span></li><li>جواب: <b><span class="frac"><span>۳</span><span>۸</span></span> پیمانه</b> شکر.</li></ol><p class="check">بررسی: <span class="frac"><span>۳</span><span>۸</span></span> کمی کمتر از نصف پیمانه است؛ منطقی است، چون <span class="frac"><span>۳</span><span>۴</span></span> هم کمی کمتر از یک پیمانه بود ✓</p></details></article>
+<article class="question card-paper"><div class="q-top"><span class="q-tag">مثال ۲</span><span class="q-level" aria-label="سطح: متوسط"><i class="on"></i><i class="on"></i><i></i></span></div><h4>زمان مطالعه</h4><p>امروز <span class="frac"><span>۱</span><span>۲</span></span> ساعت ریاضی و <span class="frac"><span>۱</span><span>۳</span></span> ساعت زبان خواندی. روی هم چه کسری از ساعت شد؟ چند دقیقه؟</p><details class="solution"><summary><span class="when-closed">نمایش راه‌حل گام‌به‌گام</span><span class="when-open">بستن راه‌حل</span></summary><ol class="solution-steps"><li>عددهای پایین فرق دارند (۲ و ۳). عدد ۶ بر هر دو بخش‌پذیر است.</li><li><span class="eq"><span class="frac"><span>۱</span><span>۲</span></span> = <span class="frac"><span>۳</span><span>۶</span></span></span> و <span class="eq"><span class="frac"><span>۱</span><span>۳</span></span> = <span class="frac"><span>۲</span><span>۶</span></span></span></li><li><span class="eq"><span class="frac"><span>۳</span><span>۶</span></span> + <span class="frac"><span>۲</span><span>۶</span></span> = <span class="frac"><span>۵</span><span>۶</span></span></span> ساعت.</li><li>هر <span class="frac"><span>۱</span><span>۶</span></span> ساعت ۱۰ دقیقه است (<span class="eq">۶۰ ÷ ۶ = ۱۰</span>)، پس <span class="frac"><span>۵</span><span>۶</span></span> ساعت = <b>۵۰ دقیقه</b>.</li></ol><p class="check">بررسی: نیم ساعت = ۳۰ دقیقه و یک‌سوم ساعت = ۲۰ دقیقه؛ <span class="eq">۳۰ + ۲۰ = ۵۰</span> ✓</p></details></article>
+</div></div>
+<div class="part part-try"><h3 class="part-label"><span class="pn" aria-hidden="true">۳</span>خودت امتحان کن</h3><div class="exercises">
+<div class="exercise" id="b3-q1" data-choices="۵/۷|۵/۱۴|۶/۷" data-correct="0"><div class="ex-top"><span class="ex-n">تمرین ۱</span><span class="q-level" aria-label="سطح: آسان"><i class="on"></i><i></i><i></i></span></div><div class="ex-q"><p><span class="eq"><span class="frac"><span>۲</span><span>۷</span></span> + <span class="frac"><span>۳</span><span>۷</span></span></span> چند است؟</p></div><details class="solution"><summary><span class="when-closed">دیدن راه‌حل</span><span class="when-open">بستن راه‌حل</span></summary><ol class="solution-steps"><li>عددهای پایین یکی است؛ پس فقط بالاها را جمع می‌کنیم: <span class="eq">۲ + ۳ = ۵</span></li><li>جواب: <b><span class="frac"><span>۵</span><span>۷</span></span></b> (عدد پایین ۷ می‌ماند، نه ۱۴).</li></ol></details></div>
+<div class="exercise" id="b3-q2" data-choices="۳/۸|۲/۱۲|۲/۸" data-correct="0" data-hint="یک‌چهارم را به هشتم تبدیل کن."><div class="ex-top"><span class="ex-n">تمرین ۲</span><span class="q-level" aria-label="سطح: متوسط"><i class="on"></i><i class="on"></i><i></i></span></div><div class="ex-q"><p><span class="eq"><span class="frac"><span>۱</span><span>۴</span></span> + <span class="frac"><span>۱</span><span>۸</span></span></span> چند است؟</p></div><details class="solution"><summary><span class="when-closed">دیدن راه‌حل</span><span class="when-open">بستن راه‌حل</span></summary><ol class="solution-steps"><li><span class="eq"><span class="frac"><span>۱</span><span>۴</span></span> = <span class="frac"><span>۲</span><span>۸</span></span></span> (بالا و پایین ضرب در ۲)</li><li><span class="eq"><span class="frac"><span>۲</span><span>۸</span></span> + <span class="frac"><span>۱</span><span>۸</span></span> = <b><span class="frac"><span>۳</span><span>۸</span></span></b></span></li></ol></details></div>
+<div class="exercise" id="b3-q3" data-answer="45" data-unit="دقیقه"><div class="ex-top"><span class="ex-n">تمرین ۳</span><span class="q-level" aria-label="سطح: آسان"><i class="on"></i><i></i><i></i></span></div><div class="ex-q"><p><span class="frac"><span>۱</span><span>۴</span></span> ساعت پیاده‌روی کردی و <span class="frac"><span>۱</span><span>۲</span></span> ساعت دوچرخه‌سواری. روی هم چند دقیقه ورزش کردی؟</p></div><details class="solution"><summary><span class="when-closed">دیدن راه‌حل</span><span class="when-open">بستن راه‌حل</span></summary><ol class="solution-steps"><li>یک‌چهارم ساعت (یک ربع) = ۱۵ دقیقه</li><li>نیم ساعت = ۳۰ دقیقه</li><li><span class="eq">۱۵ + ۳۰ = <b>۴۵</b></span> دقیقه</li></ol></details></div>
+<div class="exercise" id="b3-q4" data-choices="۱/۴|۱/۲|۲/۴" data-correct="0"><div class="ex-top"><span class="ex-n">تمرین ۴</span><span class="q-level" aria-label="سطح: متوسط"><i class="on"></i><i class="on"></i><i></i></span></div><div class="ex-q"><p>نصفِ نصفِ یک پیتزا چه کسری از کل پیتزا است؟</p></div><details class="solution"><summary><span class="when-closed">دیدن راه‌حل</span><span class="when-open">بستن راه‌حل</span></summary><ol class="solution-steps"><li>«نصفِ نصف» یعنی <span class="eq"><span class="frac"><span>۱</span><span>۲</span></span> × <span class="frac"><span>۱</span><span>۲</span></span></span></li><li>بالا در بالا و پایین در پایین: <b><span class="frac"><span>۱</span><span>۴</span></span></b></li></ol></details></div>
+<div class="exercise" id="b3-q5" data-answer="6" data-unit="پیمانه" data-hint="هر ۴ نفر چند پیمانه لازم دارند؟"><div class="ex-top"><span class="ex-n">تمرین ۵</span><span class="q-level" aria-label="سطح: متوسط"><i class="on"></i><i class="on"></i><i></i></span></div><div class="ex-q"><p>برای هر نفر <span class="frac"><span>۳</span><span>۴</span></span> پیمانه برنج لازم است. برای ۸ نفر چند پیمانه برنج بپزی؟</p></div><details class="solution"><summary><span class="when-closed">دیدن راه‌حل</span><span class="when-open">بستن راه‌حل</span></summary><ol class="solution-steps"><li><span class="eq">۸ × <span class="frac"><span>۳</span><span>۴</span></span> = <span class="frac"><span>۲۴</span><span>۴</span></span></span></li><li><span class="eq">۲۴ ÷ ۴ = <b>۶</b></span> پیمانه.</li></ol><p class="check">راه دیگر: هر ۴ نفر ۳ پیمانه می‌خواهند، پس ۸ نفر ۶ پیمانه ✓</p></details></div>
+</div></div>
+<aside class="tip" aria-label="ترفند سرانگشتی"><p class="kicker">ترفند سرانگشتی</p><h3>جمع دو کسر «یکی‌بالا» با یک حرکت</h3>
+<p>برای جمع دو کسری که بالایشان ۱ است: عددهای پایین را جمع کن و بالا بنویس؛ عددهای پایین را ضرب کن و پایین بنویس.</p>
+<p class="trick-example"><span class="eq"><span class="frac"><span>۱</span><span>۳</span></span> + <span class="frac"><span>۱</span><span>۴</span></span> = <span class="frac"><span>۷</span><span>۱۲</span></span></span> (چون <span class="eq">۳ + ۴ = ۷</span> و <span class="eq">۳ × ۴ = ۱۲</span>)</p>
+</aside>
+</div>
+</section>
+<section class="lesson" id="b4" aria-labelledby="b4-t">
+<div class="container">
+<header class="lesson-head"><span class="lesson-n" aria-hidden="true">۴</span><div><p class="kicker">زیردرس ۴ از ۴</p><h2 id="b4-t">عدد اعشاری و تبدیل کسر، اعشار و درصد</h2></div></header>
+<div class="part part-see"><h3 class="part-label"><span class="pn" aria-hidden="true">۱</span>ببین</h3><div class="prose">
+<p>عدد اعشاری راه دیگری برای نوشتن کسرهایی است که پایینشان ۱۰، ۱۰۰ یا ۱۰۰۰ است. ۰٫۵ یعنی «۵ دهم» = <span class="frac"><span>۵</span><span>۱۰</span></span> = نصف. ۰٫۲۵ یعنی «۲۵ صدم» = <span class="frac"><span>۲۵</span><span>۱۰۰</span></span> = یک‌چهارم.</p>
+<p>در فارسی ممیز را معمولاً با «/» یا «٫» می‌نویسند؛ ۲٫۵ (یا ۲/۵) همان «دو و نیم» است. در کادر جواب تمرین‌ها هم هر دو را قبول می‌کنیم.</p>
+<div class="key"><b>ضرب در ۱۰، ۱۰۰ و ۱۰۰۰:</b> ممیز به تعداد صفرها جلو می‌رود و عدد بزرگ می‌شود. <b>تقسیم:</b> ممیز عقب می‌رود و عدد کوچک می‌شود. <span class="eq">۲٫۵ × ۱۰ = ۲۵</span>، <span class="eq">۲٫۵ × ۱۰۰ = ۲۵۰</span>، <span class="eq">۳۷ ÷ ۱۰۰ = ۰٫۳۷</span></div>
+<p>این جدول را یک بار با دقت نگاه کن؛ همه‌جا به کارت می‌آید:</p>
+<div class="table-wrap"><table class="data-table">
+<thead><tr><th>کسر</th><th>اعشار</th><th>درصد</th></tr></thead>
+<tbody>
+<tr><td><span class="frac"><span>۱</span><span>۲</span></span></td><td>۰٫۵</td><td>۵۰٪</td></tr>
+<tr><td><span class="frac"><span>۱</span><span>۴</span></span></td><td>۰٫۲۵</td><td>۲۵٪</td></tr>
+<tr><td><span class="frac"><span>۳</span><span>۴</span></span></td><td>۰٫۷۵</td><td>۷۵٪</td></tr>
+<tr><td><span class="frac"><span>۱</span><span>۵</span></span></td><td>۰٫۲</td><td>۲۰٪</td></tr>
+<tr><td><span class="frac"><span>۱</span><span>۱۰</span></span></td><td>۰٫۱</td><td>۱۰٪</td></tr>
+<tr><td><span class="frac"><span>۱</span><span>۱۰۰</span></span></td><td>۰٫۰۱</td><td>۱٪</td></tr>
+</tbody></table></div>
+<ul class="dots"><li><b>کسر ← اعشار:</b> بالا را بر پایین تقسیم کن. <span class="eq"><span class="frac"><span>۳</span><span>۴</span></span> = ۳ ÷ ۴ = ۰٫۷۵</span></li><li><b>اعشار ← درصد:</b> در ۱۰۰ ضرب کن. <span class="eq">۰٫۷۵ × ۱۰۰ = ۷۵٪</span></li><li><b>درصد ← اعشار:</b> بر ۱۰۰ تقسیم کن. <span class="eq">۸٪ = ۰٫۰۸</span></li><li><b>ضرب در ۰٫۵</b> یعنی نصف کردن و <b>ضرب در ۰٫۱</b> یعنی تقسیم بر ۱۰.</li></ul>
+</div></div>
+<div class="part part-solved"><h3 class="part-label"><span class="pn" aria-hidden="true">۲</span>حل‌شده</h3><div class="examples">
+<article class="question card-paper"><div class="q-top"><span class="q-tag">مثال ۱</span><span class="q-level" aria-label="سطح: آسان"><i class="on"></i><i></i><i></i></span></div><h4>خرید میوه</h4><p>۱٫۵ کیلو سیب و ۰٫۷۵ کیلو پرتقال خریدی. روی هم چند کیلو شد؟</p><details class="solution"><summary><span class="when-closed">نمایش راه‌حل گام‌به‌گام</span><span class="when-open">بستن راه‌حل</span></summary><ol class="solution-steps"><li>اگر با اعشار راحت نیستی، به گرم تبدیل کن (هر کیلو ۱۰۰۰ گرم): ۱٫۵ کیلو = ۱۵۰۰ گرم و ۰٫۷۵ کیلو = ۷۵۰ گرم.</li><li><span class="eq">۱٬۵۰۰ + ۷۵۰ = ۲٬۲۵۰</span> گرم.</li><li>دوباره به کیلو: <b>۲٫۲۵ کیلو</b> (دو کیلو و یک‌چهارم).</li></ol><p class="check">ترفند: هر وقت اعشار گیجت کرد، به واحد کوچک‌تر (گرم، سانتی‌متر، دقیقه) برو تا عددها صحیح شوند.</p></details></article>
+<article class="question card-paper"><div class="q-top"><span class="q-tag">مثال ۲</span><span class="q-level" aria-label="سطح: متوسط"><i class="on"></i><i class="on"></i><i></i></span></div><h4>قیمت دو و نیم کیلو گوشت</h4><p>گوشت کیلویی ۸۰۰٬۰۰۰ تومان است. ۲٫۵ کیلو چقدر می‌شود؟</p><details class="solution"><summary><span class="when-closed">نمایش راه‌حل گام‌به‌گام</span><span class="when-open">بستن راه‌حل</span></summary><ol class="solution-steps"><li>۲٫۵ یعنی ۲ کیلو و نیم.</li><li>۲ کیلو: <span class="eq">۲ × ۸۰۰٬۰۰۰ = ۱٬۶۰۰٬۰۰۰</span></li><li>نیم کیلو: نصفِ ۸۰۰٬۰۰۰ = <span class="eq">۴۰۰٬۰۰۰</span></li><li>جمع: <span class="eq">۱٬۶۰۰٬۰۰۰ + ۴۰۰٬۰۰۰ = <b>۲٬۰۰۰٬۰۰۰</b></span> تومان.</li></ol></details></article>
+</div></div>
+<div class="part part-try"><h3 class="part-label"><span class="pn" aria-hidden="true">۳</span>خودت امتحان کن</h3><div class="exercises">
+<div class="exercise" id="b4-q1" data-answer="0.75" data-hint="بالا را بر پایین تقسیم کن."><div class="ex-top"><span class="ex-n">تمرین ۱</span><span class="q-level" aria-label="سطح: آسان"><i class="on"></i><i></i><i></i></span></div><div class="ex-q"><p><span class="frac"><span>۳</span><span>۴</span></span> را به‌صورت عدد اعشاری بنویس.</p></div><details class="solution"><summary><span class="when-closed">دیدن راه‌حل</span><span class="when-open">بستن راه‌حل</span></summary><ol class="solution-steps"><li><span class="eq">۳ ÷ ۴ = <b>۰٫۷۵</b></span></li></ol><p class="check">یا از جدول: سه‌چهارم = ۷۵ صدم = ۰٫۷۵</p></details></div>
+<div class="exercise" id="b4-q2" data-answer="35" data-unit="٪"><div class="ex-top"><span class="ex-n">تمرین ۲</span><span class="q-level" aria-label="سطح: آسان"><i class="on"></i><i></i><i></i></span></div><div class="ex-q"><p>عدد ۰٫۳۵ چند درصد است؟</p></div><details class="solution"><summary><span class="when-closed">دیدن راه‌حل</span><span class="when-open">بستن راه‌حل</span></summary><ol class="solution-steps"><li>در ۱۰۰ ضرب کن: <span class="eq">۰٫۳۵ × ۱۰۰ = <b>۳۵٪</b></span></li></ol></details></div>
+<div class="exercise" id="b4-q3" data-answer="360" data-hint="ضرب در ۱۰۰ یعنی ممیز دو رقم جلو می‌رود."><div class="ex-top"><span class="ex-n">تمرین ۳</span><span class="q-level" aria-label="سطح: آسان"><i class="on"></i><i></i><i></i></span></div><div class="ex-q"><p><span class="eq">۳٫۶ × ۱۰۰</span> چند است؟</p></div><details class="solution"><summary><span class="when-closed">دیدن راه‌حل</span><span class="when-open">بستن راه‌حل</span></summary><ol class="solution-steps"><li>ممیز دو رقم جلو می‌رود: ۳٫۶ ← ۳۶ ← <b>۳۶۰</b></li></ol></details></div>
+<div class="exercise" id="b4-q4" data-answer="1200000" data-unit="تومان"><div class="ex-top"><span class="ex-n">تمرین ۴</span><span class="q-level" aria-label="سطح: متوسط"><i class="on"></i><i class="on"></i><i></i></span></div><div class="ex-q"><p>پنیر کیلویی ۴۸۰٬۰۰۰ تومان است. ۲٫۵ کیلو چقدر می‌شود؟</p></div><details class="solution"><summary><span class="when-closed">دیدن راه‌حل</span><span class="when-open">بستن راه‌حل</span></summary><ol class="solution-steps"><li>۲ کیلو: <span class="eq">۲ × ۴۸۰٬۰۰۰ = ۹۶۰٬۰۰۰</span></li><li>نیم کیلو: نصفِ ۴۸۰٬۰۰۰ = <span class="eq">۲۴۰٬۰۰۰</span></li><li>جمع: <span class="eq">۹۶۰٬۰۰۰ + ۲۴۰٬۰۰۰ = <b>۱٬۲۰۰٬۰۰۰</b></span> تومان.</li></ol></details></div>
+<div class="exercise" id="b4-q5" data-answer="0.2"><div class="ex-top"><span class="ex-n">تمرین ۵</span><span class="q-level" aria-label="سطح: متوسط"><i class="on"></i><i class="on"></i><i></i></span></div><div class="ex-q"><p><span class="frac"><span>۱</span><span>۵</span></span> را به‌صورت عدد اعشاری بنویس.</p></div><details class="solution"><summary><span class="when-closed">دیدن راه‌حل</span><span class="when-open">بستن راه‌حل</span></summary><ol class="solution-steps"><li><span class="eq">۱ ÷ ۵ = <b>۰٫۲</b></span></li></ol><p class="check">یا: <span class="eq"><span class="frac"><span>۱</span><span>۵</span></span> = <span class="frac"><span>۲</span><span>۱۰</span></span></span> یعنی «۲ دهم» = ۰٫۲</p></details></div>
+</div></div>
+<aside class="tip" aria-label="ترفند سرانگشتی"><p class="kicker">ترفند سرانگشتی</p><h3>ضرب در ۰٫۵، ۰٫۲۵ و ۱٫۵</h3>
+<p>ضرب در ۰٫۵ یعنی نصف کن. ضرب در ۰٫۲۵ یعنی یک‌چهارم کن (دو بار نصف). ضرب در ۱٫۵ یعنی خود عدد به‌اضافه‌ی نصفش.</p>
+<p class="trick-example"><span class="eq">۱٫۵ × ۶۰۰ = ۶۰۰ + ۳۰۰ = <b>۹۰۰</b></span></p>
+</aside>
+</div>
+</section>
+
+<nav class="lesson-nav container" aria-label="موضوع قبلی و بعدی">
+<a class="prev" href="../index.html#topics"><small>→ بازگشت به</small><strong>همه‌ی موضوع‌ها</strong></a>
+<a class="next" href="percent.html"><small>موضوع بعدی ←</small><strong>درصد و تخفیف</strong></a>
+</nav>
+  </main>
+
+  <!-- ============ فوتر ============ -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p class="footer-brand">ریاضی روزمره</p>
+      <p class="footer-note">جواب‌ها را در کادر بنویس و «بررسی» را بزن؛ ارقام فارسی و انگلیسی هر دو قبول است و ممیز را می‌توانی با «/» یا «.» بنویسی. پیشرفتت فقط در همین مرورگر ذخیره می‌شود.</p>
+      <a class="to-top" href="#top">
+        بازگشت به بالا
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M6 11l6-6 6 6"/></svg>
+      </a>
+    </div>
+  </footer>
+
+  <script src="../js/main.js" defer></script>
+</body>
+</html>

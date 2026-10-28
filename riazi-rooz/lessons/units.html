@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>واحدها، زمان و سرعت | ریاضی روزمره</title>
+  <meta name="description" content="آموزش ساده‌ی تبدیل واحدهای طول و وزن و حجم، حساب ساعت و مدت زمان، رابطه‌ی سرعت و مسافت و زمان، و مصرف سوخت و هزینه‌ی سفر.">
+  <meta name="theme-color" content="#fbf7ee" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0f1226" media="(prefers-color-scheme: dark)">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <script>
+    /* تم را پیش از اولین رندر تنظیم می‌کند تا چشمک نزند */
+    (function () {
+      var root = document.documentElement, theme = null;
+      root.classList.add('js');
+      try { theme = localStorage.getItem('theme'); } catch (e) {}
+      if (theme !== 'light' && theme !== 'dark') {
+        theme = window.matchMedia && matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      }
+      root.setAttribute('data-theme', theme);
+    })();
+  </script>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body class="lesson-page" data-topic="units" style="--c:var(--c-unit);--c-ink:var(--c-unit-ink)">
+  <a class="skip-link" href="#main">پرش به محتوا</a>
+
+  <!-- ============ هدر ============ -->
+  <header class="site-header" id="top">
+    <div class="container header-inner">
+      <a class="brand" href="../index.html" aria-label="ریاضی روزمره، صفحه اصلی">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 32 32" width="32" height="32"><rect width="32" height="32" rx="10" fill="currentColor"/><circle cx="16" cy="9.5" r="2.4" fill="var(--bg)"/><circle cx="16" cy="22.5" r="2.4" fill="var(--bg)"/><rect x="7.5" y="14.7" width="17" height="2.6" rx="1.3" fill="var(--bg)"/></svg>
+        </span>
+        <span class="brand-name">ریاضی روزمره</span>
+      </a>
+
+      <nav class="main-nav" id="main-nav" aria-label="منوی اصلی">
+        <a href="../index.html#topics">همه‌ی موضوع‌ها</a>
+        <a href="#toc">زیردرس‌ها</a>
+        <a href="../index.html#tricks">ترفند سرانگشتی</a>
+      </nav>
+
+      <div class="header-actions">
+        <button class="icon-btn" id="theme-toggle" type="button" aria-label="تغییر حالت روشن/تیره" title="تغییر حالت روشن/تیره">
+          <svg class="i-sun" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+          <svg class="i-moon" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+        </button>
+        <button class="icon-btn menu-btn" id="menu-btn" type="button" aria-label="باز و بسته کردن منو" aria-expanded="false" aria-controls="main-nav">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path class="bar b1" d="M4 7h16"/><path class="bar b2" d="M4 12h16"/><path class="bar b3" d="M4 17h16"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+<section class="lesson-hero" aria-labelledby="page-title">
+<div class="container">
+<nav class="crumbs" aria-label="مسیر"><a href="../index.html">خانه</a><span aria-hidden="true">/</span><a href="../index.html#topics">موضوع‌ها</a><span aria-hidden="true">/</span><span aria-current="page">واحدها، زمان و سرعت</span></nav>
+<div class="lh-grid">
+<div class="lh-copy">
+<p class="kicker">موضوع ۸ از ۸</p>
+<h1 id="page-title">واحدها، <span class="mark">زمان</span> و سرعت</h1>
+<p class="lead">چند گرم می‌شود یک کیلو؟ از ساعت ۱۰:۴۵ تا ۱۳:۱۰ چقدر است؟ تا مقصد چند ساعت راه است و چقدر بنزین می‌خواهد؟ از آشپزخانه تا جاده، با واحدها سروکار داری.</p>
+<div class="progress">
+<span class="progress-track" aria-hidden="true"><span class="progress-fill" id="progress-fill"></span></span>
+<span class="progress-text" id="progress-text">۰ از ۱۸ تمرین حل شده</span>
+<button type="button" class="link-btn" id="progress-reset">از نو</button>
+</div>
+</div>
+<nav class="toc card-sticker" id="toc" aria-labelledby="toc-title">
+<span class="tape" aria-hidden="true"></span>
+<h2 id="toc-title">زیردرس‌ها</h2>
+<ol class="toc-list"><li><a href="#u1">تبدیل واحد</a></li><li><a href="#u2">ساعت و مدت زمان</a></li><li><a href="#u3">سرعت، مسافت و زمان</a></li><li><a href="#u4">مصرف سوخت و هزینه‌ی سفر</a></li></ol>
+<p class="toc-meta">۴ زیردرس · ۸ مثال حل‌شده · ۱۸ تمرین</p>
+</nav>
+</div>
+</div>
+</section>
+
+<section class="lesson" id="u1" aria-labelledby="u1-t">
+<div class="container">
+<header class="lesson-head"><span class="lesson-n" aria-hidden="true">۱</span><div><p class="kicker">زیردرس ۱ از ۴</p><h2 id="u1-t">تبدیل واحد</h2></div></header>
+<div class="part part-see"><h3 class="part-label"><span class="pn" aria-hidden="true">۱</span>ببین</h3><div class="prose">
+<p>واحدهای متریک (متر، گرم، لیتر) خیلی ساده‌اند، چون همه‌چیز با ۱۰، ۱۰۰ و ۱۰۰۰ کار می‌کند. فقط کافی است معنی پیشوندها را بدانی:</p>
+<div class="table-wrap"><table class="data-table"><thead><tr><th>پیشوند</th><th>یعنی</th><th>مثال</th></tr></thead><tbody><tr><td>کیلو</td><td>۱۰۰۰ برابر</td><td>۱ کیلوگرم = ۱۰۰۰ گرم</td></tr><tr><td>سانتی</td><td>یک‌صدم</td><td>۱ متر = ۱۰۰ سانتی‌متر</td></tr><tr><td>میلی</td><td>یک‌هزارم</td><td>۱ لیتر = ۱۰۰۰ میلی‌لیتر</td></tr></tbody></table></div>
+<div class="key"><b>قانون جهت:</b> از واحد بزرگ به کوچک ← <b>ضرب</b> کن (عدد بزرگ‌تر می‌شود). از واحد کوچک به بزرگ ← <b>تقسیم</b> کن (عدد کوچک‌تر می‌شود).</div>
+<p>مثال: ۲٫۵ کیلو = <span class="eq">۲٫۵ × ۱۰۰۰ = ۲٬۵۰۰</span> گرم ؛ ۷۵۰ میلی‌لیتر = <span class="eq">۷۵۰ ÷ ۱۰۰۰ = ۰٫۷۵</span> لیتر.</p>
+<p><strong>چک معقول بودن:</strong> وقتی به واحد کوچک‌تر می‌روی، باید «تعداد» بیشتری داشته باشی؛ مثل خرد کردن یک اسکناس درشت به چند اسکناس ریز.</p>
+<ul class="dots"><li><b>واحدهای آشپزخانه (تقریبی):</b> ۱ قاشق غذاخوری ≈ ۱۵ میلی‌لیتر، ۱ قاشق چای‌خوری ≈ ۵ میلی‌لیتر، ۱ پیمانه ≈ ۲۴۰ میلی‌لیتر.</li><li><b>اینچ:</b> ۱ اینچ = ۲٫۵۴ سانتی‌متر؛ اندازه‌ی صفحه‌ی تلویزیون و گوشی را با اینچ می‌گویند.</li><li><b>تن:</b> ۱ تن = ۱۰۰۰ کیلوگرم.</li></ul>
+</div></div>
+<div class="part part-solved"><h3 class="part-label"><span class="pn" aria-hidden="true">۲</span>حل‌شده</h3><div class="examples">
+<article class="question card-paper"><div class="q-top"><span class="q-tag">مثال ۱</span><span class="q-level" aria-label="سطح: آسان"><i class="on"></i><i></i><i></i></span></div><h4>بطری‌های آب</h4><p>باید ۳ لیتر آب را در بطری‌های ۵۰۰ میلی‌لیتری بریزی. چند بطری لازم است؟</p><details class="solution"><summary><span class="when-closed">نمایش راه‌حل گام‌به‌گام</span><span class="when-open">بستن راه‌حل</span></summary><ol class="solution-steps"><li>۳ لیتر = <span class="eq">۳ × ۱۰۰۰ = ۳٬۰۰۰</span> میلی‌لیتر</li><li><span class="eq">۳٬۰۰۰ ÷ ۵۰۰ = <b>۶</b></span> بطری.</li></ol></details></article>
+<article class="question card-paper"><div class="q-top"><span class="q-tag">مثال ۲</span><span class="q-level" aria-label="سطح: متوسط"><i class="on"></i><i class="on"></i><i></i></span></div><h4>تلویزیون ۵۵ اینچ</h4><p>قطر صفحه‌ی یک تلویزیون ۵۵ اینچ است. چند سانتی‌متر است؟</p><details class="solution"><summary><span class="when-closed">نمایش راه‌حل گام‌به‌گام</span><span class="when-open">بستن راه‌حل</span></summary><ol class="solution-steps"><li><span class="eq">۵۵ × ۲٫۵۴ = ۱۳۹٫۷</span></li><li>حدود <b>۱۴۰ سانتی‌متر</b>.</li></ol><p class="check">تخمین: <span class="eq">۵۵ × ۲٫۵ = ۱۳۷٫۵</span>؛ جواب باید کمی بیشتر باشد ✓</p></details></article>
+</div></div>
+<div class="part part-try"><h3 class="part-label"><span class="pn" aria-hidden="true">۳</span>خودت امتحان کن</h3><div class="exercises">
+<div class="exercise" id="u1-q1" data-answer="1750" data-unit="گرم"><div class="ex-top"><span class="ex-n">تمرین ۱</span><span class="q-level" aria-label="سطح: آسان"><i class="on"></i><i></i><i></i></span></div><div class="ex-q"><p>۱٫۷۵ کیلوگرم چند گرم است؟</p></div><details class="solution"><summary><span class="when-closed">دیدن راه‌حل</span><span class="when-open">بستن راه‌حل</span></summary><ol class="solution-steps"><li><span class="eq">۱٫۷۵ × ۱۰۰۰ = <b>۱٬۷۵۰</b></span> گرم.</li></ol></details></div>
+<div class="exercise" id="u1-q2" data-answer="0.33" data-unit="لیتر"><div class="ex-top"><span class="ex-n">تمرین ۲</span><span class="q-level" aria-label="سطح: آسان"><i class="on"></i><i></i><i></i></span></div><div class="ex-q"><p>۳۳۰ میلی‌لیتر چند لیتر است؟</p></div><details class="solution"><summary><span class="when-closed">دیدن راه‌حل</span><span class="when-open">بستن راه‌حل</span></summary><ol class="solution-steps"><li><span class="eq">۳۳۰ ÷ ۱۰۰۰ = <b>۰٫۳۳</b></span> لیتر.</li></ol></details></div>
+<div class="exercise" id="u1-q3" data-answer="1.2" data-unit="کیلومتر"><div class="ex-top"><span class="ex-n">تمرین ۳</span><span class="q-level" aria-label="سطح: آسان"><i class="on"></i><i></i><i></i></span></div><div class="ex-q"><p>مسافت خانه تا نانوایی ۱۲۰۰ متر است. چند کیلومتر است؟</p></div><details class="solution"><summary><span class="when-closed">دیدن راه‌حل</span><span class="when-open">بستن راه‌حل</span></summary><ol class="solution-steps"><li><span class="eq">۱٬۲۰۰ ÷ ۱۰۰۰ = <b>۱٫۲</b></span> کیلومتر.</li></ol></details></div>
+<div class="exercise" id="u1-q4" data-answer="8" data-unit="لیوان" data-hint="اول ۲ لیتر را به میلی‌لیتر تبدیل کن."><div class="ex-top"><span class="ex-n">تمرین ۴</span><span class="q-level" aria-label="سطح: متوسط"><i class="on"></i><i class="on"></i><i></i></span></div><div class="ex-q"><p>یک پارچ ۲ لیتری شربت را در لیوان‌های ۲۵۰ میلی‌لیتری می‌ریزی. چند لیوان پر می‌شود؟</p></div><details class="solution"><summary><span class="when-closed">دیدن راه‌حل</span><span class="when-open">بستن راه‌حل</span></summary><ol class="solution-steps"><li>۲ لیتر = ۲۰۰۰ میلی‌لیتر</li><li><span class="eq">۲٬۰۰۰ ÷ ۲۵۰ = <b>۸</b></span> لیوان.</li></ol></details></div>
+<div class="exercise" id="u1-q5" data-answer="45" data-unit="میلی‌لیتر"><div class="ex-top"><span class="ex-n">تمرین ۵</span><span class="q-level" aria-label="سطح: متوسط"><i class="on"></i><i class="on"></i><i></i></span></div><div class="ex-q"><p>دستور غذا می‌گوید ۳ قاشق غذاخوری روغن. حدوداً چند میلی‌لیتر می‌شود؟</p></div><details class="solution"><summary><span class="when-closed">دیدن راه‌حل</span><span class="when-open">بستن راه‌حل</span></summary><ol class="solution-steps"><li>هر قاشق غذاخوری حدود ۱۵ میلی‌لیتر است.</li><li><span class="eq">۳ × ۱۵ = <b>۴۵</b></span> میلی‌لیتر.</li></ol></details></div>
+</div></div>
+<aside class="tip" aria-label="ترفند سرانگشتی"><p class="kicker">ترفند سرانگشتی</p><h3>پله‌های هزارتایی</h3>
+<p>کیلو ← واحد ← میلی: هر پله یعنی ×۱۰۰۰ (سه صفر). از کیلوگرم به میلی‌گرم دو پله است، یعنی شش صفر.</p>
+<p class="trick-example">۰٫۰۰۲ کیلوگرم ← ۲ گرم ← <b>۲۰۰۰ میلی‌گرم</b></p>
+</aside>
+</div>
+</section>
+<section class="lesson" id="u2" aria-labelledby="u2-t">
+<div class="container">
+<header class="lesson-head"><span class="lesson-n" aria-hidden="true">۲</span><div><p class="kicker">زیردرس ۲ از ۴</p><h2 id="u2-t">ساعت و مدت زمان</h2></div></header>
+<div class="part part-see"><h3 class="part-label"><span class="pn" aria-hidden="true">۱</span>ببین</h3><div class="prose">
+<p>زمان «ده‌دهی» نیست! هر ساعت ۶۰ دقیقه است، نه ۱۰۰. بیشتر اشتباه‌ها از همین‌جا می‌آید.</p>
+<div class="key"><b>۱٫۵ ساعت = ۱ ساعت و ۳۰ دقیقه</b> (نه ۱ ساعت و ۵۰ دقیقه). همین‌طور ۰٫۲۵ ساعت = ۱۵ دقیقه و ۰٫۷۵ ساعت = ۴۵ دقیقه.</div>
+<p class="formula"><span class="eq eq-fa">دقیقه = ساعت × ۶۰ ؛ ساعت = دقیقه ÷ ۶۰</span></p>
+<p><strong>حساب مدت زمان:</strong> «رو به جلو بشمار» و از ساعت‌های رُند کمک بگیر. از ۱۰:۴۵ تا ۱۳:۱۰: از ۱۰:۴۵ تا ۱۱:۰۰ می‌شود ۱۵ دقیقه، از ۱۱:۰۰ تا ۱۳:۰۰ می‌شود ۲ ساعت و از ۱۳:۰۰ تا ۱۳:۱۰ می‌شود ۱۰ دقیقه. روی هم: ۲ ساعت و ۲۵ دقیقه.</p>
+<p><strong>جمع زمان‌ها:</strong> دقیقه‌ها را جمع کن؛ اگر از ۶۰ گذشت، هر ۶۰ دقیقه را یک ساعت کن. ۴۰ دقیقه + ۳۵ دقیقه = ۷۵ دقیقه = ۱ ساعت و ۱۵ دقیقه.</p>
+<ul class="dots"><li><b>ساعت ۲۴ساعته:</b> بعد از ظهر، ۱۲ تا اضافه کن. ساعت ۳ بعدازظهر = ۱۵:۰۰ و ساعت ۸ شب = ۲۰:۰۰.</li><li><b>روز و هفته:</b> ۱ روز = ۲۴ ساعت؛ ۱ هفته = ۱۶۸ ساعت؛ ۱ سال حدود ۵۲ هفته است.</li></ul>
+</div></div>
+<div class="part part-solved"><h3 class="part-label"><span class="pn" aria-hidden="true">۲</span>حل‌شده</h3><div class="examples">
+<article class="question card-paper"><div class="q-top"><span class="q-tag">مثال ۱</span><span class="q-level" aria-label="سطح: متوسط"><i class="on"></i><i class="on"></i><i></i></span></div><h4>مدت فیلم</h4><p>فیلمی ساعت ۲۰:۵۰ شروع شد و ساعت ۲۳:۱۵ تمام شد. چقدر طول کشید؟</p><details class="solution"><summary><span class="when-closed">نمایش راه‌حل گام‌به‌گام</span><span class="when-open">بستن راه‌حل</span></summary><ol class="solution-steps"><li>از ۲۰:۵۰ تا ۲۱:۰۰ ← ۱۰ دقیقه</li><li>از ۲۱:۰۰ تا ۲۳:۰۰ ← ۲ ساعت</li><li>از ۲۳:۰۰ تا ۲۳:۱۵ ← ۱۵ دقیقه</li><li>روی هم: <b>۲ ساعت و ۲۵ دقیقه</b> (یعنی ۱۴۵ دقیقه).</li></ol></details></article>
+<article class="question card-paper"><div class="q-top"><span class="q-tag">مثال ۲</span><span class="q-level" aria-label="سطح: متوسط"><i class="on"></i><i class="on"></i><i></i></span></div><h4>ورزش هفتگی</h4><p>هفته‌ای ۳ بار ورزش می‌کنی و هر بار ۲ ساعت و ۴۰ دقیقه طول می‌کشد. در هفته روی هم چند ساعت ورزش می‌کنی؟</p><details class="solution"><summary><span class="when-closed">نمایش راه‌حل گام‌به‌گام</span><span class="when-open">بستن راه‌حل</span></summary><ol class="solution-steps"><li>هر بار: <span class="eq">۲ × ۶۰ + ۴۰ = ۱۶۰</span> دقیقه</li><li>سه بار: <span class="eq">۳ × ۱۶۰ = ۴۸۰</span> دقیقه</li><li>به ساعت: <span class="eq">۴۸۰ ÷ ۶۰ = <b>۸</b></span> ساعت.</li></ol></details></article>
+</div></div>
+<div class="part part-try"><h3 class="part-label"><span class="pn" aria-hidden="true">۳</span>خودت امتحان کن</h3><div class="exercises">
+<div class="exercise" id="u2-q1" data-answer="90" data-unit="دقیقه"><div class="ex-top"><span class="ex-n">تمرین ۱</span><span class="q-level" aria-label="سطح: آسان"><i class="on"></i><i></i><i></i></span></div><div class="ex-q"><p>۱٫۵ ساعت چند دقیقه است؟</p></div><details class="solution"><summary><span class="when-closed">دیدن راه‌حل</span><span class="when-open">بستن راه‌حل</span></summary><ol class="solution-steps"><li><span class="eq">۱٫۵ × ۶۰ = <b>۹۰</b></span> دقیقه.</li></ol></details></div>
+<div class="exercise" id="u2-q2" data-answer="2.25" data-unit="ساعت" data-hint="۱۵ دقیقه چه کسری از ساعت است؟"><div class="ex-top"><span class="ex-n">تمرین ۲</span><span class="q-level" aria-label="سطح: متوسط"><i class="on"></i><i class="on"></i><i></i></span></div><div class="ex-q"><p>۲ ساعت و ۱۵ دقیقه را به‌صورت عدد اعشاری بنویس. چند ساعت است؟</p></div><details class="solution"><summary><span class="when-closed">دیدن راه‌حل</span><span class="when-open">بستن راه‌حل</span></summary><ol class="solution-steps"><li>۱۵ دقیقه = <span class="frac"><span>۱۵</span><span>۶۰</span></span> = <span class="frac"><span>۱</span><span>۴</span></span> ساعت = ۰٫۲۵ ساعت</li><li><span class="eq">۲ + ۰٫۲۵ = <b>۲٫۲۵</b></span> ساعت.</li></ol></details></div>
+<div class="exercise" id="u2-q3" data-answer="155" data-unit="دقیقه"><div class="ex-top"><span class="ex-n">تمرین ۳</span><span class="q-level" aria-label="سطح: متوسط"><i class="on"></i><i class="on"></i><i></i></span></div><div class="ex-q"><p>از ساعت ۹:۲۰ تا ۱۱:۵۵ چند دقیقه است؟</p></div><details class="solution"><summary><span class="when-closed">دیدن راه‌حل</span><span class="when-open">بستن راه‌حل</span></summary><ol class="solution-steps"><li>از ۹:۲۰ تا ۱۱:۲۰ ← ۲ ساعت = ۱۲۰ دقیقه</li><li>از ۱۱:۲۰ تا ۱۱:۵۵ ← ۳۵ دقیقه</li><li><span class="eq">۱۲۰ + ۳۵ = <b>۱۵۵</b></span> دقیقه.</li></ol></details></div>
+<div class="exercise" id="u2-q4" data-answer="18"><div class="ex-top"><span class="ex-n">تمرین ۴</span><span class="q-level" aria-label="سطح: آسان"><i class="on"></i><i></i><i></i></span></div><div class="ex-q"><p>ساعت ۶ بعدازظهر در ساعت ۲۴ساعته چند است؟</p></div><details class="solution"><summary><span class="when-closed">دیدن راه‌حل</span><span class="when-open">بستن راه‌حل</span></summary><ol class="solution-steps"><li><span class="eq">۶ + ۱۲ = <b>۱۸</b></span> ← یعنی ۱۸:۰۰.</li></ol></details></div>
+<div class="exercise" id="u2-q5" data-answer="75" data-unit="دقیقه"><div class="ex-top"><span class="ex-n">تمرین ۵</span><span class="q-level" aria-label="سطح: متوسط"><i class="on"></i><i class="on"></i><i></i></span></div><div class="ex-q"><p>سه کار داری: یکی ۲۵ دقیقه، یکی ۳۵ دقیقه و یکی یک ربع. روی هم چند دقیقه طول می‌کشد؟</p></div><details class="solution"><summary><span class="when-closed">دیدن راه‌حل</span><span class="when-open">بستن راه‌حل</span></summary><ol class="solution-steps"><li>یک ربع = ۱۵ دقیقه</li><li><span class="eq">۲۵ + ۳۵ + ۱۵ = <b>۷۵</b></span> دقیقه (یعنی ۱ ساعت و ۱۵ دقیقه).</li></ol></details></div>
+</div></div>
+<aside class="tip" aria-label="ترفند سرانگشتی"><p class="kicker">ترفند سرانگشتی</p><h3>ساعت را ربع‌ربع ببین</h3>
+<p>اعشار ساعت را به «ربع» ترجمه کن: ۰٫۲۵ = یک ربع، ۰٫۵ = نیم ساعت، ۰٫۷۵ = سه ربع.</p>
+<p class="trick-example">۲٫۷۵ ساعت ← ۲ ساعت و سه ربع ← <b>۲ ساعت و ۴۵ دقیقه</b></p>
+</aside>
+</div>
+</section>
+<section class="lesson" id="u3" aria-labelledby="u3-t">
+<div class="container">
+<header class="lesson-head"><span class="lesson-n" aria-hidden="true">۳</span><div><p class="kicker">زیردرس ۳ از ۴</p><h2 id="u3-t">سرعت، مسافت و زمان</h2></div></header>
+<div class="part part-see"><h3 class="part-label"><span class="pn" aria-hidden="true">۱</span>ببین</h3><div class="prose">
+<p>سرعت ۶۰ کیلومتر بر ساعت یعنی در هر ساعت ۶۰ کیلومتر جلو می‌روی.</p>
+<figure class="figure"><svg viewBox="0 0 220 170" width="220" height="170" role="img" aria-label="مثلث مسافت، سرعت و زمان: مسافت بالا، سرعت و زمان پایین"><polygon points="110,10 205,160 15,160" class="fill-c stroke"/><line x1="52" y1="100" x2="168" y2="100" class="stroke"/><line x1="110" y1="100" x2="110" y2="160" class="stroke"/><text x="110" y="78" text-anchor="middle" font-size="18">مسافت</text><text x="73" y="138" text-anchor="middle" font-size="15">سرعت</text><text x="147" y="138" text-anchor="middle" font-size="15">زمان</text></svg><figcaption>مقداری را که می‌خواهی بپوشان؛ دو تای دیگر رابطه را نشان می‌دهند.</figcaption></figure>
+<div class="key"><b>سه فرمول، یک رابطه:</b> مسافت = سرعت × زمان ؛ زمان = مسافت ÷ سرعت ؛ سرعت = مسافت ÷ زمان</div>
+<div class="key">واحدها باید جور باشند: اگر سرعت «کیلومتر بر ساعت» است، زمان باید «ساعت» باشد. ۳۰ دقیقه = ۰٫۵ ساعت و ۲۰ دقیقه = <span class="frac"><span>۱</span><span>۳</span></span> ساعت.</div>
+<p><strong>ترفند سرعت ۶۰:</strong> با سرعت ۶۰ کیلومتر بر ساعت، هر دقیقه دقیقاً ۱ کیلومتر می‌روی!</p>
+<p><strong>سرعت متوسط</strong> = کل مسافت ÷ کل زمان. میانگین گرفتن از سرعت‌ها معمولاً جواب غلط می‌دهد (مثال دوم را ببین).</p>
+</div></div>
+<div class="part part-solved"><h3 class="part-label"><span class="pn" aria-hidden="true">۲</span>حل‌شده</h3><div class="examples">
+<article class="question card-paper"><div class="q-top"><span class="q-tag">مثال ۱</span><span class="q-level" aria-label="سطح: آسان"><i class="on"></i><i></i><i></i></span></div><h4>سفر به رشت</h4><p>فاصله‌ی تهران تا رشت حدود ۳۲۰ کیلومتر است. با سرعت متوسط ۸۰ کیلومتر بر ساعت، سفر چقدر طول می‌کشد؟</p><details class="solution"><summary><span class="when-closed">نمایش راه‌حل گام‌به‌گام</span><span class="when-open">بستن راه‌حل</span></summary><ol class="solution-steps"><li>زمان = مسافت ÷ سرعت</li><li><span class="eq">۳۲۰ ÷ ۸۰ = <b>۴</b></span> ساعت.</li></ol></details></article>
+<article class="question card-paper"><div class="q-top"><span class="q-tag">مثال ۲</span><span class="q-level" aria-label="سطح: سخت"><i class="on"></i><i class="on"></i><i class="on"></i></span></div><h4>سرعت متوسط رفت و برگشت</h4><p>۶۰ کیلومتر را با سرعت ۶۰ کیلومتر بر ساعت رفتی و همان راه را با سرعت ۳۰ برگشتی. سرعت متوسط کل سفر چقدر است؟</p><details class="solution"><summary><span class="when-closed">نمایش راه‌حل گام‌به‌گام</span><span class="when-open">بستن راه‌حل</span></summary><ol class="solution-steps"><li>رفت: <span class="eq">۶۰ ÷ ۶۰ = ۱</span> ساعت ؛ برگشت: <span class="eq">۶۰ ÷ ۳۰ = ۲</span> ساعت</li><li>کل مسافت ۱۲۰ کیلومتر و کل زمان ۳ ساعت</li><li><span class="eq">۱۲۰ ÷ ۳ = <b>۴۰</b></span> کیلومتر بر ساعت.</li></ol><p class="check">نه ۴۵! چون مدت بیشتری را با سرعت کم گذراندی.</p></details></article>
+</div></div>
+<div class="part part-try"><h3 class="part-label"><span class="pn" aria-hidden="true">۳</span>خودت امتحان کن</h3><div class="exercises">
+<div class="exercise" id="u3-q1" data-answer="150" data-unit="کیلومتر"><div class="ex-top"><span class="ex-n">تمرین ۱</span><span class="q-level" aria-label="سطح: آسان"><i class="on"></i><i></i><i></i></span></div><div class="ex-q"><p>۲٫۵ ساعت با سرعت ۶۰ کیلومتر بر ساعت رانندگی کردی. چند کیلومتر رفتی؟</p></div><details class="solution"><summary><span class="when-closed">دیدن راه‌حل</span><span class="when-open">بستن راه‌حل</span></summary><ol class="solution-steps"><li><span class="eq">۶۰ × ۲٫۵ = <b>۱۵۰</b></span> کیلومتر.</li></ol></details></div>
+<div class="exercise" id="u3-q2" data-answer="45" data-unit="دقیقه" data-hint="اول زمان را به ساعت حساب کن، بعد به دقیقه ببر."><div class="ex-top"><span class="ex-n">تمرین ۲</span><span class="q-level" aria-label="سطح: متوسط"><i class="on"></i><i class="on"></i><i></i></span></div><div class="ex-q"><p>۱۵ کیلومتر را با دوچرخه و با سرعت ۲۰ کیلومتر بر ساعت می‌روی. چند دقیقه طول می‌کشد؟</p></div><details class="solution"><summary><span class="when-closed">دیدن راه‌حل</span><span class="when-open">بستن راه‌حل</span></summary><ol class="solution-steps"><li><span class="eq">۱۵ ÷ ۲۰ = ۰٫۷۵</span> ساعت</li><li><span class="eq">۰٫۷۵ × ۶۰ = <b>۴۵</b></span> دقیقه.</li></ol></details></div>
+<div class="exercise" id="u3-q3" data-answer="5" data-unit="کیلومتر بر ساعت" data-hint="۳۶ دقیقه چند ساعت است؟"><div class="ex-top"><span class="ex-n">تمرین ۳</span><span class="q-level" aria-label="سطح: متوسط"><i class="on"></i><i class="on"></i><i></i></span></div><div class="ex-q"><p>در ۳۶ دقیقه ۳ کیلومتر پیاده رفتی. سرعتت چند کیلومتر بر ساعت بوده؟</p></div><details class="solution"><summary><span class="when-closed">دیدن راه‌حل</span><span class="when-open">بستن راه‌حل</span></summary><ol class="solution-steps"><li>۳۶ دقیقه = <span class="eq">۳۶ ÷ ۶۰ = ۰٫۶</span> ساعت</li><li><span class="eq">۳ ÷ ۰٫۶ = <b>۵</b></span> کیلومتر بر ساعت.</li></ol></details></div>
+<div class="exercise" id="u3-q4" data-answer="11"><div class="ex-top"><span class="ex-n">تمرین ۴</span><span class="q-level" aria-label="سطح: متوسط"><i class="on"></i><i class="on"></i><i></i></span></div><div class="ex-q"><p>ساعت ۸ صبح راه می‌افتی و باید ۲۷۰ کیلومتر را با سرعت متوسط ۹۰ کیلومتر بر ساعت بروی. ساعت چند (صبح) می‌رسی؟</p></div><details class="solution"><summary><span class="when-closed">دیدن راه‌حل</span><span class="when-open">بستن راه‌حل</span></summary><ol class="solution-steps"><li>زمان سفر: <span class="eq">۲۷۰ ÷ ۹۰ = ۳</span> ساعت</li><li><span class="eq">۸ + ۳ = <b>۱۱</b></span> ← ساعت ۱۱ صبح.</li></ol></details></div>
+</div></div>
+<aside class="tip" aria-label="ترفند سرانگشتی"><p class="kicker">ترفند سرانگشتی</p><h3>سرعت ۶۰ یعنی دقیقه‌ای یک کیلومتر</h3>
+<p>با سرعت ۶۰، تعداد کیلومترها همان تعداد دقیقه‌هاست. با سرعت ۱۲۰، زمان نصف می‌شود.</p>
+<p class="trick-example">۴۵ کیلومتر با سرعت ۶۰ ← <b>۴۵ دقیقه</b> ؛ با سرعت ۹۰ ← ۳۰ دقیقه</p>
+</aside>
+</div>
+</section>
+<section class="lesson" id="u4" aria-labelledby="u4-t">
+<div class="container">
+<header class="lesson-head"><span class="lesson-n" aria-hidden="true">۴</span><div><p class="kicker">زیردرس ۴ از ۴</p><h2 id="u4-t">مصرف سوخت و هزینه‌ی سفر</h2></div></header>
+<div class="part part-see"><h3 class="part-label"><span class="pn" aria-hidden="true">۱</span>ببین</h3><div class="prose">
+<p>مصرف سوخت ماشین معمولاً به شکل «لیتر در ۱۰۰ کیلومتر» گفته می‌شود. ماشینی با مصرف ۸ لیتر، برای هر ۱۰۰ کیلومتر ۸ لیتر بنزین می‌سوزاند.</p>
+<div class="key"><b>سوخت لازم</b> = مسافت ÷ ۱۰۰ × مصرف ؛ <b>هزینه‌ی سوخت</b> = تعداد لیتر × قیمت هر لیتر</div>
+<p class="formula"><span class="eq eq-fa">بنزین لازم = مسافت ÷ ۱۰۰ × مصرف</span></p>
+<p>مثال: ۴۰۰ کیلومتر با ماشینی که ۸ لیتر مصرف دارد: <span class="eq">۴۰۰ ÷ ۱۰۰ × ۸ = ۳۲</span> لیتر.</p>
+<ul class="dots"><li><b>رفت و برگشت</b> را یادت نرود؛ مسافت را دو برابر کن.</li><li><b>تقسیم هزینه بین همسفرها:</b> کل هزینه ÷ تعداد نفرات.</li><li><b>هزینه‌ی هر کیلومتر</b> = قیمت هر لیتر × مصرف ÷ ۱۰۰؛ برای مقایسه‌ی ماشین شخصی با اتوبوس و قطار به کار می‌آید.</li></ul>
+<p>در مثال‌ها قیمت بنزین را فرضی گرفته‌ایم؛ قیمت واقعی روز را جایش بگذار.</p>
+</div></div>
+<div class="part part-solved"><h3 class="part-label"><span class="pn" aria-hidden="true">۲</span>حل‌شده</h3><div class="examples">
+<article class="question card-paper"><div class="q-top"><span class="q-tag">مثال ۱</span><span class="q-level" aria-label="سطح: متوسط"><i class="on"></i><i class="on"></i><i></i></span></div><h4>سفر رفت و برگشت</h4><p>مقصد ۲۵۰ کیلومتر فاصله دارد و ماشین ۸ لیتر در ۱۰۰ کیلومتر مصرف می‌کند. برای رفت و برگشت چند لیتر بنزین لازم است؟ اگر هر لیتر ۳٬۰۰۰ تومان باشد، هزینه‌اش چقدر است؟</p><details class="solution"><summary><span class="when-closed">نمایش راه‌حل گام‌به‌گام</span><span class="when-open">بستن راه‌حل</span></summary><ol class="solution-steps"><li>کل مسافت: <span class="eq">۲۵۰ × ۲ = ۵۰۰</span> کیلومتر</li><li>بنزین: <span class="eq">۵۰۰ ÷ ۱۰۰ × ۸ = ۵ × ۸ = ۴۰</span> لیتر</li><li>هزینه: <span class="eq">۴۰ × ۳٬۰۰۰ = <b>۱۲۰٬۰۰۰</b></span> تومان.</li></ol></details></article>
+<article class="question card-paper"><div class="q-top"><span class="q-tag">مثال ۲</span><span class="q-level" aria-label="سطح: متوسط"><i class="on"></i><i class="on"></i><i></i></span></div><h4>مقایسه‌ی دو ماشین</h4><p>ماشین الف ۷ لیتر و ماشین ب ۱۰ لیتر در ۱۰۰ کیلومتر مصرف دارد. اگر ماهی ۱۵۰۰ کیلومتر رانندگی کنی، ماشین ب ماهانه چند لیتر بیشتر می‌سوزاند؟</p><details class="solution"><summary><span class="when-closed">نمایش راه‌حل گام‌به‌گام</span><span class="when-open">بستن راه‌حل</span></summary><ol class="solution-steps"><li>۱۵۰۰ کیلومتر یعنی ۱۵ تا «صد کیلومتر».</li><li>الف: <span class="eq">۱۵ × ۷ = ۱۰۵</span> لیتر ؛ ب: <span class="eq">۱۵ × ۱۰ = ۱۵۰</span> لیتر</li><li>اختلاف: <span class="eq">۱۵۰ − ۱۰۵ = <b>۴۵</b></span> لیتر در ماه.</li></ol></details></article>
+</div></div>
+<div class="part part-try"><h3 class="part-label"><span class="pn" aria-hidden="true">۳</span>خودت امتحان کن</h3><div class="exercises">
+<div class="exercise" id="u4-q1" data-answer="24" data-unit="لیتر"><div class="ex-top"><span class="ex-n">تمرین ۱</span><span class="q-level" aria-label="سطح: آسان"><i class="on"></i><i></i><i></i></span></div><div class="ex-q"><p>۳۰۰ کیلومتر با ماشینی که ۸ لیتر در ۱۰۰ کیلومتر مصرف دارد. چند لیتر بنزین لازم است؟</p></div><details class="solution"><summary><span class="when-closed">دیدن راه‌حل</span><span class="when-open">بستن راه‌حل</span></summary><ol class="solution-steps"><li><span class="eq">۳۰۰ ÷ ۱۰۰ × ۸ = ۳ × ۸ = <b>۲۴</b></span> لیتر.</li></ol></details></div>
+<div class="exercise" id="u4-q2" data-answer="50000" data-unit="تومان"><div class="ex-top"><span class="ex-n">تمرین ۲</span><span class="q-level" aria-label="سطح: آسان"><i class="on"></i><i></i><i></i></span></div><div class="ex-q"><p>هزینه‌ی سفری ۲۰۰٬۰۰۰ تومان شد و ۴ نفر بودید. سهم هر نفر چقدر است؟</p></div><details class="solution"><summary><span class="when-closed">دیدن راه‌حل</span><span class="when-open">بستن راه‌حل</span></summary><ol class="solution-steps"><li><span class="eq">۲۰۰٬۰۰۰ ÷ ۴ = <b>۵۰٬۰۰۰</b></span> تومان.</li></ol></details></div>
+<div class="exercise" id="u4-q3" data-answer="7.5" data-unit="لیتر" data-hint="۴۰۰ کیلومتر چند تا «صد کیلومتر» است؟"><div class="ex-top"><span class="ex-n">تمرین ۳</span><span class="q-level" aria-label="سطح: متوسط"><i class="on"></i><i class="on"></i><i></i></span></div><div class="ex-q"><p>با ۳۰ لیتر بنزین ۴۰۰ کیلومتر رفتی. مصرف ماشین چند لیتر در ۱۰۰ کیلومتر است؟</p></div><details class="solution"><summary><span class="when-closed">دیدن راه‌حل</span><span class="when-open">بستن راه‌حل</span></summary><ol class="solution-steps"><li>۴۰۰ کیلومتر = ۴ تا صد کیلومتر</li><li><span class="eq">۳۰ ÷ ۴ = <b>۷٫۵</b></span> لیتر در ۱۰۰ کیلومتر.</li></ol></details></div>
+<div class="exercise" id="u4-q4" data-answer="600" data-unit="کیلومتر"><div class="ex-top"><span class="ex-n">تمرین ۴</span><span class="q-level" aria-label="سطح: متوسط"><i class="on"></i><i class="on"></i><i></i></span></div><div class="ex-q"><p>باک ۴۵ لیتری ماشین پر است و ماشین ۷٫۵ لیتر در ۱۰۰ کیلومتر مصرف دارد. با یک باک چند کیلومتر می‌شود رفت؟</p></div><details class="solution"><summary><span class="when-closed">دیدن راه‌حل</span><span class="when-open">بستن راه‌حل</span></summary><ol class="solution-steps"><li><span class="eq">۴۵ ÷ ۷٫۵ = ۶</span> تا «صد کیلومتر»</li><li><span class="eq">۶ × ۱۰۰ = <b>۶۰۰</b></span> کیلومتر.</li></ol></details></div>
+</div></div>
+<aside class="tip" aria-label="ترفند سرانگشتی"><p class="kicker">ترفند سرانگشتی</p><h3>«لیتر در صد» به «کیلومتر با هر لیتر»</h3>
+<p>بعضی‌ها مصرف را برعکس می‌گویند: «با هر لیتر چند کیلومتر». برای تبدیل، ۱۰۰ را بر مصرف تقسیم کن.</p>
+<p class="trick-example">۸ لیتر در ۱۰۰ کیلومتر ← <span class="eq">۱۰۰ ÷ ۸ = <b>۱۲٫۵</b></span> کیلومتر با هر لیتر</p>
+</aside>
+</div>
+</section>
+
+<nav class="lesson-nav container" aria-label="موضوع قبلی و بعدی">
+<a class="prev" href="money.html"><small>→ موضوع قبلی</small><strong>پول و حساب‌وکتاب</strong></a>
+<a class="next" href="../index.html#topics"><small>تمام شد! بازگشت به ←</small><strong>همه‌ی موضوع‌ها</strong></a>
+</nav>
+  </main>
+
+  <!-- ============ فوتر ============ -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p class="footer-brand">ریاضی روزمره</p>
+      <p class="footer-note">جواب‌ها را در کادر بنویس و «بررسی» را بزن؛ ارقام فارسی و انگلیسی هر دو قبول است و ممیز را می‌توانی با «/» یا «.» بنویسی. پیشرفتت فقط در همین مرورگر ذخیره می‌شود.</p>
+      <a class="to-top" href="#top">
+        بازگشت به بالا
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M6 11l6-6 6 6"/></svg>
+      </a>
+    </div>
+  </footer>
+
+  <script src="../js/main.js" defer></script>
+</body>
+</html>
