@@ -1,0 +1,362 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ریاضی روزمره | ریاضی‌ای که هر روز به کارت می‌آید</title>
+  <meta name="description" content="آموزش ساده و کاربردی ریاضی زندگی روزمره: درصد و تخفیف، تناسب، تخمین ذهنی، هندسه کاربردی و آمار و احتمال؛ با مثال‌های واقعی و راه‌حل قدم‌به‌قدم.">
+  <meta name="theme-color" content="#fbf7ee" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0f1226" media="(prefers-color-scheme: dark)">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <script>
+    /* تم را پیش از اولین رندر تنظیم می‌کند تا چشمک نزند */
+    (function () {
+      var root = document.documentElement, theme = null;
+      root.classList.add('js');
+      try { theme = localStorage.getItem('theme'); } catch (e) {}
+      if (theme !== 'light' && theme !== 'dark') {
+        theme = window.matchMedia && matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      }
+      root.setAttribute('data-theme', theme);
+    })();
+  </script>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">پرش به محتوا</a>
+
+  <!-- ============ هدر ============ -->
+  <header class="site-header" id="top">
+    <div class="container header-inner">
+      <a class="brand" href="#top" aria-label="ریاضی روزمره، صفحه اصلی">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 32 32" width="32" height="32"><rect width="32" height="32" rx="10" fill="currentColor"/><circle cx="16" cy="9.5" r="2.4" fill="var(--bg)"/><circle cx="16" cy="22.5" r="2.4" fill="var(--bg)"/><rect x="7.5" y="14.7" width="17" height="2.6" rx="1.3" fill="var(--bg)"/></svg>
+        </span>
+        <span class="brand-name">ریاضی روزمره</span>
+      </a>
+
+      <nav class="main-nav" id="main-nav" aria-label="منوی اصلی">
+        <a href="#topics">موضوع‌ها</a>
+        <a href="#how">درس‌ها چه شکلی‌اند؟</a>
+        <a href="#tricks">ترفند سرانگشتی</a>
+        <a href="#ideas">پیشنهادها</a>
+      </nav>
+
+      <div class="header-actions">
+        <button class="icon-btn" id="theme-toggle" type="button" aria-label="تغییر حالت روشن/تیره" title="تغییر حالت روشن/تیره">
+          <svg class="i-sun" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+          <svg class="i-moon" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+        </button>
+        <button class="icon-btn menu-btn" id="menu-btn" type="button" aria-label="باز و بسته کردن منو" aria-expanded="false" aria-controls="main-nav">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path class="bar b1" d="M4 7h16"/><path class="bar b2" d="M4 12h16"/><path class="bar b3" d="M4 17h16"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- ============ هیرو ============ -->
+    <section class="hero">
+      <div class="hero-symbols" aria-hidden="true">
+        <span style="--x:6%;--y:18%;--s:3.4rem;--d:0s;--r:-12deg">٪</span>
+        <span style="--x:46%;--y:6%;--s:2.6rem;--d:1.2s;--r:8deg">÷</span>
+        <span style="--x:58%;--y:88%;--s:3rem;--d:.6s;--r:-6deg">×</span>
+        <span style="--x:92%;--y:12%;--s:3.2rem;--d:1.8s;--r:14deg">π</span>
+        <span style="--x:3%;--y:76%;--s:2.8rem;--d:2.4s;--r:10deg">≈</span>
+        <span style="--x:94%;--y:80%;--s:2.6rem;--d:.9s;--r:-10deg">+</span>
+      </div>
+
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow"><span class="dot" aria-hidden="true"></span> برای همه؛ حتی اگر ریاضی‌ات ضعیف است</p>
+          <h1>ریاضی‌ای که <span class="mark">هر روز</span> به کارت می‌آید</h1>
+          <p class="lead">تخفیف، قیمت هر کیلو، متراژ کاشی، شانس باران… همه‌اش ریاضی است. اینجا بدون فرمول‌های ترسناک و با مثال‌های واقعی، قدم‌به‌قدم یاد می‌گیری.</p>
+          <div class="cta-row">
+            <a class="btn btn-primary" href="#topics">
+              شروع از موضوع‌ها
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>
+            </a>
+            <a class="btn btn-ghost" href="#tricks">یک ترفند بگو</a>
+          </div>
+          <ul class="hero-facts" aria-label="ویژگی‌های سایت">
+            <li><strong>۵</strong> موضوع اصلی</li>
+            <li><strong>گام‌به‌گام</strong> راه‌حل‌ها</li>
+            <li><strong>۱۰۰٪</strong> فارسی و ساده</li>
+          </ul>
+        </div>
+
+        <!-- ماشین‌حساب تخفیف -->
+        <aside class="calc-wrap" aria-labelledby="calc-title">
+          <div class="calc card-sticker">
+            <span class="tape" aria-hidden="true"></span>
+            <div class="calc-head">
+              <span class="calc-badge" aria-hidden="true">٪</span>
+              <div>
+                <h2 id="calc-title">تخفیف‌یاب سریع</h2>
+                <p>قیمت و درصد را بنویس، جواب همان لحظه می‌آید.</p>
+              </div>
+            </div>
+
+            <form class="calc-form" id="calc-form" autocomplete="off" novalidate>
+              <label class="field">
+                <span class="field-label">قیمت اصلی (تومان)</span>
+                <input id="price" name="price" type="text" inputmode="decimal" value="۱٬۲۰۰٬۰۰۰" dir="ltr" aria-describedby="calc-explain">
+              </label>
+              <label class="field">
+                <span class="field-label">درصد تخفیف</span>
+                <span class="field-with-unit">
+                  <input id="percent" name="percent" type="text" inputmode="decimal" value="۲۵" dir="ltr" aria-describedby="calc-explain">
+                  <span class="unit" aria-hidden="true">٪</span>
+                </span>
+              </label>
+              <div class="chips" role="group" aria-label="درصدهای آماده">
+                <button type="button" class="chip" data-p="10">۱۰٪</button>
+                <button type="button" class="chip" data-p="15">۱۵٪</button>
+                <button type="button" class="chip" data-p="20">۲۰٪</button>
+                <button type="button" class="chip" data-p="25">۲۵٪</button>
+                <button type="button" class="chip" data-p="30">۳۰٪</button>
+                <button type="button" class="chip" data-p="50">۵۰٪</button>
+              </div>
+            </form>
+
+            <div class="calc-result" aria-live="polite">
+              <div class="bar-track" aria-hidden="true"><span class="bar-fill" id="bar-fill"></span></div>
+              <dl class="result-grid">
+                <div>
+                  <dt>مبلغ تخفیف</dt>
+                  <dd id="out-off">۳۰۰٬۰۰۰ <small>تومان</small></dd>
+                </div>
+                <div class="final">
+                  <dt>قیمت نهایی</dt>
+                  <dd id="out-final">۹۰۰٬۰۰۰ <small>تومان</small></dd>
+                </div>
+              </dl>
+              <p class="explain" id="calc-explain"><span class="eq">۱٬۲۰۰٬۰۰۰ × ۲۵ ÷ ۱۰۰ = ۳۰۰٬۰۰۰</span> تومان تخفیف</p>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- ============ نوار سؤال‌های واقعی ============ -->
+    <div class="ribbon" aria-label="چند سؤال از زندگی روزمره">
+      <div class="ribbon-track">
+        <ul>
+          <li>تخفیف ۳۰٪ یعنی چقدر؟</li>
+          <li>کدام بسته ارزان‌تر است؟</li>
+          <li>برای این اتاق چند متر کاشی لازم است؟</li>
+          <li>احتمال بارش ۷۰٪ یعنی چه؟</li>
+          <li>قسط وام را چطور بسنجم؟</li>
+          <li>انعام ۱۰٪ چقدر می‌شود؟</li>
+        </ul>
+        <ul aria-hidden="true">
+          <li>تخفیف ۳۰٪ یعنی چقدر؟</li>
+          <li>کدام بسته ارزان‌تر است؟</li>
+          <li>برای این اتاق چند متر کاشی لازم است؟</li>
+          <li>احتمال بارش ۷۰٪ یعنی چه؟</li>
+          <li>قسط وام را چطور بسنجم؟</li>
+          <li>انعام ۱۰٪ چقدر می‌شود؟</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- ============ موضوع‌های اصلی ============ -->
+    <section class="section" id="topics" aria-labelledby="topics-title">
+      <div class="container">
+        <header class="section-head reveal">
+          <p class="kicker">پنج موضوع اصلی</p>
+          <h2 id="topics-title">از کجا شروع کنیم؟</h2>
+          <p>هر موضوع یک درس کوتاه دارد، با مثال‌های واقعی، نمونه‌سؤال حل‌شده و چند تمرین برای خودت.</p>
+        </header>
+
+        <div class="topic-grid">
+
+          <article class="topic t-percent reveal" style="--c:var(--c-percent);--c-ink:var(--c-percent-ink)">
+            <span class="topic-num" aria-hidden="true">۱</span>
+            <div class="topic-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="7" cy="7" r="2.6"/><circle cx="17" cy="17" r="2.6"/><path d="M19 5 5 19"/></svg>
+            </div>
+            <h3>درصدها و تخفیف‌ها</h3>
+            <p>تخفیف واقعی چقدر است؟ مالیات، سود و انعام را در چند ثانیه حساب کن.</p>
+            <ul class="tags">
+              <li>تخفیف پشت تخفیف</li><li>افزایش و کاهش</li><li>درصد تغییر</li>
+            </ul>
+            <p class="real-q"><span>سؤال واقعی:</span> «تخفیف ۳۰٪ و بعد ۱۰٪ همان ۴۰٪ است؟»</p>
+            <span class="soon">به‌زودی</span>
+          </article>
+
+          <article class="topic t-ratio reveal" style="--c:var(--c-ratio);--c-ink:var(--c-ratio-ink)">
+            <span class="topic-num" aria-hidden="true">۲</span>
+            <div class="topic-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v16M7 20h10M5 7h14"/><path d="M5 7 2.5 13a2.6 2.6 0 0 0 5 0L5 7zM19 7l-2.5 6a2.6 2.6 0 0 0 5 0L19 7z"/></svg>
+            </div>
+            <h3>تناسب و قاعده سه‌تایی</h3>
+            <p>از یک نمونه به همه‌چیز برس: دستور غذا، قیمت هر کیلو، ارز و مقیاس نقشه.</p>
+            <ul class="tags">
+              <li>تناسب مستقیم</li><li>تناسب معکوس</li><li>قیمت واحد</li>
+            </ul>
+            <p class="real-q"><span>سؤال واقعی:</span> «اگر ۳ کیلو ۱۵۰ هزار تومان است، ۷ کیلو چند؟»</p>
+            <span class="soon">به‌زودی</span>
+          </article>
+
+          <article class="topic t-est reveal" style="--c:var(--c-est);--c-ink:var(--c-est-ink)">
+            <span class="topic-num" aria-hidden="true">۳</span>
+            <div class="topic-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9c2.2-2.4 4.3-2.4 6.5 0s4.3 2.4 6.5 0c1.9-2 3-2.2 5-1M3 16c2.2-2.4 4.3-2.4 6.5 0s4.3 2.4 6.5 0c1.9-2 3-2.2 5-1"/></svg>
+            </div>
+            <h3>تخمین ذهنی و سرانگشتی</h3>
+            <p>جواب تقریبی سریع و قابل‌اعتماد، تا بفهمی یک عدد غلط است یا نه.</p>
+            <ul class="tags">
+              <li>گرد کردن هوشمند</li><li>ترفندهای ذهنی</li><li>معقول بودن جواب</li>
+            </ul>
+            <p class="real-q"><span>سؤال واقعی:</span> «جمع این فاکتور حدوداً چقدر می‌شود؟»</p>
+            <span class="soon">به‌زودی</span>
+          </article>
+
+          <article class="topic t-geo reveal" style="--c:var(--c-geo);--c-ink:var(--c-geo-ink)">
+            <span class="topic-num" aria-hidden="true">۴</span>
+            <div class="topic-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V4l16 16z"/><path d="M4 14h6v6"/></svg>
+            </div>
+            <h3>هندسه کاربردی</h3>
+            <p>محیط، مساحت و حجم برای کاشی، رنگ، فرش و ظرف آب؛ همان چیزی که واقعاً لازم می‌شود.</p>
+            <ul class="tags">
+              <li>محیط و مساحت</li><li>حجم و گنجایش</li><li>تبدیل واحد</li>
+            </ul>
+            <p class="real-q"><span>سؤال واقعی:</span> «برای کاشی‌کاری این اتاق چند متر لازم است؟»</p>
+            <span class="soon">به‌زودی</span>
+          </article>
+
+          <article class="topic t-stat reveal" style="--c:var(--c-stat);--c-ink:var(--c-stat-ink)">
+            <span class="topic-num" aria-hidden="true">۵</span>
+            <div class="topic-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 20v-7M11 20V5M17 20v-10M2.5 20h19"/></svg>
+            </div>
+            <h3>آمار و احتمال مقدماتی</h3>
+            <p>میانگین، میانه و شانس؛ تا گول عددهای تبلیغات و خبرها را نخوری.</p>
+            <ul class="tags">
+              <li>میانگین و میانه</li><li>احتمال ساده</li><li>خواندن نمودار</li>
+            </ul>
+            <p class="real-q"><span>سؤال واقعی:</span> «احتمال بارش ۷۰٪ یعنی چه؟»</p>
+            <span class="soon">به‌زودی</span>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ شکل درس‌ها ============ -->
+    <section class="section section-alt" id="how" aria-labelledby="how-title">
+      <div class="container how-grid">
+        <div class="how-copy reveal">
+          <p class="kicker">درس‌ها چه شکلی‌اند؟</p>
+          <h2 id="how-title">کوتاه، قدم‌به‌قدم و بدون استرس</h2>
+          <p>هر درس همین چهار بخش را دارد. اگر جایی گیر کردی، راه‌حل را باز می‌کنی و گام‌به‌گام می‌بینی.</p>
+          <ol class="steps">
+            <li><span class="step-n">۱</span><div><strong>ببین</strong><p>توضیح ساده با یک مثال از زندگی واقعی.</p></div></li>
+            <li><span class="step-n">۲</span><div><strong>حل‌شده</strong><p>نمونه‌سؤال با پاسخ گام‌به‌گام.</p></div></li>
+            <li><span class="step-n">۳</span><div><strong>خودت امتحان کن</strong><p>چند تمرین؛ اول فکر کن، بعد جواب را باز کن.</p></div></li>
+            <li><span class="step-n">۴</span><div><strong>ترفند سرانگشتی</strong><p>یک میان‌بر ذهنی که جلوی دیگران بدرخشی.</p></div></li>
+          </ol>
+        </div>
+
+        <div class="lesson-demo reveal" aria-labelledby="demo-title">
+          <p class="demo-label">نمونه‌ای از ظاهر یک سؤال (فقط برای دیدن شکل)</p>
+          <div class="question card-paper">
+            <div class="q-top">
+              <span class="q-tag">درصد و تخفیف</span>
+              <span class="q-level" aria-label="سطح: آسان">
+                <i class="on"></i><i></i><i></i>
+              </span>
+            </div>
+            <h3 id="demo-title">قیمت کفش بعد از تخفیف</h3>
+            <p>یک کفش <strong>۲٬۴۰۰٬۰۰۰</strong> تومانی <strong>۲۵٪</strong> تخفیف دارد. قیمت نهایی چند تومان است؟</p>
+
+            <details class="solution">
+              <summary>
+                <span class="when-closed">نمایش راه‌حل گام‌به‌گام</span>
+                <span class="when-open">بستن راه‌حل</span>
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+              </summary>
+              <ol class="solution-steps">
+                <li><b>۲۵٪ یعنی یک‌چهارم.</b> پس باید قیمت را به ۴ قسمت کنیم.</li>
+                <li><span class="eq">۲٬۴۰۰٬۰۰۰ ÷ ۴ = <b>۶۰۰٬۰۰۰</b></span> تومان تخفیف.</li>
+                <li><span class="eq">۲٬۴۰۰٬۰۰۰ − ۶۰۰٬۰۰۰ = <b>۱٬۸۰۰٬۰۰۰</b></span> <b>تومان</b>.</li>
+              </ol>
+              <p class="check">بررسی سریع: ۷۵٪ از ۲٬۴۰۰٬۰۰۰ هم همین‌قدر می‌شود. ✓</p>
+            </details>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ ترفند سرانگشتی ============ -->
+    <section class="section" id="tricks" aria-labelledby="tricks-title">
+      <div class="container">
+        <div class="trick-card reveal">
+          <div class="trick-side">
+            <p class="kicker">ترفند سرانگشتی</p>
+            <h2 id="tricks-title">یک میان‌بر ذهنی</h2>
+            <p>هر بار یکی را امتحان کن؛ نه ماشین‌حساب می‌خواهد، نه کاغذ.</p>
+            <button class="btn btn-primary" id="trick-next" type="button">
+              ترفند بعدی
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12a9 9 0 0 1 15.5-6.2L21 8M21 3v5h-5M21 12a9 9 0 0 1-15.5 6.2L3 16M3 21v-5h5"/></svg>
+            </button>
+          </div>
+          <div class="trick-body" aria-live="polite">
+            <span class="trick-count" id="trick-count" aria-hidden="true">۱ از ۶</span>
+            <h3 id="trick-title">۱۰٪ هر عدد؛ فقط یک رقم عقب‌تر</h3>
+            <p id="trick-text">برای ۱۰٪ هر عدد، ممیز را یک رقم به چپ ببر. اگر عدد به صفر ختم می‌شود، یعنی همان صفر آخرش را بردار.</p>
+            <p class="trick-example" id="trick-example">۱۰٪ از ۴۵٬۰۰۰ = <b>۴٬۵۰۰</b></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ موضوع‌های پیشنهادی ============ -->
+    <section class="section section-alt" id="ideas" aria-labelledby="ideas-title">
+      <div class="container">
+        <header class="section-head reveal">
+          <p class="kicker">پیشنهاد برای افزودن</p>
+          <h2 id="ideas-title">سه موضوع دیگر که به نظرم لازم است</h2>
+          <p>این‌ها هنوز تأیید نشده‌اند. اگر موافقی اضافه می‌شوند، اگر نه حذفشان می‌کنیم.</p>
+        </header>
+
+        <div class="idea-grid">
+          <article class="idea reveal">
+            <span class="idea-badge">پیشنهادی ۱</span>
+            <h3>پایه‌ها: کسر، اعشار و چهار عمل</h3>
+            <p>پایه‌ی همه‌ی موضوع‌های بالا. اگر ریاضی را ضعیف می‌دانی، از همین‌جا شروع کن.</p>
+          </article>
+          <article class="idea reveal">
+            <span class="idea-badge">پیشنهادی ۲</span>
+            <h3>پول و حساب‌وکتاب شخصی</h3>
+            <p>بودجه، سود و بهره، قسط و وام، و تورم؛ مهم‌ترین ریاضیِ دخل‌وخرج.</p>
+          </article>
+          <article class="idea reveal">
+            <span class="idea-badge">پیشنهادی ۳</span>
+            <h3>واحدها، زمان و سرعت</h3>
+            <p>تبدیل واحد، ساعت و تاریخ، سرعت و مسافت؛ از آشپزی تا سفر.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============ فوتر ============ -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p class="footer-brand">ریاضی روزمره</p>
+      <p class="footer-note">سایتی شخصی و در حال ساخت. فعلاً فقط ظاهر آماده است و محتوای درس‌ها بعداً اضافه می‌شود.</p>
+      <a class="to-top" href="#top">
+        بازگشت به بالا
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M6 11l6-6 6 6"/></svg>
+      </a>
+    </div>
+  </footer>
+
+  <script src="js/main.js" defer></script>
+</body>
+</html>
